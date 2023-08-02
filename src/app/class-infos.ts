@@ -5,3 +5,10 @@ export class Categorie {
         public titre:string
     ){}
 }
+
+export class Theme {
+    constructor(
+        public id : string,
+        public theme_title: string []
+    ){}
+}
