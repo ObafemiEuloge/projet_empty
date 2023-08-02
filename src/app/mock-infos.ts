@@ -19,7 +19,8 @@ export const THEME_LISTS: Theme[] = [
     },
     {
         "id": "2",
-        "theme_List": ["officia",
+        "theme_List": [
+            "officia",
             "nulla",
             "non",
             "assumenda",

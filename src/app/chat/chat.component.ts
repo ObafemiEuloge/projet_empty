@@ -13,7 +13,7 @@ export class ChatComponent implements OnInit {
 
   ngOnInit(): void {
     this.chatService.getCategories();
-    console.log("chat");
+    this.chatService.getCategorieThemes();
   }
 
 }

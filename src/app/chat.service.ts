@@ -13,12 +13,20 @@ export class ChatService {
   constructor() { }
 
   getCategories() {
-    // return console.log(this.categories);
-    return this.categories;
+    return console.log(this.categories);
+    // return this.categories;
   }
 
-  getCategorieThemes(id: string) {
-    this.themeLists.find(el => { el.id === id })?.theme_List;
+  getCategorieThemes() {
+    this.themeLists.forEach(el => {
+      if (el.id === "2") {
+        console.log(el.theme_List);
+        
+      }
+    })
+    let themeList = this.themeLists.find(el => { el.id === "2" })?.theme_List;
+    return console.log(themeList);
+
   }
 
 
