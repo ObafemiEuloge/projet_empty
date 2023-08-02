@@ -9,7 +9,7 @@ export class Categorie {
 export class Theme {
     constructor(
         public id : string,
-        public theme_title: string []
+        public theme_List: string []
     ){}
 }
 export class Colors {
