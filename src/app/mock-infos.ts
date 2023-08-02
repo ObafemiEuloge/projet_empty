@@ -7,31 +7,39 @@ export const CATEGORIE: Categorie[] = [
         "titre": "loreme"
     },
     {
-        "id": "1",
-        "titre": "loreme"
+        "id": "2",
+        "titre": "cat"
     },
     {
-        "id": "1",
-        "titre": "loreme"
+        "id": "3",
+        "titre": "bike"
     },
     {
-        "id": "1",
-        "titre": "loreme"
+        "id": "4",
+        "titre": "plane"
     },
     {
-        "id": "1",
-        "titre": "loreme"
+        "id": "5",
+        "titre": "helicopter"
     },
     {
-        "id": "1",
-        "titre": "loreme"
+        "id": "6",
+        "titre": "boat"
     },
     {
-        "id": "1",
-        "titre": "loreme"
+        "id": "7",
+        "titre": "blog"
     },
     {
-        "id": "1",
-        "titre": "loreme"
+        "id": "8",
+        "titre": "tech"
     },
+    {
+        "id": "9",
+        "titre": "meteo"
+    },
+    {
+        "id": "10",
+        "titre": "motivation"
+    }
 ]
