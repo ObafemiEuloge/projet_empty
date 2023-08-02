@@ -4,7 +4,7 @@ import { Theme } from "./class-infos";
 export const THEME_LISTS: Theme[] = [
     {
         "id": "1",
-        "theme_title": ["lorem",
+        "theme_List": ["lorem",
             "ipsum",
             "dolor",
             "sit",
@@ -18,39 +18,129 @@ export const THEME_LISTS: Theme[] = [
     },
     {
         "id": "2",
-        "theme_title": ["lorem"]
+        "theme_List": ["officia",
+            "nulla",
+            "non",
+            "assumenda",
+            "enim",
+            "cupiditate",
+            "iste",
+            "reprehenderit",
+            "itaque",
+            "adipisci",
+        ]
     },
     {
         "id": "3",
-        "theme_title": ["lorem"]
+        "theme_List": ["vitae",
+            "ducimus",
+            "repellendus",
+            "optio",
+            "ea",
+            "libero",
+            "sint",
+            "officiis",
+            "ipsam",
+            "consequatur",
+        ]
     },
     {
         "id": "4",
-        "theme_title": ["lorem"]
+        "theme_List": ["consequuntur",
+            "placeat",
+            "corrupti",
+            "neque",
+            "totam",
+            "quo",
+            "provident",
+            "Beatae",
+            "nihil",
+            "vero",
+        ]
     },
     {
         "id": "5",
-        "theme_title": ["lorem"]
+        "theme_List": ["ullam",
+            "dolor",
+            "eligendi",
+            "saepe",
+            "architecto",
+            "unde",
+            "sit",
+            "earum",
+            "explicabo",
+            "laborum",
+        ]
     },
     {
         "id": "6",
-        "theme_title": ["lorem"]
+        "theme_List": ["asperiores",
+            "Ratione",
+            "sit",
+            "quam",
+            "voluptates",
+            "iste",
+            "perferendis",
+            "fugit",
+            "eveniet",
+            "dolorum",
+        ]
     },
     {
         "id": "7",
-        "theme_title": ["lorem"]
+        "theme_List": ["beatae",
+            "aliquid",
+            "doloremque",
+            "mollitia",
+            "veniam",
+            "asperiores",
+            "eaque",
+            "corrupti",
+            "at",
+            "alias",
+        ]
     },
     {
         "id": "8",
-        "theme_title": ["lorem"]
+        "theme_List": ["labore",
+            "earum",
+            "repudiandae",
+            "distinctio",
+            "repellendus",
+            "Veniam",
+            "laborum",
+            "eligendi",
+            "alias",
+            "non",
+        ]
     },
     {
         "id": "9",
-        "theme_title": ["lorem"]
+        "theme_List": ["iste",
+            "exercitationem",
+            "reprehenderit",
+            "sed",
+            "nihil",
+            "officia",
+            "est",
+            "beatae",
+            "labore",
+            "magni",
+        ]
     },
     {
         "id": "10",
-        "theme_title": ["lorem"]
+        "theme_List": ["quisquam",
+            "nisi",
+            "doloribus",
+            "expedita",
+            "fugiat",
+            "temporibus",
+            "Adipisci",
+            "beatae",
+            "eveniet",
+            "veniam",
+        ]
     }
 ]
 
