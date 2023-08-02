@@ -1,5 +1,6 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
+import { Routes, RouterModule } from '@angular/router'; // module des routes et class de T
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -7,6 +8,18 @@ import { HomeComponent } from './home/home.component';
 import { ContactComponent } from './contact/contact.component';
 import { ChatComponent } from './chat/chat.component';
 import { TemplateComponent } from './template/template.component';
+
+// L'ensemble des routes de notre application
+const seetRoutes: Routes = [
+  {
+    path: '',
+    component: HomeComponent
+  },
+  {
+    path: 'chat',
+    component: ChatComponent
+  }
+]
 
 @NgModule({
   declarations: [
@@ -18,7 +31,9 @@ import { TemplateComponent } from './template/template.component';
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+
+    RouterModule.forRoot(seetRoutes),  // chargement des routes dans l'application
   ],
   providers: [],
   bootstrap: [AppComponent]
