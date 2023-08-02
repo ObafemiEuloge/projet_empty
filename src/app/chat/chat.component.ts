@@ -9,10 +9,11 @@ import { ChatService } from '../chat.service';
 export class ChatComponent implements OnInit {
   constructor(
     private chatService: ChatService,
-  ){}
-  
+  ) { }
+
   ngOnInit(): void {
-    
+    this.chatService.getCategories();
+    console.log("chat");
   }
 
 }
