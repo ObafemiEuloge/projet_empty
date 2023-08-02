@@ -4,7 +4,7 @@ import { Theme } from "./class-infos";
 export const THEME_LISTS: Theme[] = [
     {
         "id": "1",
-        "theme_title": ["lorem",
+        "theme_List": ["lorem",
             "ipsum",
             "dolor",
             "sit",
@@ -18,7 +18,7 @@ export const THEME_LISTS: Theme[] = [
     },
     {
         "id": "2",
-        "theme_title": ["officia",
+        "theme_List": ["officia",
             "nulla",
             "non",
             "assumenda",
@@ -32,7 +32,7 @@ export const THEME_LISTS: Theme[] = [
     },
     {
         "id": "3",
-        "theme_title": ["vitae",
+        "theme_List": ["vitae",
             "ducimus",
             "repellendus",
             "optio",
@@ -46,7 +46,7 @@ export const THEME_LISTS: Theme[] = [
     },
     {
         "id": "4",
-        "theme_title": ["consequuntur",
+        "theme_List": ["consequuntur",
             "placeat",
             "corrupti",
             "neque",
@@ -60,7 +60,7 @@ export const THEME_LISTS: Theme[] = [
     },
     {
         "id": "5",
-        "theme_title": ["ullam",
+        "theme_List": ["ullam",
             "dolor",
             "eligendi",
             "saepe",
@@ -74,7 +74,7 @@ export const THEME_LISTS: Theme[] = [
     },
     {
         "id": "6",
-        "theme_title": ["asperiores",
+        "theme_List": ["asperiores",
             "Ratione",
             "sit",
             "quam",
@@ -88,7 +88,7 @@ export const THEME_LISTS: Theme[] = [
     },
     {
         "id": "7",
-        "theme_title": ["beatae",
+        "theme_List": ["beatae",
             "aliquid",
             "doloremque",
             "mollitia",
@@ -102,7 +102,7 @@ export const THEME_LISTS: Theme[] = [
     },
     {
         "id": "8",
-        "theme_title": ["labore",
+        "theme_List": ["labore",
             "earum",
             "repudiandae",
             "distinctio",
@@ -116,7 +116,7 @@ export const THEME_LISTS: Theme[] = [
     },
     {
         "id": "9",
-        "theme_title": ["iste",
+        "theme_List": ["iste",
             "exercitationem",
             "reprehenderit",
             "sed",
@@ -130,7 +130,7 @@ export const THEME_LISTS: Theme[] = [
     },
     {
         "id": "10",
-        "theme_title": ["quisquam",
+        "theme_List": ["quisquam",
             "nisi",
             "doloribus",
             "expedita",
