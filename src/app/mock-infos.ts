@@ -1,5 +1,6 @@
 import { Categorie } from "./class-infos";
 import { Theme } from "./class-infos";
+import { Colors } from "./class-infos";
 
 export const THEME_LISTS: Theme[] = [
     {
@@ -96,4 +97,21 @@ export const CATEGORIE: Categorie[] = [
         "id": "10",
         "titre": "motivation"
     }
+]
+
+export const COLORS: Colors[] = [
+    {
+        "template_colors": [
+            "green",
+            "yellow",
+            "red",
+            "blue",
+            "dark",
+            "orangered",
+            "magenta",
+            "purple",
+            "whitesmoke",
+            "black",
+    ]
+}
 ]

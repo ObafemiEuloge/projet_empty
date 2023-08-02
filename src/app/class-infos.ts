@@ -12,3 +12,8 @@ export class Theme {
         public theme_title: string []
     ){}
 }
+export class Colors {
+    constructor(
+        public template_colors: string []
+    ){}
+}
