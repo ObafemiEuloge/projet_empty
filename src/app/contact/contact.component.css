@@ -51,16 +51,22 @@ form{
     padding: 1.5rem;
     padding-bottom: 1rem;
     margin-bottom: 1.5rem;
+    margin-top: 2rem;
     border-radius: 15px;
     background-color: rgba(95, 94, 98, 0.617);
 }
 
-span{
+.pt-logo{
     position: absolute;
-    top: -0;
-    left: -2;
-    margin-bottom: 2rem;
-    padding-right: .2rem;
+    top: -9px;
+    left: 145px;
+    margin-bottom: 8rem;
+    padding-right: 1rem;
     background-color: #B2CC12;
+    border-radius: 10px;
     color: #181818;
+}
+
+fieldset{
+    padding-top: 3rem ;
 }
