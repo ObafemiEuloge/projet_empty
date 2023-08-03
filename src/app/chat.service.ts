@@ -7,27 +7,30 @@ import { Categorie, Theme } from './class-infos';
 })
 export class ChatService {
 
-  categories: Categorie[] = CATEGORIE
-  themeLists: Theme[] = THEME_LISTS
+  categories: Categorie[] = CATEGORIE;
+  listThemes: Theme[] = THEME_LISTS;
+
+  selectCategorie!: Categorie;
+  themeList: string[] | undefined = undefined;
 
   constructor() { }
 
   getCategories() {
-    return console.log(this.categories);
-    // return this.categories;
+    return this.categories;
   }
 
-  getCategorieThemes() {
-    this.themeLists.forEach(el => {
-      if (el.id === "2") {
-        console.log(el.theme_List);
-        
+  getCategorie(id: string): Categorie  {
+     this.categories.forEach(el => {
+      if (el.id === id) {
+        this.selectCategorie = el;
       }
     })
-    let themeList = this.themeLists.find(el => { el.id === "2" })?.theme_List;
-    return console.log(themeList);
-
+    return this.selectCategorie;
   }
 
+  getCategorieThemeList(id: string): string[] | undefined {
+    this.themeList = this.listThemes.find(el => el.id === id)?.theme_List;
+    return this.themeList;
+  }
 
 }
