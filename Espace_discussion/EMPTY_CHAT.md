@@ -14,3 +14,7 @@ En quoi consiste la suite??????????????🙄🙄🙄...
 Nicole, il faut faire le font-face des polices qui se trouvent dans le dossier Asset
 ## Euloge
 Nicole, il faut faire le font-face des polices qui se trouvent dans le dossier Asset
+
+## Nicole
+
+EULOGE vérifie si tu as reçu le second font face Google sans
