@@ -1,40 +1,46 @@
 <div>
     <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam quidem natus quas, deserunt necessitatibus
         obcaecati aperiam inventore cum, dolore, quae tenetur laborum minus illum dolores.</p>
-    <form action="#" method="post">
-            <label for="title">Nom du site:</label>
-            <input type="text" name="title" id="title" placeholder="Saisissez le nom de votre site ici...."><br>
+    <form action="#" method="post" [formGroup]="profileForm" (ngSubmit)="onSubmit()">
+        <label for="title">Nom du site:</label>
+        <input type="text" name="title" id="title" placeholder="Saisissez le nom de votre site ici...."
+            formControlName="title"><br>
 
-            <label for="categorie">Catégorie: </label>
-            <select id="categorie" class="form-select form-select-lg mb-3" aria-label="Large select example" [ngModel]="selectedCategorie" (change)="onSelect($event.target)">
-                <option [value]="0" disabled selected>Sélectionne une catégorie dans la liste suivante
-                </option>
-                <option [value]="categorie.id" *ngFor="let categorie of categories"> {{categorie.titre}} </option>
-            </select><br>
+        <label for="categorie">Catégorie: </label>
+        <select id="categorie" class="form-select form-select-lg mb-3" aria-label="Large select example"
+            (change)="onSelectCategorie($event.target)" formControlName="categorie">
+            <option value="" disabled selected>Sélectionne une catégorie dans la liste suivante
+            </option>
+            <option [value]="categorie.id" *ngFor="let categorie of categories"> {{categorie.titre}} </option>
+        </select><br>
 
-            <label for="theme">Thème: </label>
-            <select name="" id="theme" >
-                <option value="" disabled>votre thème ici</option>
-                <option value="liste.id" *ngFor="let liste of themeListe"> {{liste}} </option>
-            </select><br>
+        <label for="theme">Thème: </label>
+        <select name="theme" id="theme" class="form-select form-select-lg mb-3" aria-label="Large select example"
+            (change)="onSelectTheme($event.target)" formControlName="theme">
+            <option value="" disabled selected>votre thème ici</option>
+            <option [value]="liste" *ngFor="let liste; let i = index of themeListe"> {{liste}} </option>
+        </select><br>
 
-            <label for="">Description : </label>
-            <input type="text" id="desc" placeholder="Vos attentes du site........."><br>
-            <fieldset>
-                <legend>Choisissez à présent les couleurs de votre choix </legend>
-                <select name="" id="">
+        <label for="">Description : </label>
+        <input type="text" id="desc" name="desc" placeholder="Vos attentes du site........." formControlName="desc"><br>
+        <fieldset>
+            <legend>Choisissez à présent les couleurs de votre choix </legend>
+            <div formGroupName="color">
+                <h2>Address</h2>
+
+                <select name="Primo" id="" formControlName="Primo">
                     <option value="First Color">Primo Color</option>
                     <option value="a">A</option>
                     <option value="b">B</option>
                     <option value="c">c</option>
                 </select>
-                <select name="" id="">
+                <select name="Secondo" id="" formControlName="Secondo">
                     <option value="">Secondo Color</option>
                     <option value="a">A</option>
                     <option value="b">B</option>
                     <option value="c">c</option>
                 </select>
-                <select name="" id="">
+                <select name="Third" id="" formControlName="Third">
                     <option value="">Third Color</option>
                     <option value="a">A</option>
                     <option value="b">B</option>
@@ -42,8 +48,15 @@
                 </select><br>
                 <button class="border-radius">Color_Random</button>
                 <br>
-            </fieldset>
-            <button type="submit" class="center">Générez votre site</button>
+            </div>
+            <!-- </div> -->
+
+        </fieldset>
+        <!-- <button type="submit" class="center">Générez votre site</button> -->
+        <p>Complete the form to enable button.</p>
+        <button type="submit" [disabled]="!profileForm.valid">Générez votre site</button>
+        <p>Form Status: {{ profileForm.status }}</p>
+        <!-- <button type="button" (click)="updateProfile()">Update Profile</button> -->
         <br>
     </form>
 </div>
