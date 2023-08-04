@@ -7,12 +7,10 @@ span img {
 
 .imgLogo img {
     max-width: 50%;
-    margin-block: -130px;
 }
 
 h1{
     font-size: 5rem;
-    margin-block: 4rem;
 }
 
 h1 span {
