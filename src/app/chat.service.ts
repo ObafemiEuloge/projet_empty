@@ -2,6 +2,7 @@ import { Injectable } from '@angular/core';
 import { CATEGORIE, THEME_LISTS } from './mock-infos';
 import { Categorie, Theme } from './class-infos';
 
+
 @Injectable({
   providedIn: 'root'
 })
