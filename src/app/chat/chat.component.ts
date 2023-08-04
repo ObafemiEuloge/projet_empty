@@ -1,6 +1,7 @@
 import { Component, Input, OnInit, OnChanges } from '@angular/core';
 import { ChatService } from '../chat.service';
 import { Categorie, Theme } from '../class-infos';
+import { opacityAnimation } from '../animation.module';
 
 
 import { FormGroup, FormControl } from '@angular/forms';
@@ -10,7 +11,8 @@ import { FormArray } from '@angular/forms';
 @Component({
   selector: 'app-chat',
   templateUrl: './chat.component.html',
-  styleUrls: ['./chat.component.css']
+  styleUrls: ['./chat.component.css'],
+  animations: [opacityAnimation]
 })
 export class ChatComponent implements OnInit {
 
