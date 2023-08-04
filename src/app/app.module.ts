@@ -27,7 +27,7 @@ const seetRoutes: Routes = [
     HomeComponent,
     ContactComponent,
     ChatComponent,
-    TemplateComponent
+    TemplateComponent,
   ],
   imports: [
     BrowserModule,
