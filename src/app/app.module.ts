@@ -12,6 +12,7 @@ import { HomeComponent } from './home/home.component';
 import { ContactComponent } from './contact/contact.component';
 import { ChatComponent } from './chat/chat.component';
 import { TemplateComponent } from './template/template.component';
+import { StartComponent } from './start/start.component';
 
 // L'ensemble des routes de notre application
 const seetRoutes: Routes = [
@@ -30,6 +31,15 @@ const seetRoutes: Routes = [
   {
     path: 'contact',
     component: ContactComponent
+  },
+  {
+
+    path: 'start',
+    component: StartComponent
+  },
+  {
+    path: 'template',
+    component: TemplateComponent
   }
 ]
 
@@ -39,7 +49,8 @@ const seetRoutes: Routes = [
     HomeComponent,
     ContactComponent,
     ChatComponent,
-    TemplateComponent
+    TemplateComponent,
+    StartComponent
   ],
   imports: [
     BrowserModule,
