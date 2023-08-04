@@ -20,3 +20,6 @@ Nicole, dans quel dossier as-tu mis le fichier font-face ?
 ## Nicole
 
 EULOGE vérifie si tu as reçu le second font face Google sans
+
+## Oswald 
+Impeccable! bon courage les gars.. 👍. Tjrs dispo pour la suite..
