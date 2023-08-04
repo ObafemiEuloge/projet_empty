@@ -1,4 +1,32 @@
-<div>
+<!-- Développement du comportement du chatbot -->
+<div class="container-fluid headerChat mb-4">
+    <div class="avatarSeet">
+        <img src="../../assets/Empty-ressources/Sources/Avatar Seet/Avatar SEET.png" alt="Avatar SEET" class="avatarSeet mt-4">
+    </div>
+    <h1 class="fs-1">Bienvenue !</h1>
+    <div class="avatarText">
+        <p>Afin de générer ton site, je te prie de remplir les champs ci-dessous</p>
+    </div>
+</div>
+
+<div class="container discussionSpace">
+    <div class="chatLogo">
+        <p class="text-center logoChat" >
+            <img src="../../assets/Empty-ressources/Sources/Logos/Logo Noir.png" alt="Favicon Seet">
+        </p>
+    </div>
+
+    <!-- Espace de discussion  -->
+    <div class="chat px-md-3 py-md-3">
+        <div class="asked gap-sm-3" *ngFor="let qst of questionsGroupList.question">
+            <img src="../../assets/Empty-ressources/Sources/Avatar Seet/IDAvatar.png" alt="IDAvatar">
+            <span class="fw-bolder fs-1">.</span>
+            <p class="chatbotMsg" > </p>
+        </div>
+    </div>
+</div>
+
+<!-- <div>
     <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam quidem natus quas, deserunt necessitatibus
         obcaecati aperiam inventore cum, dolore, quae tenetur laborum minus illum dolores.</p>
     <form action="#" method="post">
@@ -46,4 +74,4 @@
             <button type="submit" class="center">Générez votre site</button>
         <br>
     </form>
-</div>
+</div> -->

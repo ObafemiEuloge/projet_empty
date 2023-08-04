@@ -1,6 +1,4 @@
-import { Categorie } from "./class-infos";
-import { Theme } from "./class-infos";
-import { Colors } from "./class-infos";
+import { Categorie, Theme, Colors, Questions } from "./class-infos";
 
 export const THEME_LISTS: Theme[] = [
     {
@@ -190,19 +188,70 @@ export const CATEGORIE: Categorie[] = [
     }
 ]
 
-export const COLORS: Colors[] = [
+// export const COLORS: Colors[] = [
+//     {
+//         "template_colors": [
+//             "green",
+//             "yellow",
+//             "red",
+//             "blue",
+//             "dark",
+//             "orangered",
+//             "magenta",
+//             "purple",
+//             "whitesmoke",
+//             "black",
+//         ]
+//     }
+// ]
+
+export const chatbotQuestion: Questions[] = [
     {
-        "template_colors": [
-            "green",
-            "yellow",
-            "red",
-            "blue",
-            "dark",
-            "orangered",
-            "magenta",
-            "purple",
-            "whitesmoke",
-            "black",
-    ]
-}
+        "num": 1,
+        "question": [
+            "Quel nom veux-tu donner à ton site ?",
+        ]
+    },
+    {
+        "num": 2,
+        "question": [
+            "A quelle catégorie veut appartenir ton site ?",
+        ]
+    },
+    {
+        "num": 3,
+        "question": [
+            "Quel est le principal thème de ton site ?",
+        ]
+    },
+    {
+        "num": 4,
+        "question": [
+            "Peux-tu me décrire brièvement le que tu as choisi ?",
+        ]
+    },
+    {
+        "num": 5,
+        "question": [
+            "Choisis une palette de couleurs que tu souhaiterais utiliser sur ton site",
+        ]
+    },
+    {
+        "num": 6,
+        "question": [
+            "Génial ! Tu y es presque. Maintenant, pour recevoir ton site, remplis le  formulaire ci-dessous"
+        ]
+    }
 ]
+// export const chatbotQuestion: Questions[] = [
+//     {
+//         "chatQuestions": [
+//             "Quel nom veux-tu donner à ton site ?",
+//             "A quelle catégorie veut appartenir ton site ?",
+//             "Quel est le principal thème de ton site ?",
+//             "Peux-tu me décrire brièvement le que tu as choisi ?",
+//             "Choisis une palette de couleurs que tu souhaiterais utiliser sur ton site",
+//             "Génial ! Tu y es presque. Maintenan, pour recevoir ton site, remplis le  formulaire ci-dessous"
+//         ]
+//     }
+// ]
