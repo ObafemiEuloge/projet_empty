@@ -1,0 +1,72 @@
+legend {
+    border: px solid rgb(52, 52, 47);
+    padding: .5em;
+    font-size: 1.8rem;
+}
+
+input {
+    width: 300px;
+    border-radius: 10px;
+    padding: .4rem;
+    padding-left: 1rem;
+}
+
+button {
+    padding: .3rem;
+    border-radius: 10px;
+    background-color: #B2CC12;
+    color: #181818;
+}
+
+.myform {
+    /* width: fit-content; */
+    max-width: 100%;
+    background-image: url("../../assets/Empty-ressources/Sources/Background/fond.jpg");
+    background-size: cover;
+    background-repeat: repeat;
+    text-align: center;
+    color: #D7D6DC;
+
+}
+
+.mylegend {
+    background-color: #B2CC12;
+    color: #181818;
+}
+
+.mylegend img {
+    mix-blend-mode: darken;
+    color: black;
+}
+
+.formul {
+    display: flex;
+}
+form{
+    justify-content: center;
+    position: relative;
+    width: auto;
+    height: 20rem;
+    margin-inline: auto;
+    padding: 1.5rem;
+    padding-bottom: 1rem;
+    margin-bottom: 1.5rem;
+    margin-top: 2rem;
+    border-radius: 15px;
+    background-color: rgba(95, 94, 98, 0.617);
+}
+
+.pt-logo{
+    position: absolute;
+    top: -9px;
+    left: 145px;
+    margin-bottom: 8rem;
+    padding-right: 1rem;
+    background-color: #B2CC12;
+    border-radius: 10px;
+    color: #181818;
+}
+
+fieldset{
+    padding-top: 3rem ;
+}
