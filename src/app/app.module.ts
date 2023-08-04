@@ -33,7 +33,6 @@ const seetRoutes: Routes = [
     component: ContactComponent
   },
   {
-
     path: 'start',
     component: StartComponent
   },
