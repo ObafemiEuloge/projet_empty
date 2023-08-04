@@ -44,3 +44,147 @@ h1 span {
     background-color: #D7D6DC;
 }
 
+.imgLogo{
+    flex-basis: 50%;
+}
+
+.beginAvatar{
+    width: 50%;
+}
+
+.avatar{
+    margin-inline: -10%;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/*Animation du logo*/
+
+.img {
+    display: inline-block;
+    max-width: 50%;
+    height: auto;
+    margin-inline: -25%;
+    margin-block: -6%;
+}
+
+div.all_img {
+    display: flex;
+    justify-content: center;
+    text-align: center;
+    position: relative;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* Animate logo */
+.image1 {
+    /* animation: name duration timing-function delay iteration-count direction fill-mode; */
+    animation: anime_img1 3s ease-in-out;
+}
+
+.image2 {
+    animation: anime_img2 3s ease-in-out;
+}
+
+.image3 {
+    animation: anime_img3 3s ease-in-out;
+}
+
+.image4 {
+    animation: anime_img4 3s ease-in-out;
+}
+
+
+@keyframes anime_img1 {
+    0% {transform: translateX(-225px);}
+    100% {transform: translateX(0px);}
+}
+
+@keyframes anime_img2 {
+    0% {transform: scale(0);}
+    100% {transform: scale(22px);}
+}
+
+@keyframes anime_img3 {
+    0% {transform: scale(0);}
+    100% {transform: scale(22px);}
+}
+
+@keyframes anime_img4 {
+    0% {transform: translateX(225px);}
+    100% {transform: translateX(0px);}
+}
+
+/* Animate my phrase */
+div.phrase { 
+    margin-top: -115px;
+    text-align: center;
+}
+
+div.phrase #la_phrase {
+    font-size: 2em;
+    font-weight: bold;
+    text-transform: uppercase;
+    color: #000;
+}
+
