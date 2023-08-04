@@ -6,25 +6,16 @@
             <input type="text" name="title" id="title" placeholder="Saisissez le nom de votre site ici...."><br>
 
             <label for="categorie">Catégorie: </label>
-            <select id="categorie" class="form-select form-select-lg mb-3" aria-label="Large select example"  name="option" ng-model="theme">
-                <option value="submit" disabled selected>Sélectionne une catégorie dans la liste suivante
+            <select id="categorie" class="form-select form-select-lg mb-3" aria-label="Large select example" [ngModel]="selectedCategorie" (change)="onSelect($event.target)">
+                <option [value]="0" disabled selected>Sélectionne une catégorie dans la liste suivante
                 </option>
-                <option value="categorie.key" *ngFor="let categorie of categories"> {{categorie.titre}} </option>
+                <option [value]="categorie.id" *ngFor="let categorie of categories"> {{categorie.titre}} </option>
             </select><br>
 
             <label for="theme">Thème: </label>
-            <select name="" id="theme" ng-switch="theme">
+            <select name="" id="theme" >
                 <option value="" disabled>votre thème ici</option>
-                <option value="categorie.key" *ngFor="let liste of themeListe" ng-switch-when="1"> 
-                    <ul>
-                        <li>item1</li>
-                        <li>item2</li>
-                        <li>item3</li>
-                        <li>item4</li>
-                        <li>item5</li>
-                    </ul>
-                 </option>
-                <!-- <option value="categorie.key" *ngFor="let liste of themeListe"> {{liste}} </option> -->
+                <option value="liste.id" *ngFor="let liste of themeListe"> {{liste}} </option>
             </select><br>
 
             <label for="">Description : </label>
