@@ -1,0 +1,76 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    background-color: #000;
+}
+
+img {
+    display: inline-block;
+    max-width: 450px;
+    height: auto;
+    margin-inline: -225px;
+    /* object-fit:; */
+}
+
+div.all_img {
+    display: flex;
+    justify-content: center;
+    text-align: center;
+    position: relative;
+}
+
+.image1 {
+    /* animation: name duration timing-function delay iteration-count direction fill-mode; */
+    animation: anime_img1 1s ease-in-out infinite;
+}
+
+.image2 {
+    animation: anime_img2 1s ease-in-out infinite;
+}
+
+.image3 {
+    animation: anime_img3 1s ease-in-out infinite;
+}
+
+.image4 {
+    animation: anime_img4 1s ease-in-out infinite;
+}
+
+
+@keyframes anime_img1 {
+    0% {transform: translateX(-225px);}
+    100% {transform: translateX(0px);}
+}
+
+@keyframes anime_img2 {
+    0% {transform: translateY(225px);}
+    100% {transform: translateY(0px);}
+}
+
+@keyframes anime_img3 {
+    0% {transform: translateY(-225px);}
+    100% {transform: translateY(0px);}
+}
+
+@keyframes anime_img4 {
+    0% {transform: translateX(225px);}
+    100% {transform: translateX(0px);}
+}
+
+
+/* Animate my phrase */
+div.phrase { 
+    margin-top: -115px;
+    text-align: center;
+}
+
+div.phrase #la_phrase {
+    font-size: 2em;
+    font-weight: bold;
+    text-transform: uppercase;
+    color: #fff;
+}
