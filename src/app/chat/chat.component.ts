@@ -13,7 +13,7 @@ export class ChatComponent implements OnInit {
   selectedCategorie!: Categorie;
   themeListe: string[] | undefined = undefined;
   questionsGroupList: Questions[] = chatbotQuestion;
-  questionList: Array<string> | undefined;
+  questionList: string[] | undefined;
   // @Input() selectedCategorie!: Categorie
 
   constructor(
@@ -31,11 +31,11 @@ export class ChatComponent implements OnInit {
   ngOnInit(): void {
     // this.categories = this.chatService.getCategories();
     // this.onSelect(this.selectedCategorie.id);
-    // this.questionsGroupList.forEach(el => {
+    this.questionsGroupList.forEach(el => {
 
-    //   this.questionList = el.question;
-    //   console.log(el.question);
-    };
+      this.questionList = el.question;
+      console.log(el.question[0]);
+    });
     
     // this.questionList = this.questionsGroupList[0].chatQuestions;
    
@@ -46,4 +46,4 @@ export class ChatComponent implements OnInit {
 // }
 
 
-// }
+}

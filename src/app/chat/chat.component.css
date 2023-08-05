@@ -42,6 +42,8 @@
 /* Espace de discussion */
 .discussionSpace {
     border-radius: 50px;
+    border-bottom-left-radius: 0px;
+    border-bottom-right-radius: 0px;
     overflow: hidden;
     padding: 0;
     background-color: #333;
@@ -83,4 +85,46 @@
     color: #D7D6DC;
 }
 
+.answer {
+    display: flex;
+    justify-content: end;
+}
+.answer .answerBox {
+    background-color: #B2CC12;
+    border-radius: 20px;
+    border-bottom-right-radius: 0;
+    padding: 1rem;
+}
+.answer .answerBox p {
+    display: inline-block;
+    margin: 0;
+}
+.answer .answerBox img {
+    max-width: 15px;
+    margin-left: 0.3rem;
+}
 
+form {
+    flex-basis: 95%;
+}
+form input {
+    background-color: #B2CC12;
+    color: black;
+    padding: 1rem;
+    width: 100%;
+    border: none;
+}
+
+input:focus {
+    outline: none;
+}
+
+svg {
+    cursor: pointer;
+    padding-right: 0.5rem;
+flex-basis: 5%;
+}
+
+form ::placeholder {
+    color: black;
+}

@@ -210,38 +210,38 @@ export const chatbotQuestion: Questions[] = [
         "num": 1,
         "question": [
             "Quel nom veux-tu donner à ton site ?",
-        ]
-    },
-    {
-        "num": 2,
-        "question": [
             "A quelle catégorie veut appartenir ton site ?",
-        ]
-    },
-    {
-        "num": 3,
-        "question": [
             "Quel est le principal thème de ton site ?",
-        ]
-    },
-    {
-        "num": 4,
-        "question": [
             "Peux-tu me décrire brièvement le que tu as choisi ?",
-        ]
-    },
-    {
-        "num": 5,
-        "question": [
             "Choisis une palette de couleurs que tu souhaiterais utiliser sur ton site",
-        ]
-    },
-    {
-        "num": 6,
-        "question": [
             "Génial ! Tu y es presque. Maintenant, pour recevoir ton site, remplis le  formulaire ci-dessous"
         ]
-    }
+    },
+    // {
+    //     "num": 2,
+    //     "question": [
+    //     ]
+    // },
+    // {
+    //     "num": 3,
+    //     "question": [
+    //     ]
+    // },
+    // {
+    //     "num": 4,
+    //     "question": [
+    //     ]
+    // },
+    // {
+    //     "num": 5,
+    //     "question": [
+    //     ]
+    // },
+    // {
+    //     "num": 6,
+    //     "question": [
+    //     ]
+    // }
 ]
 // export const chatbotQuestion: Questions[] = [
 //     {
