@@ -1,15 +1,52 @@
-<div>
-    <div>
-        <a href="#"><img src="" alt="logo"></a>
-        <p>nom de l'appli</p>
+<div [@opacityAnimation] class="container text-center">
+    <div class="container">
+        <div class="all_img">
+            <img src="../../assets/Empty-ressources/Sources/Animation Logo/1.png" alt="un" class="img image1">
+
+            <img src="../../assets/Empty-ressources/Sources/Animation Logo/2.png" alt="deux" class="img image2">
+
+            <img src="../../assets/Empty-ressources/Sources/Animation Logo/3.png" alt="trois" class="img image3">
+
+            <img src="../../assets/Empty-ressources/Sources/Animation Logo/4.png" alt="quatre" class="img image4">
+        </div>
+        <div class="phrase">
+            <p id="la_phrase" class="text-white"></p>
+        </div>
     </div>
-    <div>
-        <ul>
-            <li><a href="#">Home</a></li>
-            <li><a href="#">chat</a></li>
-            <li><a href="#">Template</a></li>
-        </ul>
-    </div>
+    <h1><span>Hello ! </span>Je suis <span>SEET,</span> le générateur de sites web à ton service.</h1>
+    <a routerLink="/start" class="start">Générer mon site <span><img
+                src="../../assets/Empty-ressources/Sources/Icons/fleche.png" alt=""></span></a>
+
 </div>
-<p> Un bon texte de bienvenu incluant la description de l'appli (je composerai un bon texte pour demain)</p>
-<button type="submit">Get started</button>
+
+<script>
+    'use strict'
+
+    const text = "Ton générateur de site web !";
+    const textElement = document.querySelector('#la_phrase');
+    console.log(textElement);
+    let index = 0;
+
+    // phraseElement.innerHTML = phrase;
+    function animePhrase() {
+        if (index < text.length) {
+            console.log('animation');
+            textElement.innerHTML += text.charAt(index);
+            index++;
+            setTimeout(animePhrase, 700);
+        }
+    }
+
+    animePhrase();
+</script>
+<!-- <div  class="container text-center">
+    <div class="imgLogo">
+        <img src="../../assets/Empty-ressources/Sources/Logos/new.png" alt="">
+    </div>
+    <h1><span>Hello ! </span>Je suis <span>SEET,</span> le générateur de sites web à ton service.</h1>
+    <a routerLink="/start" class="start">Générer mon site
+        <span>
+            <img src="../../assets/Empty-ressources/Sources/Icons/fleche.png" alt="">
+        </span>
+    </a>
+</div> -->
