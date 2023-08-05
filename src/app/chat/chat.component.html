@@ -1,9 +1,53 @@
-<div>
+<!-- Développement du comportement du chatbot -->
+<div class="container-fluid headerChat mb-4">
+    <div class="avatarSeet">
+        <img src="../../assets/Empty-ressources/Sources/Avatar Seet/Avatar SEET.png" alt="Avatar SEET" class="avatarSeet mt-4">
+    </div>
+    <h1 class="fs-1">Bienvenue !</h1>
+    <div class="avatarText">
+        <p>Afin de générer ton site, je te prie de remplir les champs ci-dessous</p>
+    </div>
+</div>
+
+<div class="container discussionSpace">
+    <div class="chatLogo">
+        <p class="text-center logoChat" >
+            <img src="../../assets/Empty-ressources/Sources/Logos/Logo Noir.png" alt="Favicon Seet">
+        </p>
+    </div>
+
+    <!-- Espace de discussion  -->
+    <div class="chat px-md-5 py-md-3">
+        <div class="asked gap-sm-3" *ngFor="let qst of questionsGroupList">
+            <img src="../../assets/Empty-ressources/Sources/Avatar Seet/IDAvatar.png" alt="IDAvatar">
+            <span class="fw-bolder fs-1">.</span>
+            <p class="chatbotMsg" > Quel nom veux-tu donner à ton site ?  </p>
+        </div>
+        <div class="answer my-2">
+            <div class="answerBox">
+                <p> Nom de mon site </p>
+                <a href="">
+                    <img src="../../assets/Empty-ressources/Sources/Icons/editer.png" alt="Editer Icons">
+                </a>
+            </div>
+        </div>
+    </div>
+    <div class="formDiv d-flex">
+        <form action="" method="post">
+            <input type="text" name="title" id="title" placeholder="Saisissez le nom de votre site ici....">
+        </form>
+        <svg xmlns="http://www.w3.org/2000/svg" width="45px" style="background-color: #B2CC12; border: none;" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M6 12L3.269 3.126A59.768 59.768 0 0121.485 12 59.77 59.77 0 013.27 20.876L5.999 12zm0 0h7.5" />
+          </svg>
+    </div>
+</div>
+
+<!-- <div>
     <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam quidem natus quas, deserunt necessitatibus
         obcaecati aperiam inventore cum, dolore, quae tenetur laborum minus illum dolores.</p>
     <form action="#" method="post">
             <label for="title">Nom du site:</label>
-            <input type="text" name="title" id="title" placeholder="Saisissez le nom de votre site ici...."><br>
+            <input type="text" name="title" id="title" placeholder="Saisissez le nom de votre site ici....">
 
             <label for="categorie">Catégorie: </label>
             <select id="categorie" class="form-select form-select-lg mb-3" aria-label="Large select example" [ngModel]="selectedCategorie" (change)="onSelect($event.target)">
@@ -46,4 +90,4 @@
             <button type="submit" class="center">Générez votre site</button>
         <br>
     </form>
-</div>
+</div> -->

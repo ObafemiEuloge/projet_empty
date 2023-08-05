@@ -1,6 +1,7 @@
 import { Component, Input, OnInit, OnChanges } from '@angular/core';
 import { ChatService } from '../chat.service';
-import { Categorie, Theme } from '../class-infos';
+import { Categorie, Questions, Theme } from '../class-infos';
+import { chatbotQuestion } from '../mock-infos';
 
 @Component({
   selector: 'app-chat',
@@ -11,6 +12,8 @@ export class ChatComponent implements OnInit {
   categories: Categorie[] = [];
   selectedCategorie!: Categorie;
   themeListe: string[] | undefined = undefined;
+  questionsGroupList: Questions[] = chatbotQuestion;
+  questionList: string[] | undefined;
   // @Input() selectedCategorie!: Categorie
 
   constructor(
@@ -22,12 +25,25 @@ export class ChatComponent implements OnInit {
     this.themeListe = this.chatService.getCategorieThemeList(categorie_id.value);
     console.log(this.themeListe);
     console.log(categorie_id.value);
-    
+
   }
-  
+
   ngOnInit(): void {
-    this.categories = this.chatService.getCategories();
-    this.onSelect(this.selectedCategorie.id)    
+    // this.categories = this.chatService.getCategories();
+    // this.onSelect(this.selectedCategorie.id);
+    this.questionsGroupList.forEach(el => {
+
+      this.questionList = el.question;
+      console.log(el.question[0]);
+    });
+    
+    // this.questionList = this.questionsGroupList[0].chatQuestions;
+   
   }
   
+//   ngOnChanges () {
+  
+// }
+
+
 }
