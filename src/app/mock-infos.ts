@@ -148,43 +148,53 @@ export const THEME_LISTS: Theme[] = [
 export const CATEGORIE: Categorie[] = [
     {
         "id": "1",
-        "titre": "loreme"
+        "titre": "loreme",
+        "value": "lorem"
     },
     {
         "id": "2",
-        "titre": "cat"
+        "titre": "cat",
+        "value": "cat"
     },
     {
         "id": "3",
-        "titre": "bike"
+        "titre": "bike",
+        "value": "bike"
     },
     {
         "id": "4",
-        "titre": "plane"
+        "titre": "plane",
+        "value": "plane"
     },
     {
         "id": "5",
-        "titre": "helicopter"
+        "titre": "helicopter",
+        "value": "helicopter"
     },
     {
         "id": "6",
-        "titre": "boat"
+        "titre": "boat",
+        "value": "boat"
     },
     {
         "id": "7",
-        "titre": "blog"
+        "titre": "blog",
+        "value": "blog"
     },
     {
         "id": "8",
-        "titre": "tech"
+        "titre": "tech",
+        "value": "tech"
     },
     {
         "id": "9",
-        "titre": "meteo"
+        "titre": "meteo",
+        "value": "meteo"
     },
     {
         "id": "10",
-        "titre": "motivation"
+        "titre": "motivation",
+        "value": "motivation"
     }
 ]
 
