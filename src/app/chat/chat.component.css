@@ -1,17 +1,17 @@
 /*=========== Feuille de style commune du template de chat ============*/
-*, 
+*,
 *::before,
 *::after {
     box-sizing: border-box;
 }
 
 /*==== Ajuster la taille de l'image peut importe le  type de périphérique ===*/
-.headerChat div.avatarSeet img{
+.headerChat div.avatarSeet img {
     max-width: 15%;
 }
 
 /* Centrer le l'avatar */
-.headerChat div.avatarSeet{
+.headerChat div.avatarSeet {
     display: flex;
     justify-content: center;
 }
@@ -26,10 +26,11 @@
 
 
 /* Texte en dessous de l'avatar */
-.headerChat div.avatarText{
+.headerChat div.avatarText {
     display: flex;
     justify-content: center;
 }
+
 .headerChat div.avatarText p {
     color: #D7D6DC;
     text-align: center;
@@ -52,13 +53,15 @@
 .logoChat {
     background-color: #B2CC12;
 }
+
 /* Centrer le logo en dessous de l'espace de discussion */
 .chatLogo .logoChat {
     display: flex;
     justify-content: center;
 }
+
 /* Ajuster la taille du logo en dessous de l'espace de discussion */
-.chatLogo .logoChat img{
+.chatLogo .logoChat img {
     mix-blend-mode: luminosity;
     max-width: 10%;
 }
@@ -68,15 +71,33 @@
     align-items: center;
     height: 100%;
 }
-.chat .asked span  {
+.chat .ans {
+    display: flex;
+    align-items: center;
+    justify-content: end;
+    height: 100%;
+}
+
+.chat .asked span {
     color: #B2CC12;
     padding-block: auto;
     vertical-align: middle;
 }
+.chat .ans span {
+    color: #B2CC12;
+    padding-block: auto;
+    vertical-align: middle;
+}
+
 .chat .asked img {
     max-width: 50px;
     max-height: 50px;
 }
+.chat .ans img {
+    max-width: 50px;
+    max-height: 50px;
+}
+
 .chat .asked .chatbotMsg {
     background-color: #4a494e;
     padding: 1rem;
@@ -84,21 +105,32 @@
     border-bottom-left-radius: 0;
     color: #D7D6DC;
 }
+.chat .ans .chatbotMsg {
+    background-color: #B2CC12;
+    padding: 1rem;
+    border-radius: 20px;
+    border-bottom-left-radius: 0;
+    color: #4a494e;
+}
+
 
 .answer {
     display: flex;
     justify-content: end;
 }
+
 .answer .answerBox {
     background-color: #B2CC12;
     border-radius: 20px;
     border-bottom-right-radius: 0;
     padding: 1rem;
 }
+
 .answer .answerBox p {
     display: inline-block;
     margin: 0;
 }
+
 .answer .answerBox img {
     max-width: 15px;
     margin-left: 0.3rem;
@@ -107,6 +139,7 @@
 form {
     flex-basis: 95%;
 }
+
 form input,
 form select {
     background-color: #B2CC12;
@@ -117,7 +150,7 @@ form select {
     border: none;
 }
 
-input:focus, 
+input:focus,
 select:focus {
     outline: none;
 }
@@ -125,10 +158,16 @@ select:focus {
 svg {
     cursor: pointer;
     padding-right: 0.5rem;
-flex-basis: 5%;
+    flex-basis: 5%;
     border: none;
 }
 
 form ::placeholder {
     color: black;
+}
+
+.sendMsg{
+    background-color: #B2CC12;
+    border: none;
+    padding: 0;
 }

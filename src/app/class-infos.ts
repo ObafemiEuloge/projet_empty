@@ -22,7 +22,7 @@ export class Colors {
 export class Questions {
         constructor(
             public num: number,
-            public question: string [],
+            public question: string,
         ) {}
 }
 // export class Questions {
