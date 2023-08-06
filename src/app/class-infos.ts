@@ -3,7 +3,8 @@ export class Categorie {
     static id: any;
     constructor(
         public id:string,
-        public titre:string
+        public titre:string,
+        public value: string
     ){}
 }
 
