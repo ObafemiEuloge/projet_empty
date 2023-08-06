@@ -11,7 +11,7 @@ span img {
 }
 
 h1{
-    font-size: 5rem;
+    font-size: 4rem;
     margin-block: 4rem;
 }
 
@@ -77,9 +77,9 @@ h1 span {
 
 .img {
     display: inline-block;
-    max-width: 50%;
+    max-width: 40%;
     height: auto;
-    margin-inline: -25%;
+    margin-inline: -20%;
     margin-block: -6%;
 }
 
