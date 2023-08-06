@@ -107,15 +107,18 @@
 form {
     flex-basis: 95%;
 }
-form input {
+form input,
+form select {
     background-color: #B2CC12;
     color: black;
     padding: 1rem;
     width: 100%;
+    height: fit-content;
     border: none;
 }
 
-input:focus {
+input:focus, 
+select:focus {
     outline: none;
 }
 
@@ -123,6 +126,7 @@ svg {
     cursor: pointer;
     padding-right: 0.5rem;
 flex-basis: 5%;
+    border: none;
 }
 
 form ::placeholder {
