@@ -18,3 +18,6 @@ Nicole, il faut faire le font-face des polices qui se trouvent dans le dossier A
 ## Nicole
 
 EULOGE vérifie si tu as reçu le second font face Google sans
+
+## Nicole
+Euloge peux-tu nous envoyer la mAquette en pdf là?
