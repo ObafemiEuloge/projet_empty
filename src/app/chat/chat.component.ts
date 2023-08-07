@@ -24,6 +24,7 @@ export class ChatComponent implements OnInit {
 
 
 
+
   input: boolean = false;
   selectCat: boolean = false;
   selectThem: boolean = false;
