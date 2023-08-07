@@ -27,6 +27,8 @@ export class ChatComponent implements OnInit {
   selectCat: boolean = false;
   selectThem: boolean = false;
   selectColor: boolean = false;
+  selectbg: boolean = false;
+  color: string = "";
 
   constructor(
     private chatService: ChatService
@@ -84,7 +86,11 @@ export class ChatComponent implements OnInit {
 
   });
 
-  onSubmit() { }
+  onSubmit() {
+    console.log(this.profileForm.value.primaryColor);
+    console.log(this.profileForm.value.secondaryColor);
+    console.log(this.profileForm.value.tertiaryColor);
+     }
   
 }
 

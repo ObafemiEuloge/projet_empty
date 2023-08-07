@@ -51,12 +51,6 @@
                 </select>
                 <input *ngIf="selectThem === true" [(ngModel)]="them" type="text" name="them" id="them"
                 placeholder="Saisissez votre thème ici...." required>
-                <!-- <select *ngIf="selectThem === true" name="theme" id="theme" aria-label="Large select example"
-                    [(ngModel)]="them">
-                    <option value="" disabled selected>votre thème ici</option>
-                    <option value="">votre thème ici</option>
-                    <option> </option>
-                </select> -->
                 <div >
                     <form [formGroup]="profileForm" (ngSubmit)="onSubmit()" class="selectColor d-flex flex-xl-row" *ngIf="selectColor === true">
                         <!-- Choix de la couleur primaire du site -->
