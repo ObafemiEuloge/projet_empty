@@ -1,3 +1,16 @@
+* {
+    margin: 0px;
+    padding: 0px;
+    list-style: none;
+    text-decoration: none;
+}
+*
+*::before
+*::after {
+    box-sizing: border-box;
+}
+
+
 .logo{
     width:90px; 
     margin-inline: 1rem ;  
@@ -56,4 +69,10 @@ ul li .navLi:hover img{
 ul li .commencer:hover{
     background-color: #B2CC12;
     color: #181818;
+}
+
+.buttonToggle span{
+    /* border-color: #181818; */
+    mix-blend-mode: exclusion;
+    width: 30px;
 }

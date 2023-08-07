@@ -1,3 +1,18 @@
+* {
+    margin: 0px;
+    padding: 0px;
+    list-style: none;
+    text-decoration: none;
+}
+*
+*::before
+*::after {
+    box-sizing: border-box;
+}
+
+
+
+
 .container{
     color: #D7D6DC;
 }
@@ -6,12 +21,19 @@ span img {
 }
 
 .imgLogo img {
+<<<<<<< HEAD
     max-width: 75%;
+=======
+    max-width: 90%;
+>>>>>>> 4b6db43d33f646448fcfd1bba686f09c9efb9e0c
 }
 
 h3{
     font-size: 3.5rem;
+<<<<<<< HEAD
     margin-bottom: 2rem;
+=======
+>>>>>>> 4b6db43d33f646448fcfd1bba686f09c9efb9e0c
 }
 
 h3 span {
@@ -49,3 +71,45 @@ h3 span {
     align-items: center;
 
 }
+
+/*Mobile*/
+/* @media screen and (max-width:600px) {
+    .container {
+        display: flex;
+        flex-direction: column;
+    }
+
+    .nav {
+        display: flex;
+        flex-direction: column;
+    }
+
+    .nav-item:last-child{
+        /* border: 1px solid ; */
+        /* margin-left: 20rem; */
+
+    /* } */
+
+/* } */
+
+
+
+/*Tablet*/
+/* @media screen and (min-width:601px) {
+    .container {
+        display: flex;
+        flex-direction: column;
+    }
+
+     
+    
+} */
+
+
+
+/*Desktop*/
+/* @media screen and (max-width:980px) {
+   
+
+    
+} */

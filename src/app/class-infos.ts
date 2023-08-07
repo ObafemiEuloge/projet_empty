@@ -23,6 +23,18 @@ export class Questions {
         constructor(
             public num: number,
             public question: string,
+<<<<<<< HEAD
+=======
+        ) {}
+}
+export class quizAndAnswer {
+        constructor(
+            public title: string,
+            public cate: string,
+            public them: string,
+            public color: string[],
+            public templa: string,
+>>>>>>> 4b6db43d33f646448fcfd1bba686f09c9efb9e0c
         ) {}
 }
 // export class Questions {

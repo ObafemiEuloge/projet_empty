@@ -93,10 +93,17 @@ export class ChatService {
    * Fonction récupérant chaque réponses et les stockant une à une dans un tableau en fonction des itération
    * @returns 
    */
+<<<<<<< HEAD
   getAnswers(answer: string) {
         if (this.compteur < this.chatQuizs.length - 1) {
           this.answers.push(answer)
         this.quizsAndAnswers.push(answer)
+=======
+  getAnswers(answer: string | undefined) {
+        if (this.compteur < this.chatQuizs.length - 1) {
+          this.answers.push(answer!)
+        this.quizsAndAnswers.push(answer!)
+>>>>>>> 4b6db43d33f646448fcfd1bba686f09c9efb9e0c
       }
       this.compteur++
       return this.answers, this.quizsAndAnswers
@@ -107,6 +114,12 @@ export class ChatService {
    * @returns 
    */
   getQuizAndAnswers(){
+<<<<<<< HEAD
+=======
+    if (this.compteur === 0) {
+      this.quizsAndAnswers = []
+    }
+>>>>>>> 4b6db43d33f646448fcfd1bba686f09c9efb9e0c
     for (let i = this.compteur; i <= this.compteur;) {
       if (this.chatQuizs[i]) {
         this.quizsAndAnswers.push(this.chatQuizs[i].question)
@@ -117,4 +130,8 @@ export class ChatService {
     return this.quizsAndAnswers;
   }
 
+<<<<<<< HEAD
+=======
+
+>>>>>>> 4b6db43d33f646448fcfd1bba686f09c9efb9e0c
 }
