@@ -1,3 +1,17 @@
+* {
+    margin: 0px;
+    padding: 0px;
+    list-style: none;
+    text-decoration: none;
+}
+*
+*::before
+*::after {
+    box-sizing: border-box;
+}
+
+
+
 legend {
     border: px solid rgb(52, 52, 47);
     padding: .5em;
