@@ -42,8 +42,8 @@
             <ng-container>
                 <input *ngIf="input === true" [(ngModel)]="titleSite" type="text" name="title" id="title"
                     placeholder="Saisissez le nom de votre site ici...." required>
-                <select *ngIf="selectCat === true" id="categorie" aria-label="Large select example"
-                    (change)="onSelectCategorie($event.target)" name="categ" [(ngModel)]="categ">
+                <select *ngIf="selectCat === true" id="categorie"  aria-label="Large select example"
+                    (change)="onSelectCategorie($event.target)" >
                     <option value="" disabled selected>Sélectionne une catégorie dans la liste suivante
                     </option>
                     <option [value]="categorie.titre" *ngFor="let categorie of categories"> {{categorie.titre}}
