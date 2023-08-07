@@ -38,17 +38,22 @@
         </ul>
     </div>
     <div class="formDiv d-flex">
-        <form action="" method="post">
+        <form action="" method="post" >
             <ng-container>
                 <input *ngIf="input === true" [(ngModel)]="titleSite" type="text" name="title" id="title"
                     placeholder="Saisissez le nom de votre site ici...." required>
-                <select *ngIf="selectCat === true" id="categorie"  aria-label="Large select example"
-                    (change)="onSelectCategorie($event.target)" >
+                <select *ngIf="selectCat === true" id="categorie" aria-label="Large select example"
+                    (change)="onSelectCategorie($event.target)" [(ngModel)]="cate" name="cate">
                     <option value="" disabled selected>Sélectionne une catégorie dans la liste suivante
                     </option>
-                    <option [value]="categorie.id" *ngFor="let categorie of categories"> {{categorie.titre}}
+                    <option [value]="categorie.titre" *ngFor="let categorie of categories"> {{categorie.titre}}
                     </option>
-                </select><br>
+                </select>
+                <select *ngIf="selectThem === true" name="theme" id="theme" 
+                    aria-label="Large select example" [(ngModel)]="them">
+                    <option value="" disabled selected>votre thème ici</option>
+                    <option >  </option>
+                </select>
 
                 <!-- <input *ngSwitchCase="3" [(ngModel)]="userAnswer" type="text" name="title" id="title"
                     placeholder="Entrer un thème en rapport avec la catéorie choisie ">

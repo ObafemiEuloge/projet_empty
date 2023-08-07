@@ -32,17 +32,28 @@ export class ChatComponent implements OnInit {
     this.quizsAndAnswersList = this.chatService.getQuizAndAnswers()
     this.input = true;
   }
+  click: number = 0
   sendNewQuiz() {
-    if (this.titleSite !== "") {
+    if (this.titleSite !== "" && this.click === 0) {
       this.answersList = this.chatService.getAnswers(this.titleSite)
       this.quizsAndAnswersList = this.chatService.getQuizAndAnswers()
+      this.input = false;
+      this.selectCat = true
+    this.click = 1
     }
-    // if (this.cate !== "") {
-    //   this.answersList = this.chatService.getAnswers(this.cate)
-    //   this.quizsAndAnswersList = this.chatService.getQuizAndAnswers()
-    //   this.input = false;
-    //   this.selectCat = false;
-    // }
+    if (this.cate !== "" && this.click === 1) {
+      this.answersList = this.chatService.getAnswers(this.cate)
+      this.quizsAndAnswersList = this.chatService.getQuizAndAnswers()
+      this.input = false;
+      this.selectCat = false;
+      this.click = 2
+    }
+    if (this.cate !== "" && this.click === 1) {
+      this.answersList = this.chatService.getAnswers(this.cate)
+      this.quizsAndAnswersList = this.chatService.getQuizAndAnswers()
+      this.input = false;
+      this.selectCat = false;
+    }
   }
 
   onSelectCategorie(categorie_id: any) {
