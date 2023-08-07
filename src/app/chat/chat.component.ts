@@ -66,5 +66,6 @@ export class ChatComponent implements OnInit {
   onSelectCategorie(categorie_id: any) {
     this.chatService.getCategorieThemeList(categorie_id.value);
   }
+  
 }
 
