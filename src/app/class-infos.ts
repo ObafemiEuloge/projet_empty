@@ -25,6 +25,15 @@ export class Questions {
             public question: string,
         ) {}
 }
+export class quizAndAnswer {
+        constructor(
+            public title: string,
+            public cate: string,
+            public them: string,
+            public color: string[],
+            public templa: string,
+        ) {}
+}
 // export class Questions {
 //         constructor(
 //             public chatQuestions: string [],
