@@ -46,33 +46,38 @@
                     (change)="onSelectCategorie($event.target)" >
                     <option value="" disabled selected>Sélectionne une catégorie dans la liste suivante
                     </option>
-                    <option [value]="categorie.id" *ngFor="let categorie of categories"> {{categorie.titre}}
+                    <option [value]="categorie.titre" *ngFor="let categorie of categories"> {{categorie.titre}}
                     </option>
-                </select><br>
-
-                <!-- <input *ngSwitchCase="3" [(ngModel)]="userAnswer" type="text" name="title" id="title"
-                    placeholder="Entrer un thème en rapport avec la catéorie choisie ">
-
-                <div formGroupName="color">
-                    <select *ngSwitchCase="4" [(ngModel)]="userAnswer" name="Primo" id="" formControlName="Primo">
-                        <option value="First Color">Primo Color</option>
-                        <option value="a">A</option>
-                        <option value="b">B</option>
-                        <option value="c">c</option>
-                    </select>
-                    <select *ngSwitchCase="4" name="Secondo" [(ngModel)]="userAnswer" id="" formControlName="Secondo">
-                        <option value="">Secondo Color</option>
-                        <option value="a">A</option>
-                        <option value="b">B</option>
-                        <option value="c">c</option>
-                    </select>
-                    <select *ngSwitchCase="4" name="Third" [(ngModel)]="userAnswer" id="" formControlName="Third">
-                        <option value="">Third Color</option>
-                        <option value="a">A</option>
-                        <option value="b">B</option>
-                        <option value="c">c</option>
-                    </select>
-                </div> -->
+                </select>
+                <input *ngIf="selectThem === true" [(ngModel)]="them" type="text" name="them" id="them"
+                placeholder="Saisissez votre thème ici...." required>
+                <!-- <select *ngIf="selectThem === true" name="theme" id="theme" aria-label="Large select example"
+                    [(ngModel)]="them">
+                    <option value="" disabled selected>votre thème ici</option>
+                    <option value="">votre thème ici</option>
+                    <option> </option>
+                </select> -->
+                <div >
+                    <form [formGroup]="profileForm" (ngSubmit)="onSubmit()" class="selectColor d-flex flex-xl-row" *ngIf="selectColor === true">
+                        <!-- Choix de la couleur primaire du site -->
+                        <div>
+                            <input id="primaryColor" type="color" formControlName="primaryColor">
+                            <span formControlName="primaryColorHex">{{ profileForm.value.primaryColor}}</span>
+                        </div>
+                    
+                        <!-- Choix de la couleur secondaire du site -->
+                        <div>
+                            <input id="secondaryColor" type="color" formControlName="secondaryColor">
+                            <span formControlName="secondaryColorHex">{{ profileForm.value.secondaryColor}}</span>
+                        </div>
+                    
+                        <!-- Choix de la couleur tertiaire du site -->
+                        <div>
+                            <input id="tertiaryColor" type="color" formControlName="tertiaryColor">
+                            <span formControlName="tertiaryColorHex">{{ profileForm.value.tertiaryColor}}</span>
+                        </div>
+                    </form>
+                </div>
             </ng-container>
         </form>
         <button type="button" class="sendMsg" (click)="sendNewQuiz()">
