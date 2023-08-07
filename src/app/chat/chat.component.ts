@@ -3,6 +3,7 @@ import { ChatService } from '../chat.service';
 import { Categorie, Questions } from '../class-infos';
 import { opacityAnimation } from '../animation.module';
 import { CATEGORIE, chatBotQuiz } from '../mock-infos';
+import { FormControl, FormGroup } from '@angular/forms';
 @Component({
   selector: 'app-chat',
   templateUrl: './chat.component.html',
@@ -21,10 +22,12 @@ export class ChatComponent implements OnInit {
   categ: string = "";  // récupérer la catégorie de l'utilisateur
   them: string = "";  // récupérer le thème de l'utilisateur
 
+
   input: boolean = false;
   inputThem: boolean = false;
   selectCat: boolean = false;
   selectThem: boolean = false;
+  selectColor: boolean = false;
 
   constructor(
     private chatService: ChatService
@@ -54,8 +57,13 @@ export class ChatComponent implements OnInit {
     if (this.them !== "" && this.click === 2) {
       this.answersList = this.chatService.getAnswers(this.them)
       this.quizsAndAnswersList = this.chatService.getQuizAndAnswers()
+      this.input = false;
+      this.selectCat = false;
+      this.selectThem = false;
+      this.selectColor = true;
       this.click = 3
     }
+    
   }
   
   // writeTheme(){
@@ -66,6 +74,23 @@ export class ChatComponent implements OnInit {
   onSelectCategorie(categorie_id: any) {
     this.chatService.getCategorieThemeList(categorie_id.value);
   }
+
+  profileForm = new FormGroup({
+    // Primary Color
+    primaryColor: new FormControl(''),
+    primaryColorHex: new FormControl(''),
+
+    // Secondary Color
+    secondaryColor: new FormControl(''),
+    secondaryColorHex: new FormControl(''),
+
+    // Tertiary Color
+    tertiaryColor: new FormControl(''),
+    tertiaryColorHex: new FormControl(''),
+
+  });
+
+  onSubmit() { }
   
 }
 
