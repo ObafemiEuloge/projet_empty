@@ -28,13 +28,10 @@ const seetRoutes: Routes = [
     component: ChatComponent
   },
   {
-<<<<<<< HEAD
-=======
     path: 'contact',
     component: ContactComponent
   },
   {
->>>>>>> 255fa55c41a971894339af16779c1cdfb0b40188
     path: 'start',
     component: StartComponent
   },
