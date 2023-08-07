@@ -104,6 +104,7 @@
     border-radius: 20px;
     border-bottom-left-radius: 0;
     color: #D7D6DC;
+    margin-bottom: 0;
 }
 .chat .ans .chatbotMsg {
     background-color: #B2CC12;
@@ -111,6 +112,9 @@
     border-radius: 20px;
     border-bottom-left-radius: 0;
     color: #4a494e;
+}
+.chat .asked .chatbotMsg p{
+margin-bottom: 0;
 }
 
 
@@ -171,6 +175,13 @@ form ::placeholder {
     border: none;
     padding: 0;
 }
+.validColor{
+    background-color: #B2CC12;
+    border: none;
+    padding: 0 2rem;
+    width: fit-content;
+    margin-top: 0.5rem;
+}
 
 .selectColor {
     background-color: #B2CC12;
@@ -185,4 +196,19 @@ form ::placeholder {
 .selectColor div  span {
     border: 1px solid;
     padding: 0.3rem;
+}
+.formColor{
+    display: flex;
+    flex-flow: column;
+    align-items: center;
+    background-color: #4a494e;
+    padding: 1rem;
+    border-radius: 20px;
+    border-bottom-left-radius: 0;
+    color: #D7D6DC;
+    width: fit-content;
+}
+.divColor{
+    display: flex;
+    
 }
