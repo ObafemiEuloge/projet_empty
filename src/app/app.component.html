@@ -1,20 +1,35 @@
-<div class="container">
-    <nav class="navbar bg-body-tertiary justify-content-between">
-        <a href="#" class="navbar-brand">
-            <img src="../assets/Img/logo.png" alt="Avatar Logo" style="width:100px;">
-        </a>
-        <ul class="nav justify-content-end">
-            <li class="nav-item">
-                <button class="btn btn-outline-success me-2" type="button">Home</button>
-            </li>
-            <li class="nav-item">
-                <button class="btn btn-outline-success me-2" type="button">Chat</button>
-            </li>
-            <li class="nav-item">
-                <button class="btn btn-outline-success me-2" type="button">Template</button>
-            </li>
-          </ul>
+<div>
+    <nav class="navbar justify-content-between" id="navbg">
+        <div class="container">
+            <a routerLink="" class="navbar-brand d-flex align-items-center logo-flex">
+                <img src="../assets/Empty-ressources/Sources/Logos/Logo blanc.png" class="logo" alt="Logo Seet">
+            </a>
+            <ul class="nav justify-content-end">
+                <li class="nav-item ">
+                    <a routerLink="" class="navLi btn me-2">
+                        <img src="../assets/Empty-ressources/Sources/Icons/accueil.png" alt="">
+                        <span>Home</span>
+                    </a>
+                </li>
+                <li class="nav-item ">
+                    <a routerLink="/template" class="navLi btn me-2">
+                        <img src="../assets/Empty-ressources/Sources/Icons/photos.png" alt="">
+                        <span>Galerie</span>
+                    </a>
+                </li>
+                <li class="nav-item ">
+                    <a href="#" class="navLi btn commencer me-2" routerLink="/start">Commencer</a>
+                </li>
+                <li class="nav-item ">
+                    <button href="#" class="navLi btn me-2" ><img src="../assets/Empty-ressources/Sources/Icons/soleil.png" alt=""></button>
+                </li>
+            </ul>
+        </div>
     </nav>
-    <app-contact></app-contact>
+    <!-- <app-contact></app-contact> -->
     <router-outlet></router-outlet>
 </div>
+
+<style>
+
+</style>

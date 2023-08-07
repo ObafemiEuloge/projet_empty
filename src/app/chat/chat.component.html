@@ -1,83 +1,91 @@
-<div>
-    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam quidem natus quas, deserunt necessitatibus obcaecati aperiam inventore cum, dolore, quae tenetur laborum minus illum dolores.</p>
-    <form action="#" method="post">
-        <fieldset>
-            <label for="title">Nom du site:</label>
-            <input type="text" name="title" id="title" placeholder="Saisissez le nom de votre site ici....">
-            <br>
-            <p>
-                <label for="categorie">
-                    Catégorie:<select id="categorie" class="form-select form-select-lg mb-3" aria-label="Large select example">
-                        <option value="submit" disabled selected>Sélectionne une catégorie dans la liste suivante</option>
-                        <option value="Automobile">Automobile</option>
-                        <option value="Ventes">Ventes</option>
-                        <option value="Amusement">Amusement</option>
-                        <option value="Ludiques">Ludiques</option>
-                        <option value="Danses">Danses</option>
-                        <option value="Musiques">Musiques</option>
-                        <option value="Restauration">Restauration</option>
-                        <option value="Sortie">Sortie</option>
-                        <option value="Lso">Lso</option>
-                        <option value="PSI">PSI</option>
-                        <option value="high">high</option>
-                        <option value="Chant">Chant</option>
-                        <option value="Conte">Conte</option>
-                        <option value="Sensualité">Sensualité</option>
-                        <option value="Echange">Echange</option>
-                    </select>
-                </label>
-            </p>       
-<label for="theme">
-    Thème:
-    <select name="" id="theme">
-        <option value="" disabled>votre thème ici</option>
-        <option value="lorem">Lorem ipsum dolor sit amet consectetur adipisicing elit.</option>
-        <option value="lorem">Lorem ipsum dolor sit amet consectetur adipisicing elit.</option>
-        <option value="lorem">Lorem ipsum dolor sit amet consectetur adipisicing elit.</option>
-        <option value="lorem">Lorem ipsum dolor sit amet consectetur adipisicing elit.</option>
-        <option value="lorem">Lorem ipsum dolor sit amet consectetur adipisicing elit.</option>
-        <option value="lorem">Lorem ipsum dolor sit amet consectetur adipisicing elit.</option>
-        <option value="lorem">Lorem ipsum dolor sit amet consectetur adipisicing elit.</option>
-        <option value="lorem">Lorem ipsum dolor sit amet consectetur adipisicing elit.</option>
-        <option value="lorem">Lorem ipsum dolor sit amet consectetur adipisicing elit.</option>
-        <option value="lorem">Lorem ipsum dolor sit amet consectetur adipisicing elit.</option>
-        <option value="lorem">Lorem ipsum dolor sit amet consectetur adipisicing elit.</option>
-        <option value="lorem">Lorem ipsum dolor sit amet consectetur adipisicing elit.</option>
-        <option value="lorem">Lorem ipsum dolor sit amet consectetur adipisicing elit.</option>
-        <option value="lorem">Lorem ipsum dolor sit amet consectetur adipisicing elit.</option>
-        <option value="lorem">Lorem ipsum dolor sit amet consectetur adipisicing elit.</option>
-    </select>
-</label><br>
+<!-- Développement du comportement du chatbot -->
 
-<p>
-    <label for="">Description :</label>
-    <input type="text" id="desc" placeholder="Vos attentes du site.........">
-</p>
-<p>Choisissez à présent les couleurs de votre choix <br>
+<div class="container-fluid headerChat mb-4">
+    <div class="avatarSeet">
+        <img src="../../assets/Empty-ressources/Sources/Avatar Seet/Avatar SEET.png" alt="Avatar SEET"
+            class="avatarSeet mt-4">
+    </div>
+    <h1 class="fs-1">Bienvenue !</h1>
+    <div class="avatarText">
+        <p>Afin de générer ton site, je te prie de remplir les champs ci-dessous</p>
+    </div>
+</div>
 
-    <select name="" id="">
-        <option value="First Color">Primo Color</option>
-        <option value="a">A</option>
-        <option value="b">B</option>
-        <option value="c">c</option>
-    </select>
-    <select name="" id="">
-        <option value="">Secondo Color</option>
-        <option value="a">A</option>
-        <option value="b">B</option>
-        <option value="c">c</option>
-    </select>
-    <select name="" id="">
-        <option value="">Third Color</option>
-        <option value="a">A</option>
-        <option value="b">B</option>
-        <option value="c">c</option>
-    </select>
-    <button class="border-radius">Color_Random</button>
-</p>
-<br>
-<button type="submit" class="center">Générez votre site</button>
-        </fieldset>
-        <br>
-    </form>
+<div class="container discussionSpace my-5">
+    <div class="chatLogo">
+        <p class="text-center logoChat">
+            <img src="../../assets/Empty-ressources/Sources/Logos/Logo Noir.png" alt="Favicon Seet">
+        </p>
+    </div>
+
+
+
+    <!-- Espace de discussion  -->
+    <div class="chat px-md-5 py-md-3">
+        <ul>
+            <div *ngFor="let quizAndAnswer; let i = index, let o = odd of quizsAndAnswersList">
+                <li class="asked gap-sm-3" *ngIf="i % 2 === 0">
+                    <img src="../../assets/Empty-ressources/Sources/Avatar Seet/IDAvatar.png" alt="IDAvatar">
+                    <span class="fw-bolder fs-1">.</span>
+                    <p class="chatbotMsg"> {{quizAndAnswer}} </p>
+                </li>
+                <li class="ans gap-sm-3" *ngIf="i % 2 === 1">
+                    <p class="chatbotMsg"> {{quizAndAnswer}} </p>
+                    <span class="fw-bolder fs-1">.</span>
+                    <img src="../../assets/Empty-ressources/Sources/Avatar Seet/IDAvatar.png" alt="IDAvatar">
+                </li>
+            </div>
+        </ul>
+    </div>
+    <div class="formDiv d-flex">
+        <form action="" method="post">
+            <ng-container>
+                <input *ngIf="input === true" [(ngModel)]="titleSite" type="text" name="title" id="title"
+                    placeholder="Saisissez le nom de votre site ici...." required>
+                <select *ngIf="selectCat === true" id="categorie"  aria-label="Large select example"
+                    (change)="onSelectCategorie($event.target)" >
+                    <option value="" disabled selected>Sélectionne une catégorie dans la liste suivante
+                    </option>
+                    <option [value]="categorie.titre" *ngFor="let categorie of categories"> {{categorie.titre}}
+                    </option>
+                </select>
+                <input *ngIf="selectThem === true" [(ngModel)]="them" type="text" name="them" id="them"
+                placeholder="Saisissez votre thème ici...." required>
+                <!-- <select *ngIf="selectThem === true" name="theme" id="theme" aria-label="Large select example"
+                    [(ngModel)]="them">
+                    <option value="" disabled selected>votre thème ici</option>
+                    <option value="">votre thème ici</option>
+                    <option> </option>
+                </select> -->
+                <div >
+                    <form [formGroup]="profileForm" (ngSubmit)="onSubmit()" class="selectColor d-flex flex-xl-row" *ngIf="selectColor === true">
+                        <!-- Choix de la couleur primaire du site -->
+                        <div>
+                            <input id="primaryColor" type="color" formControlName="primaryColor">
+                            <span formControlName="primaryColorHex">{{ profileForm.value.primaryColor}}</span>
+                        </div>
+                    
+                        <!-- Choix de la couleur secondaire du site -->
+                        <div>
+                            <input id="secondaryColor" type="color" formControlName="secondaryColor">
+                            <span formControlName="secondaryColorHex">{{ profileForm.value.secondaryColor}}</span>
+                        </div>
+                    
+                        <!-- Choix de la couleur tertiaire du site -->
+                        <div>
+                            <input id="tertiaryColor" type="color" formControlName="tertiaryColor">
+                            <span formControlName="tertiaryColorHex">{{ profileForm.value.tertiaryColor}}</span>
+                        </div>
+                    </form>
+                </div>
+            </ng-container>
+        </form>
+        <button type="button" class="sendMsg" (click)="sendNewQuiz()">
+            <svg xmlns="http://www.w3.org/2000/svg" width="45px" style="background-color: #B2CC12; border: none;"
+                fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
+                <path stroke-linecap="round" stroke-linejoin="round"
+                    d="M6 12L3.269 3.126A59.768 59.768 0 0121.485 12 59.77 59.77 0 013.27 20.876L5.999 12zm0 0h7.5" />
+            </svg>
+        </button>
+    </div>
 </div>
