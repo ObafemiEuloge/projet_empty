@@ -183,12 +183,15 @@ form ::placeholder {
     margin-top: 0.5rem;
 }
 
-.selectColor .input[type="color"] {
-    width: 30px;
+.selectColor {
+    background-color: #B2CC12;
+    padding: 1rem;
+}
+.selectColor input[type="color"] {
+    width: 50px;
     padding: 0;
 }
 
-.input[type="color"]
 
 .selectColor div  span {
     border: 1px solid;

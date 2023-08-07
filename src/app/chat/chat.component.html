@@ -26,7 +26,7 @@
             <li class="asked gap-sm-3" *ngIf="i % 2 === 0">
                 <img src="../../assets/Empty-ressources/Sources/Avatar Seet/IDAvatar.png" alt="IDAvatar">
                 <span class="fw-bolder fs-1">.</span>
-                <p class="chatbotMsg"> {{quizAndAnswer}} </p>
+                <p class="chatbotMsg" [@opacityAnimation]> {{quizAndAnswer}} </p>
             </li>
             <li class="ans gap-sm-3" *ngIf="i % 2 === 1">
                 <p class="chatbotMsg"> {{quizAndAnswer}} </p>
