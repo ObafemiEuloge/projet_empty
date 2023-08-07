@@ -15,8 +15,8 @@ export class ChatComponent implements OnInit {
 
   categories: Categorie[] = CATEGORIE; // récupérer le tableau stockant les catégories 
   quizsList: string[] | undefined;  // récupérer le tableau de question 
-  answersList: string[] | undefined;  // récupérer le tableau de réponses 
-  quizsAndAnswersList: any[] | undefined;  // récupérer le tableau de (questions et réponses) 
+  answersList: any[] | undefined;  // récupérer le tableau de réponses 
+  quizsAndAnswersList: any[] | undefined = [];  // récupérer le tableau de (questions et réponses) 
 
   titleSite: string = "";  // récupérer le nom du site de l'utilisateur
   categ: string = "";  // récupérer la catégorie de l'utilisateur
@@ -38,8 +38,11 @@ export class ChatComponent implements OnInit {
   ) { }
 
   ngOnInit(): void {
+    // this.quizsAndAnswersList = []
     this.quizsAndAnswersList = this.chatService.getQuizAndAnswers()
     this.input = true;
+    console.log(this.quizsAndAnswersList);
+    
 
   }
   click: number = 0
@@ -104,8 +107,15 @@ export class ChatComponent implements OnInit {
     let pColor = this.profileForm.value.primaryColor
     let sColor = this.profileForm.value.secondaryColor
     let tColor = this.profileForm.value.tertiaryColor
+
     this.colorArray?.push(pColor!, sColor!, tColor!)
-    this.quizsAndAnswersList?.push(this.colorArray);
+    this.answersList = this.chatService.getAnswers(this.them)
+    this.quizsAndAnswersList = this.chatService.getQuizAndAnswers()
+    // this.quizsAndAnswersList?.push(this.colorArray);
+    
+    // this.answersList?.push(this.colorArray);
+
+    console.log(this.quizsAndAnswersList);
     console.log(this.quizsAndAnswersList);
   }
 
