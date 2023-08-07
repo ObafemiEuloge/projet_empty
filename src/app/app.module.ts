@@ -3,7 +3,6 @@ import { BrowserModule } from '@angular/platform-browser';
 import { Routes, RouterModule } from '@angular/router'; // module des routes et class de T
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations'
-// import { HttpClientModule } from '.angular/common/http';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -57,7 +56,6 @@ const seetRoutes: Routes = [
     FormsModule,
     ReactiveFormsModule,
     BrowserAnimationsModule,
-    // HttpClientModule,
     RouterModule.forRoot(seetRoutes),  // chargement des routes dans l'application
   ],
   providers: [],

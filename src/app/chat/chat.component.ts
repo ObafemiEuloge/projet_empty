@@ -1,8 +1,8 @@
-import { Component, Input, OnInit, OnChanges } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { ChatService } from '../chat.service';
 import { Categorie, Questions } from '../class-infos';
 import { opacityAnimation } from '../animation.module';
-import { CATEGORIE, chatbotQuestion } from '../mock-infos';
+import { CATEGORIE, chatBotQuiz } from '../mock-infos';
 @Component({
   selector: 'app-chat',
   templateUrl: './chat.component.html',
@@ -13,32 +13,40 @@ import { CATEGORIE, chatbotQuestion } from '../mock-infos';
 export class ChatComponent implements OnInit {
 
   categories: Categorie[] = CATEGORIE; // récupérer le tableau stockant les catégories 
-  questionsGroupList: Questions[] = chatbotQuestion; //  récupérer le tableau stockant la liste des questions à poser
-  questionList: string[] | undefined;  // récupérer le tableau de question dans le grand tableau 
+  quizsList: string[] | undefined;  // récupérer le tableau de question 
+  answersList: string[] | undefined;  // récupérer le tableau de réponses 
+  quizsAndAnswersList: string[] | undefined;  // récupérer le tableau de (questions et réponses) 
 
-  constructor() { }
+  titleSite: string = "";  // récupérer la réponse de l'utilisateur
+  cate: string = "";  // récupérer la réponse de l'utilisateur
+
+  input: boolean = false;
+  selectCat: boolean = false;
+  selectThem: boolean = false;
+
+  constructor(
+    private chatService: ChatService
+  ) { }
 
   ngOnInit(): void {
-   
+    this.quizsAndAnswersList = this.chatService.getQuizAndAnswers()
+    this.input = true;
+  }
+  sendNewQuiz() {
+    if (this.titleSite !== "") {
+      this.answersList = this.chatService.getAnswers(this.titleSite)
+      this.quizsAndAnswersList = this.chatService.getQuizAndAnswers()
+    }
+    // if (this.cate !== "") {
+    //   this.answersList = this.chatService.getAnswers(this.cate)
+    //   this.quizsAndAnswersList = this.chatService.getQuizAndAnswers()
+    //   this.input = false;
+    //   this.selectCat = false;
+    // }
   }
 
-   index: number = 1; // Index pour incrémenter l'index du tableau et passer à la question suivante
-   userAnswer: string ="";  // récupérer la réponse de l'utilisateur
-   showUserAnswer: string = "";  // variable allant permettre d'afficher la réponse de l'utilisateur 
-
-   quests: string[] = [];  
-  answers: string [] = [];
-  categoriesOption: string[] = [];
-
-
-  nextQuestion () {
-    this.showUserAnswer = this.userAnswer;
-    this.answers.push(this.showUserAnswer);
-    this.quests.push(this.questionsGroupList[0].question[this.index]);
-    this.categoriesOption.push(this.categories[this.index].value)
-    this.index++;
-    this.userAnswer = ""
+  onSelectCategorie(categorie_id: any) {
+    this.chatService.getCategorieThemeList(categorie_id.value);
   }
-  
-  }
+}
 
