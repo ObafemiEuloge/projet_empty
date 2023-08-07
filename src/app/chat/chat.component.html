@@ -46,15 +46,17 @@
                     (change)="onSelectCategorie($event.target)" name="categ" [(ngModel)]="categ">
                     <option value="" disabled selected>Sélectionne une catégorie dans la liste suivante
                     </option>
-                    <option [value]="categorie.id" *ngFor="let categorie of categories"> {{categorie.titre}}
+                    <option [value]="categorie.titre" *ngFor="let categorie of categories"> {{categorie.titre}}
                     </option>
                 </select>
-                <select *ngIf="selectThem === true" name="theme" id="theme" aria-label="Large select example"
+                <!-- <select *ngIf="selectThem === true" name="theme" id="theme" aria-label="Large select example"
                     [(ngModel)]="them">
                     <option value="" disabled selected>votre thème ici</option>
-                    <option> </option>
                 </select>
-                <div>
+                <button *ngIf="selectThem === true" (click)="writeTheme()">autre</button> -->
+                <input *ngIf="inputThem === true" [(ngModel)]="them" type="text" name="theme" id="title"
+                    placeholder="Saisissez le thème ici...." required>
+                <!-- <div>
                     <select name="Primo" id="">
                         <option value="">Primo Color</option>
                         <option value="a">A</option>
@@ -73,7 +75,7 @@
                         <option value="b">B</option>
                         <option value="c">c</option>
                     </select>
-                </div>
+                </div> -->
             </ng-container>
         </form>
         <button type="button" class="sendMsg" (click)="sendNewQuiz()">

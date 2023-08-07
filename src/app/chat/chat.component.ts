@@ -22,6 +22,7 @@ export class ChatComponent implements OnInit {
   them: string = "";  // récupérer le thème de l'utilisateur
 
   input: boolean = false;
+  inputThem: boolean = false;
   selectCat: boolean = false;
   selectThem: boolean = false;
 
@@ -47,7 +48,7 @@ export class ChatComponent implements OnInit {
       this.quizsAndAnswersList = this.chatService.getQuizAndAnswers()
       this.input = false;
       this.selectCat = false;
-      this.selectThem = true;
+      this.inputThem = true;
       this.click = 2
     }
     if (this.them !== "" && this.click === 2) {
@@ -56,6 +57,11 @@ export class ChatComponent implements OnInit {
       this.click = 3
     }
   }
+  
+  // writeTheme(){
+  //   this.selectThem = false;
+  //   this.inputThem = true;
+  // }
 
   onSelectCategorie(categorie_id: any) {
     this.chatService.getCategorieThemeList(categorie_id.value);
