@@ -23,6 +23,7 @@ export class ChatComponent implements OnInit {
   them: string = "";  // récupérer la réponse de l'utilisateur
 
 
+
   input: boolean = false;
   selectCat: boolean = false;
   selectThem: boolean = false;
