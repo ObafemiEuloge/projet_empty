@@ -42,3 +42,9 @@ h1 span {
     background-color: #D7D6DC;
 }
 
+.divAvatar{
+    display: grid;
+    grid-template-columns: 50% 50%;
+    align-items: center;
+
+}
