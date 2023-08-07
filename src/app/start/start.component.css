@@ -45,5 +45,10 @@ h3 span {
 .divAvatar{
     display: grid;
     grid-template-columns: 50% 50%;
+<<<<<<< HEAD
     /* align-items: center; */
+=======
+    align-items: center;
+
+>>>>>>> 6d245578c98b3494c0b0362423ca74f099cb89d0
 }

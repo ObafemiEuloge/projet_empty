@@ -2,7 +2,6 @@ import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { Routes, RouterModule } from '@angular/router'; // module des routes et class de T
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
-// import { HttpClientModule } from '.angular/common/http';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations'
 
 import { AppRoutingModule } from './app-routing.module';
@@ -49,15 +48,11 @@ const seetRoutes: Routes = [
     ContactComponent,
     ChatComponent,
     TemplateComponent,
+    StartComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
-
-    FormsModule,
-    ReactiveFormsModule,
-    // HttpClientModule,
-
     FormsModule,
     ReactiveFormsModule,
     BrowserAnimationsModule,
