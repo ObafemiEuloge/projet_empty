@@ -22,21 +22,61 @@
 
     <!-- Espace de discussion  -->
     <div class="chat px-md-5 py-md-3">
-        <div *ngFor="let quizAndAnswer; let i = index, let o = odd of quizsAndAnswersList">
-            <li class="asked gap-sm-3" *ngIf="i % 2 === 0">
+        <div>
+            <div class="asked gap-sm-3">
                 <img src="../../assets/Empty-ressources/Sources/Avatar Seet/IDAvatar.png" alt="IDAvatar">
                 <span class="fw-bolder fs-1">.</span>
-                <p class="chatbotMsg" [@opacityAnimation]> {{quizAndAnswer}} </p>
-            </li>
-            <li class="ans gap-sm-3" *ngIf="i % 2 === 1">
-                <p class="chatbotMsg"> {{quizAndAnswer}} </p>
+                <p class="chatbotMsg" [@opacityAnimation]> Quel nom veux-tu donner à ton site ? </p>
+            </div>
+            <div class="ans gap-sm-3" *ngIf="titleSiteInter !== ''">
+                <p class="chatbotMsg"> {{ titleSiteInter }} </p>
                 <span class="fw-bolder fs-1">.</span>
                 <img src="../../assets/Empty-ressources/Sources/Avatar Seet/IDAvatar.png" alt="IDAvatar">
-            </li>
+            </div>
+            <div class="asked gap-sm-3" *ngIf="titleSiteInter !== ''">
+                <img src="../../assets/Empty-ressources/Sources/Avatar Seet/IDAvatar.png" alt="IDAvatar">
+                <span class="fw-bolder fs-1">.</span>
+                <p class="chatbotMsg" [@opacityAnimation]> A quelle catégorie veut appartenir ton site ? </p>
+            </div>
+            <div class="ans gap-sm-3" *ngIf="categInter !== ''">
+                <p class="chatbotMsg"> {{categInter}} </p>
+                <span class="fw-bolder fs-1">.</span>
+                <img src="../../assets/Empty-ressources/Sources/Avatar Seet/IDAvatar.png" alt="IDAvatar">
+            </div>
+
+            <div class="asked gap-sm-3" *ngIf="categInter !== ''">
+                <img src="../../assets/Empty-ressources/Sources/Avatar Seet/IDAvatar.png" alt="IDAvatar">
+                <span class="fw-bolder fs-1">.</span>
+                <p class="chatbotMsg" [@opacityAnimation]> Quel est le principal thème de ton site ? </p>
+            </div>
+            <div class="ans gap-sm-3" *ngIf="themInter !== ''">
+                <p class="chatbotMsg"> {{themInter}} </p>
+                <span class="fw-bolder fs-1">.</span>
+                <img src="../../assets/Empty-ressources/Sources/Avatar Seet/IDAvatar.png" alt="IDAvatar">
+            </div>
+
+            <div class="asked gap-sm-3" *ngIf="themInter !== ''">
+                <img src="../../assets/Empty-ressources/Sources/Avatar Seet/IDAvatar.png" alt="IDAvatar">
+                <span class="fw-bolder fs-1">.</span>
+                <p class="chatbotMsg" [@opacityAnimation]> Choisis une palette de couleurs que tu souhaiterais utiliser
+                    sur ton site </p>
+            </div>
+
+            <div class="ans gap-sm-3" *ngIf="colorInter !== ''">
+                <p class="chatbotMsg"> {{colorInter}} </p>
+                <span class="fw-bolder fs-1">.</span>
+                <img src="../../assets/Empty-ressources/Sources/Avatar Seet/IDAvatar.png" alt="IDAvatar">
+            </div>
+            <!-- <div class="asked gap-sm-3">
+                <img src="../../assets/Empty-ressources/Sources/Avatar Seet/IDAvatar.png" alt="IDAvatar">
+                <span class="fw-bolder fs-1">.</span>
+                <p class="chatbotMsg" [@opacityAnimation]> Génial ! Tu y es presque. Maintenant, pour recevoir ton site,
+                    remplis le formulaire ci-dessous </p>
+            </div> -->
         </div>
         <div>
             <form [formGroup]="profileForm" (ngSubmit)="onSubmit()" class=" formColor" *ngIf="selectColor === true">
-                <div class="divColor" >
+                <div class="divColor">
                     <!-- Choix de la couleur primaire du site -->
                     <div>
                         <input id="primaryColor" type="color" formControlName="primaryColor">
@@ -77,16 +117,9 @@
                 </select>
                 <input *ngIf="inputThem === true" [(ngModel)]="them" type="text" name="them" id="them"
                     placeholder="Saisissez votre thème ici...." required>
-                <!-- <select *ngIf="selectThem === true" name="theme" id="theme" aria-label="Large select example"
-                    [(ngModel)]="them">
-                    <option value="" disabled selected>votre thème ici</option>
-                    <option value="">votre thème ici</option>
-                    <option> </option>
-                </select> -->
             </ng-container>
         </form>
-        <button
-        *ngIf="buttonSendMsg === true" type="button" class="sendMsg" (click)="sendNewQuiz()">
+        <button *ngIf="buttonSendMsg === true" type="button" class="sendMsg" (click)="sendNewQuiz()">
             <svg xmlns="http://www.w3.org/2000/svg" width="45px" style="background-color: #B2CC12; border: none;"
                 fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
                 <path stroke-linecap="round" stroke-linejoin="round"

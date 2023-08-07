@@ -19,9 +19,17 @@ export class ChatComponent implements OnInit {
   quizsAndAnswersList: any[] | undefined = [];  // récupérer le tableau de (questions et réponses) 
 
   titleSite: string = "";  // récupérer le nom du site de l'utilisateur
+  titleSiteInter: string = "";  // Réponse à afficher à l'utilisateur
+
   categ: string = "";  // récupérer la catégorie de l'utilisateur
+  categInter: string = "";  // récupérer la catégorie de l'utilisateur
+
   them: string = "";  // récupérer le thème de l'utilisateur
-  color: string = "#526926";  // récupérer le thème de l'utilisateur
+  themInter: string = "";  // récupérer le thème de l'utilisateur
+
+  color: string = "";  // récupérer le thème de l'utilisateur
+  colorInter: string = "";  // récupérer le thème de l'utilisateur
+
   colorArray: string[] | undefined = [];  // récupérer les couleurs de l'utilisateur
 
   pColor!: string | null;
@@ -48,41 +56,26 @@ export class ChatComponent implements OnInit {
   click: number = 0
   sendNewQuiz() {
     if (this.titleSite !== "" && this.click === 0) {
+      this.titleSiteInter = this.titleSite;
       this.answersList = this.chatService.getAnswers(this.titleSite)
-      this.quizsAndAnswersList = this.chatService.getQuizAndAnswers()
+      // this.quizsAndAnswersList = this.chatService.getQuizAndAnswers()
       this.input = false;
-<<<<<<< HEAD
-      this.selectCat = true
-    this.click = 1
-    }
-    if (this.cate !== "" && this.click === 1) {
-      this.answersList = this.chatService.getAnswers(this.cate)
-      this.quizsAndAnswersList = this.chatService.getQuizAndAnswers()
-      this.input = false;
-      this.selectCat = false;
-      this.click = 2
-    }
-    if (this.cate !== "" && this.click === 1) {
-      this.answersList = this.chatService.getAnswers(this.cate)
-      this.quizsAndAnswersList = this.chatService.getQuizAndAnswers()
-      this.input = false;
-      this.selectCat = false;
-    }
-=======
       this.selectCat = true;
       this.click = 1;
     }
     if (this.categ !== "" && this.click === 1) {
+      this.categInter = this.categ;
       this.answersList = this.chatService.getAnswers(this.categ)
-      this.quizsAndAnswersList = this.chatService.getQuizAndAnswers()
+      // this.quizsAndAnswersList = this.chatService.getQuizAndAnswers()
       this.input = false;
       this.selectCat = false;
       this.inputThem = true;
       this.click = 2
     }
     if (this.them !== "" && this.click === 2) {
+      this.themInter = this.them;
       this.answersList = this.chatService.getAnswers(this.them)
-      this.quizsAndAnswersList = this.chatService.getQuizAndAnswers()
+      // this.quizsAndAnswersList = this.chatService.getQuizAndAnswers()
       this.input = false;
       this.selectCat = false;
       this.inputThem = false;
@@ -91,15 +84,15 @@ export class ChatComponent implements OnInit {
       this.buttonSendMsg = false
     }
     if (this.color !== "" && this.click === 3) {
+      this.colorInter = this.color;
       this.answersList = this.chatService.getAnswers(this.them)
-      this.quizsAndAnswersList = this.chatService.getQuizAndAnswers()
+      // this.quizsAndAnswersList = this.chatService.getQuizAndAnswers()
       this.input = false;
       this.selectCat = false;
       this.selectThem = false;
       this.click = 4
     }
 
->>>>>>> 813dc769207bda98f7cc0b915ca9c109a482b470
   }
 
   onSelectCategorie(categorie_id: any) {

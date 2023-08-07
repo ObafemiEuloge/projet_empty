@@ -93,10 +93,10 @@ export class ChatService {
    * Fonction récupérant chaque réponses et les stockant une à une dans un tableau en fonction des itération
    * @returns 
    */
-  getAnswers(answer: string) {
+  getAnswers(answer: string | undefined) {
         if (this.compteur < this.chatQuizs.length - 1) {
-          this.answers.push(answer)
-        this.quizsAndAnswers.push(answer)
+          this.answers.push(answer!)
+        this.quizsAndAnswers.push(answer!)
       }
       this.compteur++
       return this.answers, this.quizsAndAnswers
