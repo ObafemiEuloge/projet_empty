@@ -106,13 +106,14 @@
     color: #D7D6DC;
     margin-bottom: 0;
 }
-.chat .ans .chatbotMsg {
+.chat .result .chatbotMsg {
     background-color: #B2CC12;
     padding: 1rem;
     border-radius: 20px;
-    border-bottom-left-radius: 0;
+    border-bottom-right-radius: 0;
     color: #4a494e;
 }
+
 .chat .asked .chatbotMsg p{
 margin-bottom: 0;
 }

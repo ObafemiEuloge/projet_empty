@@ -28,10 +28,8 @@
                 <span class="fw-bolder fs-1">.</span>
                 <p class="chatbotMsg" [@opacityAnimation]> {{quizAndAnswer}} </p>
             </li>
-            <li class="ans gap-sm-3" *ngIf="i % 2 === 1">
+            <li class="ans result gap-sm-3" *ngIf="i % 2 === 1">
                 <p class="chatbotMsg"> {{quizAndAnswer}} </p>
-                <span class="fw-bolder fs-1">.</span>
-                <img src="../../assets/Empty-ressources/Sources/Avatar Seet/IDAvatar.png" alt="IDAvatar">
             </li>
         </div>
         <div>
@@ -77,12 +75,12 @@
                 </select>
                 <input *ngIf="inputThem === true" [(ngModel)]="them" type="text" name="them" id="them"
                     placeholder="Saisissez votre thème ici...." required>
-                <!-- <select *ngIf="selectThem === true" name="theme" id="theme" aria-label="Large select example"
+                <select *ngIf="selectThem === true" name="theme" id="theme" aria-label="Large select example"
                     [(ngModel)]="them">
                     <option value="" disabled selected>votre thème ici</option>
                     <option value="">votre thème ici</option>
                     <option> </option>
-                </select> -->
+                </select>
             </ng-container>
         </form>
         <button
