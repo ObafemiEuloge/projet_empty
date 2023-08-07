@@ -107,9 +107,9 @@ export class ChatService {
    * @returns 
    */
   getQuizAndAnswers(){
-    if (this.compteur === 0) {
-      this.quizsAndAnswers = []
-    }
+    // if (this.compteur === 0) {
+    //   this.quizsAndAnswers = []
+    // }
     for (let i = this.compteur; i <= this.compteur;) {
       if (this.chatQuizs[i]) {
         this.quizsAndAnswers.push(this.chatQuizs[i].question)

@@ -230,11 +230,11 @@ export const chatBotQuiz: Questions[] = [
     },
     {
         "num": 4,
-        "question": "Peux-tu me décrire brièvement le que tu as choisi ?",
+        "question": "Choisis une palette de couleurs que tu souhaiterais utiliser sur ton site",
     },
     {
         "num": 5,
-        "question": "Choisis une palette de couleurs que tu souhaiterais utiliser sur ton site",
+        "question": "Veuillez choisir un template à votre goût",
     },
     {
         "num": 6,

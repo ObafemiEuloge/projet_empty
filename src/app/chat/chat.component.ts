@@ -32,6 +32,7 @@ export class ChatComponent implements OnInit {
   selectThem: boolean = false;
   selectColor: boolean = false;
   buttonSendMsg: boolean = true;
+  carouselTemplate: boolean = false;
 
   constructor(
     private chatService: ChatService
@@ -68,18 +69,20 @@ export class ChatComponent implements OnInit {
       this.input = false;
       this.selectCat = false;
       this.inputThem = false;
-      this.click = 3
       this.selectColor = true;
       this.buttonSendMsg = false
+      this.click = 3
     }
-    if (this.color !== "" && this.click === 3) {
-      this.answersList = this.chatService.getAnswers(this.them)
-      this.quizsAndAnswersList = this.chatService.getQuizAndAnswers()
-      this.input = false;
-      this.selectCat = false;
-      this.selectThem = false;
-      this.click = 4
-    }
+    // if (this.color !== "" && this.click === 3) {
+    //   this.answersList = this.chatService.getAnswers(this.them)
+    //   this.quizsAndAnswersList = this.chatService.getQuizAndAnswers()
+    //   this.input = false;
+    //   this.selectCat = false;
+    //   this.selectThem = false;
+    //   this.selectColor = false;
+    //   this.buttonSendMsg = false
+    //   this.click = 4
+    // }
 
   }
 
@@ -113,10 +116,10 @@ export class ChatComponent implements OnInit {
     this.quizsAndAnswersList = this.chatService.getQuizAndAnswers()
     // this.quizsAndAnswersList?.push(this.colorArray);
     
-    // this.answersList?.push(this.colorArray);
+    this.answersList?.push(this.colorArray);
 
-    console.log(this.quizsAndAnswersList);
-    console.log(this.quizsAndAnswersList);
+    // console.log(this.quizsAndAnswersList);
+    // console.log(this.quizsAndAnswersList);
   }
 
 }
