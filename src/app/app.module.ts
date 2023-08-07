@@ -2,7 +2,7 @@ import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { Routes, RouterModule } from '@angular/router'; // module des routes et class de T
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
-// import { HttpClientModule } from '.angular/common/http';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations'
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -20,10 +20,21 @@ const seetRoutes: Routes = [
     component: HomeComponent
   },
   {
+    path: 'home',
+    component: HomeComponent
+  },
+  {
     path: 'chat',
     component: ChatComponent
   },
   {
+<<<<<<< HEAD
+=======
+    path: 'contact',
+    component: ContactComponent
+  },
+  {
+>>>>>>> 255fa55c41a971894339af16779c1cdfb0b40188
     path: 'start',
     component: StartComponent
   },
@@ -45,11 +56,9 @@ const seetRoutes: Routes = [
   imports: [
     BrowserModule,
     AppRoutingModule,
-
     FormsModule,
     ReactiveFormsModule,
-    // HttpClientModule,
-
+    BrowserAnimationsModule,
     RouterModule.forRoot(seetRoutes),  // chargement des routes dans l'application
   ],
   providers: [],
