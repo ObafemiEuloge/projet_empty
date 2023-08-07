@@ -18,11 +18,9 @@ export class ChatComponent implements OnInit {
   answersList: string[] | undefined;  // récupérer le tableau de réponses 
   quizsAndAnswersList: string[] | undefined;  // récupérer le tableau de (questions et réponses) 
 
-  titleSite: string = "";  // récupérer la réponse de l'utilisateur
-  categ: string = "";  // récupérer la réponse de l'utilisateur
-  them: string = "";  // récupérer la réponse de l'utilisateur
-
-
+  titleSite: string = "";  // récupérer le nom du site de l'utilisateur
+  categ: string = "";  // récupérer la catégorie de l'utilisateur
+  them: string = "";  // récupérer le thème de l'utilisateur
 
 
   input: boolean = false;
@@ -38,9 +36,9 @@ export class ChatComponent implements OnInit {
     this.quizsAndAnswersList = this.chatService.getQuizAndAnswers()
     this.input = true;
   }
-  click: number = 0;
+  click: number = 0
   sendNewQuiz() {
-    if (this.titleSite !== "") {
+    if (this.titleSite !== "" && this.click === 0) {
       this.answersList = this.chatService.getAnswers(this.titleSite)
       this.quizsAndAnswersList = this.chatService.getQuizAndAnswers()
       this.input = false;
