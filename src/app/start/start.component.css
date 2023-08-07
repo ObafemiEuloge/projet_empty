@@ -21,14 +21,14 @@ span img {
 }
 
 .imgLogo img {
-    max-width: 50%;
+    max-width: 90%;
 }
 
-h1{
-    font-size: 5rem;
+h3{
+    font-size: 3.5rem;
 }
 
-h1 span {
+h3 span {
     color: #B2CC12;
 }
 
@@ -57,6 +57,12 @@ h1 span {
     background-color: #D7D6DC;
 }
 
+.divAvatar{
+    display: grid;
+    grid-template-columns: 50% 50%;
+    align-items: center;
+
+}
 
 /*Mobile*/
 /* @media screen and (max-width:600px) {

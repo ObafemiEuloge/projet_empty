@@ -1,8 +1,10 @@
 //class Categorie
 export class Categorie {
+    static id: any;
     constructor(
         public id:string,
-        public titre:string
+        public titre:string,
+        public value: string
     ){}
 }
 
@@ -17,3 +19,23 @@ export class Colors {
         public template_colors: string []
     ){}
 }
+export class Questions {
+        constructor(
+            public num: number,
+            public question: string,
+        ) {}
+}
+export class quizAndAnswer {
+        constructor(
+            public title: string,
+            public cate: string,
+            public them: string,
+            public color: string[],
+            public templa: string,
+        ) {}
+}
+// export class Questions {
+//         constructor(
+//             public chatQuestions: string [],
+//         ) {}
+// }
