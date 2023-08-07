@@ -140,7 +140,7 @@ form {
     flex-basis: 95%;
 }
 
-form input,
+form input[type= "text"],
 form select {
     background-color: #B2CC12;
     color: black;
@@ -170,4 +170,19 @@ form ::placeholder {
     background-color: #B2CC12;
     border: none;
     padding: 0;
+}
+
+.selectColor {
+    background-color: #B2CC12;
+    padding: 1rem;
+}
+.selectColor input[type="color"] {
+    width: 50px;
+    padding: 0;
+}
+
+
+.selectColor div  span {
+    border: 1px solid;
+    padding: 0.3rem;
 }

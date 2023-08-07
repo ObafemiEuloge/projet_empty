@@ -6,14 +6,14 @@ span img {
 }
 
 .imgLogo img {
-    max-width: 50%;
+    max-width: 90%;
 }
 
-h1{
-    font-size: 5rem;
+h3{
+    font-size: 3.5rem;
 }
 
-h1 span {
+h3 span {
     color: #B2CC12;
 }
 
@@ -47,7 +47,6 @@ h1 span {
 .divAvatar{
     display: grid;
     grid-template-columns: 50% 50%;
-    align-items: center;
-
+    /* align-items: center; */
 }
 >>>>>>> 255fa55c41a971894339af16779c1cdfb0b40188
