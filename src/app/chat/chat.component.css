@@ -198,6 +198,14 @@ form ::placeholder {
     margin-top: 0.5rem;
     border-radius: 20px;
 }
+.modifColor {
+    background-color: #B2CC12;
+    border: none;
+    padding: 0 2rem;
+    width: fit-content;
+    margin-top: 0.5rem;
+    border-radius: 20px;
+}
 
 .selectColor {
     background-color: #B2CC12;
