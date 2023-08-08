@@ -34,7 +34,7 @@ const seetRoutes: Routes = [
   },
   {
     path: 'start-bot',
-    component: StartBotComponent
+    component: StartBotComponent,
   },
   {
     path: 'template',
