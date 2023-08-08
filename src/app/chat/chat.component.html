@@ -29,9 +29,9 @@
                 <p class="chatbotMsg" [@opacityAnimation]> Quel nom veux-tu donner à ton site ? </p>
             </div>
             <div class="ans gap-sm-3" *ngIf="titleSiteInter !== ''">
-                <p class="chatbotMsg"> {{ titleSiteInter }} </p>
-                <span class="fw-bolder fs-1">.</span>
-                <img src="../../assets/Empty-ressources/Sources/Avatar Seet/IDAvatar.png" alt="IDAvatar">
+                <p class="userMsg"> {{ titleSiteInter }} </p>
+                <img src="../../assets/Empty-ressources/Sources/Avatar Seet/IDAvatar.png" class="userAvatar"
+                    alt="IDAvatar">
             </div>
             <div class="asked gap-sm-3" *ngIf="titleSiteInter !== ''">
                 <img src="../../assets/Empty-ressources/Sources/Avatar Seet/IDAvatar.png" alt="IDAvatar">
@@ -39,9 +39,9 @@
                 <p class="chatbotMsg" [@opacityAnimation]> A quelle catégorie veut appartenir ton site ? </p>
             </div>
             <div class="ans gap-sm-3" *ngIf="categInter !== ''">
-                <p class="chatbotMsg"> {{categInter}} </p>
-                <span class="fw-bolder fs-1">.</span>
-                <img src="../../assets/Empty-ressources/Sources/Avatar Seet/IDAvatar.png" alt="IDAvatar">
+                <p class="userMsg"> {{categInter}} </p>
+                <img src="../../assets/Empty-ressources/Sources/Avatar Seet/IDAvatar.png" class="userAvatar"
+                    alt="IDAvatar">
             </div>
 
             <div class="asked gap-sm-3" *ngIf="categInter !== ''">
@@ -50,12 +50,159 @@
                 <p class="chatbotMsg" [@opacityAnimation]> Quel est le principal thème de ton site ? </p>
             </div>
             <div class="ans gap-sm-3" *ngIf="themInter !== ''">
-                <p class="chatbotMsg"> {{themInter}} </p>
-                <span class="fw-bolder fs-1">.</span>
-                <img src="../../assets/Empty-ressources/Sources/Avatar Seet/IDAvatar.png" alt="IDAvatar">
+                <p class="userMsg"> {{themInter}} </p>
+                <img class="userAvatar" src="../../assets/Empty-ressources/Sources/Avatar Seet/IDAvatar.png"
+                    alt="IDAvatar">
             </div>
 
-            <div class="asked gap-sm-3" *ngIf="themInter !== ''">
+            <!-- Choix du template -->
+            <div *ngIf="themInter !== ''">
+                <div class="asked gap-sm-3">
+                    <img src="../../assets/Empty-ressources/Sources/Avatar Seet/IDAvatar.png" alt="IDAvatar">
+                    <span class="fw-bolder fs-1">.</span>
+                    <p class="chatbotMsg" [@opacityAnimation]>Veuillez choisir un template ! </p>
+                </div>
+                <form action="" [formGroup]="templateChoice" class=" formColor">
+                    <div class="templateBox p-3 ms-4 mt-3">
+                        <div class="template">
+                            <!-- Template 1 -->
+                            <div id="cass1" value="top" class="carousel slide template1" data-bs-ride="carousel">
+                                <input type="radio" value="temp1" name="template" formControlName="template_1"
+                                    class="inputTemplate" [ngClass]="{'disabled': templateChoice.value.template_1 !== ''}">
+                                <!-- Points au bas d'image/trois barres -->
+                                <div class="carousel-indicators">
+                                    <button type="button" data-bs-target="#cass1" data-bs-slide-to="0"
+                                        class="active"></button>
+                                    <button type="button" data-bs-target="#cass1" data-bs-slide-to="1"></button>
+                                    <button type="button" data-bs-target="#cass1" data-bs-slide-to="2"></button>
+                                </div>
+                                <!-- Diaporama/carousel -->
+                                <div class="carousel-inner">
+                                    <div class="carousel-item active">
+                                        <img src="../../assets/aaressources/templates/template 1/Screenshot 2023-08-04 at 14-36-21 Level HTML Template by Tooplate.png"
+                                            class="d-block" style="width:100%">
+                                    </div>
+                                    <div class="carousel-item">
+                                        <img src="../../assets/aaressources/templates/template 1/Screenshot 2023-08-04 at 14-37-28 Level HTML Template by Tooplate.png"
+                                            class="d-block" style="width:100%">
+                                    </div>
+                                    <div class="carousel-item">
+                                        <img src="../../assets/aaressources/templates/template 1/Screenshot 2023-08-04 at 14-38-44 Level HTML Template by Tooplate.png"
+                                            class="d-block" style="width:100%">
+                                    </div>
+                                </div>
+                                <!-- Touche commande droite et gauche/fleche -->
+                                <button class="carousel-control-prev" type="button" data-bs-target="#cass1"
+                                    data-bs-slide="prev">
+                                    <span class="carousel-control-prev-icon"></span>
+                                </button>
+                                <button class="carousel-control-next" type="button" data-bs-target="#cass1"
+                                    data-bs-slide="next">
+                                    <span class="carousel-control-next-icon"></span>
+                                </button>
+                            </div>
+                            <!-- Template 2 -->
+                            <div id="cass2" class="carousel slide template2" data-bs-ride="carousel">
+                                <input type="radio" value="temp2" name="template" formControlName="template_2"
+                                    class="inputTemplate">
+                                <!-- Points au bas d'image/trois barres -->
+                                <div class="carousel-indicators">
+                                    <button type="button" data-bs-target="#cass2" data-bs-slide-to="0"
+                                        class="active"></button>
+                                    <button type="button" data-bs-target="#cass2" data-bs-slide-to="1"></button>
+                                    <button type="button" data-bs-target="#cass2" data-bs-slide-to="2"></button>
+                                </div>
+                                <!-- Diaporama/carousel -->
+                                <div class="carousel-inner">
+                                    <div class="carousel-item active">
+                                        <img src="../../assets/aaressources/templates/template 2/Screenshot 2023-08-04 at 14-44-56 Pop HTML CSS Template.png"
+                                            class="d-block" style="width:100%">
+                                    </div>
+                                    <div class="carousel-item">
+                                        <img src="../../assets/aaressources/templates/template 2/Screenshot 2023-08-04 at 14-45-15 Pop HTML CSS Template.png"
+                                            class="d-block" style="width:100%">
+                                    </div>
+                                    <div class="carousel-item">
+                                        <img src="../../assets/aaressources/templates/template 2/Screenshot 2023-08-04 at 14-45-41 Pop HTML CSS Template.png"
+                                            class="d-block" style="width:100%">
+                                    </div>
+                                </div>
+                                <!-- Touche commande droite et gauche/fleche -->
+                                <button class="carousel-control-prev" type="button" data-bs-target="#cass2"
+                                    data-bs-slide="prev">
+                                    <span class="carousel-control-prev-icon"></span>
+                                </button>
+                                <button class="carousel-control-next" type="button" data-bs-target="#cass2"
+                                    data-bs-slide="next">
+                                    <span class="carousel-control-next-icon"></span>
+                                </button>
+                            </div>
+                            <!-- Template 3 -->
+                            <div id="cass4" class="carousel slide template3" data-bs-ride="carousel">
+                                <input type="radio" value="temp3" name="template" formControlName="template_3"
+                                    class="inputTemplate">
+                                <!-- Points au bas d'image/trois barres -->
+                                <div class="carousel-indicators">
+                                    <button type="button" data-bs-target="#cass4" data-bs-slide-to="0"
+                                        class="active"></button>
+                                    <button type="button" data-bs-target="#cass4" data-bs-slide-to="1"></button>
+                                    <button type="button" data-bs-target="#cass4" data-bs-slide-to="2"></button>
+                                </div>
+                                <!-- Diaporama/carousel -->
+                                <div class="carousel-inner">
+                                    <div class="carousel-item active">
+                                        <img src="../../assets/aaressources/templates/template 4/Screenshot 2023-08-04 at 14-51-52 JobEntry - Job Portal Website Template.png"
+                                            class="d-block" style="width:100%">
+                                    </div>
+                                    <div class="carousel-item">
+                                        <img src="../../assets/aaressources/templates/template 4/Screenshot 2023-08-04 at 14-52-38 JobEntry - Job Portal Website Template.png"
+                                            class="d-block" style="width:100%">
+                                    </div>
+                                    <div class="carousel-item">
+                                        <img src="../../assets/aaressources/templates/template 4/Screenshot 2023-08-04 at 14-52-55 JobEntry - Job Portal Website Template.png"
+                                            class="d-block" style="width:100%">
+                                    </div>
+                                </div>
+                                <!-- Touche commande droite et gauche/fleche -->
+                                <button class="carousel-control-prev" type="button" data-bs-target="#cass4"
+                                    data-bs-slide="prev">
+                                    <span class="carousel-control-prev-icon"></span>
+                                </button>
+                                <button class="carousel-control-next" type="button" data-bs-target="#cass4"
+                                    data-bs-slide="next">
+                                    <span class="carousel-control-next-icon"></span>
+                                </button>
+                            </div>
+                        </div>
+                        <div class="indiceTemplate">
+                            <div><span class="btn t1">1</span></div>
+                            <div><span class="btn t2">2</span></div>
+                            <div><span class="btn t3">3</span></div>
+                        </div>
+                        <!-- <button type="button" class="validTemp btn p-1 mt-4" (click)="validerTemplate()">Valider</button> -->
+                    </div>
+                </form>
+                <div class="ans gap-sm-3 mt-3"
+                    *ngIf="templateChoice.value.template_1 !== '' && templateChoice.value.template_2 === '' && templateChoice.value.template_3 === ''">
+                    <p class="userMsg"> <strong>Choix du template:</strong> Template 1</p>
+                    <img class="userAvatar" src="../../assets/Empty-ressources/Sources/Avatar Seet/IDAvatar.png"
+                        alt="IDAvatar">
+                </div>
+                <div class="ans gap-sm-3 mt-3"
+                    *ngIf="templateChoice.value.template_1 === '' && templateChoice.value.template_2 !== '' && templateChoice.value.template_3 === ''">
+                    <p class="userMsg"> <strong>Choix du template:</strong> Template 2</p>
+                    <img class="userAvatar" src="../../assets/Empty-ressources/Sources/Avatar Seet/IDAvatar.png"
+                        alt="IDAvatar">
+                </div>
+                <div class="ans gap-sm-3 mt-3"
+                    *ngIf="templateChoice.value.template_1 === '' && templateChoice.value.template_2 === '' && templateChoice.value.template_3 !== ''">
+                    <p class="userMsg"> <strong>Choix du template:</strong> Template 3</p>
+                    <img class="userAvatar" src="../../assets/Empty-ressources/Sources/Avatar Seet/IDAvatar.png"
+                        alt="IDAvatar">
+                </div>
+            </div>
+
+            <div class="asked gap-sm-3" *ngIf="templateChoice.value.template_1 !== '' || templateChoice.value.template_2 !== '' || templateChoice.value.template_3 !== ''">
                 <img src="../../assets/Empty-ressources/Sources/Avatar Seet/IDAvatar.png" alt="IDAvatar">
                 <span class="fw-bolder fs-1">.</span>
                 <div class="divParaColor">
@@ -85,7 +232,7 @@
                                 </div>
                             </div>
                             <button type="button" class="validColor" (click)="validerColor()">Valider</button>
-                            <button type="button" class="modifColor" (click)="modifColor()">Modifier</button>
+                            <!-- <button type="button" class="modifColor" (click)="modifColor()">Modifier</button> -->
                         </form>
                     </div>
                 </div>
@@ -93,24 +240,26 @@
 
             <div class="ans gap-sm-3" *ngIf="colorChoice === true">
                 <div class="divColorAns" *ngIf="pColor !== '' || sColor !== '' || tColor !== ''">
-                    <p class="chatbotMsg"> Vos couleur sont: </p>
+                    <p class="userMsg"> Vos couleur sont: </p>
                     <div>
                         <p class="colorAns" [style.backgroundColor]="pColor"></p>
                         <p class="colorAns" [style.backgroundColor]="sColor"></p>
                         <p class="colorAns" [style.backgroundColor]="tColor"></p>
                     </div>
                 </div>
-                <div class="divColorAns" >
-                    <p class="chatbotMsg" *ngIf="pColor === '' || sColor === '' || tColor === ''"> Vous n'avez choisit aucune couleur: </p>
+                <div class="divColorAns">
+                    <p class="userMsg" *ngIf="pColor === '' || sColor === '' || tColor === ''"> Vous n'avez choisit
+                        aucune couleur: </p>
                     <!-- <div>
                         <p class="colorAns">{{pColor}} </p>
                         <p class="colorAns">ihugy </p>
                         <p class="colorAns">ihugy </p>
                     </div> -->
                 </div>
-                <span class="fw-bolder fs-1">.</span>
-                <img src="../../assets/Empty-ressources/Sources/Avatar Seet/IDAvatar.png" alt="IDAvatar">
+                <img class="userAvatar" src="../../assets/Empty-ressources/Sources/Avatar Seet/IDAvatar.png" alt="IDAvatar">
             </div>
+
+            
             <div class="asked gap-sm-3" *ngIf="colorArray?.length !== 0">
                 <img src="../../assets/Empty-ressources/Sources/Avatar Seet/IDAvatar.png" alt="IDAvatar">
                 <span class="fw-bolder fs-1">.</span>
