@@ -1,6 +1,4 @@
 * {
-    margin: 0px;
-    padding: 0px;
     list-style: none;
     text-decoration: none;
 }
@@ -61,6 +59,8 @@ h3 span {
     display: grid;
     grid-template-columns: 50% 50%;
     align-items: center;
+    justify-content: center;
+    margin-block: 8rem;
 
 }
 

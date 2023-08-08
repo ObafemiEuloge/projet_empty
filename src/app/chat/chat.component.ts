@@ -1,17 +1,20 @@
 import { Component, OnInit } from '@angular/core';
 import { ChatService } from '../chat.service';
 import { Categorie } from '../class-infos';
-import { opacityAnimation } from '../animation.module';
+import { opacityAnimation, opacityAnimationChat } from '../animation.module';
+import { fadeIn, fadeOut } from "../animation.module";
 import { CATEGORIE } from '../mock-infos';
 import { FormControl, FormGroup } from '@angular/forms';
 @Component({
   selector: 'app-chat',
   templateUrl: './chat.component.html',
   styleUrls: ['./chat.component.css'],
-  animations: [opacityAnimation]
+  animations: [fadeOut, fadeIn, opacityAnimation, opacityAnimationChat]
 })
 
 export class ChatComponent implements OnInit {
+
+  showFirst = true;
 
   answersList: any[] | undefined;  // récupérer le tableau de réponses 
 
@@ -30,8 +33,8 @@ export class ChatComponent implements OnInit {
   colorInter: string = "";  // récupérer le thème de l'utilisateur
 
   pColor: string = "";
-  sColor: string |undefined;
-  tColor: string |undefined;
+  sColor: string | undefined;
+  tColor: string | undefined;
 
   colorArray: string[] | undefined = [];  // récupérer les couleurs de l'utilisateur
 
@@ -118,5 +121,7 @@ export class ChatComponent implements OnInit {
     console.log(this.pColor);
 
   }
+
+ 
 
 }

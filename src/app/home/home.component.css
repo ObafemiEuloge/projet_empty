@@ -1,6 +1,4 @@
 * {
-    margin: 0px;
-    padding: 0px;
     list-style: none;
     text-decoration: none;
 }
@@ -91,9 +89,9 @@ h1 span {
 
 .img {
     display: inline-block;
-    max-width: 40%;
+    max-width: 50%;
     height: auto;
-    margin-inline: -20%;
+    margin-inline: -25%;
     /* margin-block: -6%; */
 }
 
