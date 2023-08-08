@@ -5,6 +5,7 @@ import { opacityAnimation, opacityAnimationChat } from '../animation.module';
 import { fadeIn, fadeOut } from "../animation.module";
 import { CATEGORIE } from '../mock-infos';
 import { FormControl, FormGroup } from '@angular/forms';
+import { fakeAsync } from '@angular/core/testing';
 @Component({
   selector: 'app-chat',
   templateUrl: './chat.component.html',
@@ -45,6 +46,7 @@ export class ChatComponent implements OnInit {
   selectThem: boolean = false;
   selectColor: boolean = false;
   buttonSendMsg: boolean = true;
+  colorChoice: boolean = false;
 
   constructor(
     private chatService: ChatService
@@ -114,8 +116,11 @@ export class ChatComponent implements OnInit {
     let tColor = this.profileForm.value.tertiaryColor
 
     this.pColor = pColor!;
+    this.sColor = sColor!;
+    this.tColor = tColor!;
     this.colorArray?.push(pColor!, sColor!, tColor!);
     this.answersList?.push(this.colorArray.splice(0))
+    this.colorChoice = true;
     // this.answersList = this.chatService.getAnswers(this.them)
     console.log(this.answersList);
     console.log(this.pColor);
