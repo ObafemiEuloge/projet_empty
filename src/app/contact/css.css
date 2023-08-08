@@ -1,7 +1,18 @@
+@charset "UTF-8";
 .chatbo {
-/* opacity: 0.05; */
-  }
-
+  /*=========== Feuille de style commune du template de chat ============*/
+  /*==== Ajuster la taille de l'image peut importe le  type de périphérique ===*/
+  /* Centrer le l'avatar */
+  /* Styler le texte de bienvenue */
+  /* Texte en dessous de l'avatar */
+  /*===================== Espace de discussion ==================== */
+  /* Espace de discussion */
+  /* Centrer le logo en dessous de l'espace de discussion */
+  /* Ajuster la taille du logo en dessous de l'espace de discussion */
+  /* Template */
+  /*================== LOGO NOIR Seet========================*/
+  /* La bulle des messages... */
+}
 .chatbo *,
 .chatbo *::before,
 .chatbo *::after {
@@ -368,126 +379,3 @@
 }
 
 /*# sourceMappingURL=css.css.map */
-
-
-
-/************************contact**********************/
-
-.contact .headerChat div.avatarSeet img {
-    max-width: 15%;
-  }
-  .contact p {
-    font-size: 1.1rem;
-  }
-  .contact .headerChat div.avatarSeet {
-    display: flex;
-    justify-content: center;
-  }
-  .contact .headerChat h1 {
-    color: #B2CC12;
-    font-weight: bolder;
-    text-align: center;
-  }
-  .contact .headerChat div.avatarText {
-    display: flex;
-    justify-content: center;
-  }
-  .contact .headerChat div.avatarText p {
-    color: #D7D6DC;
-    text-align: center;
-    max-width: 300px;
-    font-size: 1.2rem;
-  }
-
-.contact {
-    mix-blend-mode: screen;
-    position: absolute;
-    top: 30%;
-    left: 20%;
-  }
-.contact * {
-    
-    list-style: none;
-    text-decoration: none;
-  }
-  .contact * *::before *::after {
-    box-sizing: border-box;
-  }
-  .contact legend {
-    border: px solid rgb(52, 52, 47);
-    padding: 0.5em;
-    font-size: 1.8rem;
-  }
-  .contact p {
-    font-size: 2.8rem;
-    font-style: italic;
-  }
-  .contact input {
-    width: 300px;
-    border-radius: 10px;
-    padding: 0.4rem;
-    padding-left: 1rem;
-  }
-  .contact ::placeholder {
-    font-style: italic;
-  }
-  .contact button {
-    padding: 0.3rem;
-    border-radius: 10px;
-    font-style: italic;
-    background-color: #B2CC12;
-    color: #181818;
-  }
-  .contact .myform {
-    /* width: fit-content; */
-    max-width: 100%;
-    background-image: url("../../assets/Empty-ressources/Sources/Background/fond.jpg");
-    background-size: cover;
-    background-repeat: repeat;
-    text-align: center;
-    color: #D7D6DC;
-  }
-  .contact .mylegend {
-    background-color: #B2CC12;
-    color: #181818;
-  }
-  .contact .mylegend img {
-    mix-blend-mode: darken;
-    color: black;
-  }
-  .contact .formul {
-    display: flex;
-  }
-  .contact form {
-    justify-content: center;
-    position: relative;
-    width: auto;
-    height: 20rem;
-    margin-inline: auto;
-    padding: 1.5rem;
-    padding-bottom: 1rem;
-    margin-bottom: 1.5rem;
-    margin-top: 2rem;
-    border-radius: 15px;
-    background-color: rgba(207, 189, 189, 0.089);
-  }
-  .contact .pt-logo {
-    position: absolute;
-    top: -9px;
-    left: 140px;
-    margin-bottom: 8rem;
-    padding: 0.2rem;
-    padding-right: 1rem;
-    background-color: #B2CC12;
-    border-radius: 10px;
-    color: #181818;
-  }
-  .contact span {
-    font-size: 1rem;
-  }
-  .contact fieldset {
-    padding-top: 2.5rem;
-  }
-  
-  /*# sourceMappingURL=css.css.map */
-  
