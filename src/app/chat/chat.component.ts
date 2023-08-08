@@ -120,6 +120,7 @@ export class ChatComponent implements OnInit {
       this.colorChoice = true;
       this.buttonValider = false;
       this.buttonModif = true;
+    
 
       if (this.colorChoice === true || this.noColorChoice === true) {
         setTimeout(() => {
