@@ -48,7 +48,6 @@ const seetRoutes: Routes = [
     ContactComponent,
     ChatComponent,
     TemplateComponent,
-    StartComponent
   ],
   imports: [
     BrowserModule,

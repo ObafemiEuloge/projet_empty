@@ -17,35 +17,3 @@
     <a routerLink="/start" class="start">Générer mon site <span><img src="../../assets/Empty-ressources/Sources/Icons/fleche.png" alt=""></span></a>
 
 </div>
-
-<script>
-    'use strict'
-
-    const text = "Ton générateur de site web !";
-    const textElement = document.querySelector('#la_phrase');
-    console.log(textElement);
-    let index = 0;
-
-    // phraseElement.innerHTML = phrase;
-    function animePhrase() {
-        if (index < text.length) {
-            console.log('animation');
-            textElement.innerHTML += text.charAt(index);
-            index++;
-            setTimeout(animePhrase, 700);
-        }
-    }
-
-    animePhrase();
-</script>
-<!-- <div  class="container text-center">
-    <div class="imgLogo">
-        <img src="../../assets/Empty-ressources/Sources/Logos/new.png" alt="">
-    </div>
-    <h1><span>Hello ! </span>Je suis <span>SEET,</span> le générateur de sites web à ton service.</h1>
-    <a routerLink="/start" class="start">Générer mon site
-        <span>
-            <img src="../../assets/Empty-ressources/Sources/Icons/fleche.png" alt="">
-        </span>
-    </a>
-</div> -->
