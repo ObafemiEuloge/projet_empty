@@ -80,18 +80,10 @@ export class ChatComponent implements OnInit {
       this.selectCat = false;
       this.inputThem = false;
       this.selectColor = true;
-      this.buttonSendMsg = false
+      this.buttonSendMsg = false;
       this.click = 3
     }
-    if (this.color !== "" && this.click === 3) {
-      this.colorInter = this.color;
-      this.answersList = this.chatService.getAnswers(this.them)
-      this.input = false;
-      this.selectCat = false;
-      this.selectThem = false;
-      this.click = 4
-    }
-
+  
   }
 
 
@@ -109,6 +101,8 @@ export class ChatComponent implements OnInit {
     tertiaryColorHex: new FormControl(''),
 
   });
+
+
 
   validerColor() {
     this.colorArray = []
@@ -150,5 +144,13 @@ export class ChatComponent implements OnInit {
     this.noColorChoice = true;
     this.colorChoice = false;
   }
+
+  templateChoice = new FormGroup({
+    template_1: new FormControl(''),
+    template_2: new FormControl(''),
+    template_3: new FormControl(''),
+  });
+
+
 
 }

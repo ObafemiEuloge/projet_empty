@@ -316,4 +316,74 @@ form ::placeholder {
 .buttonValAn{
     display: flex;
     gap: 1rem;
+/* Template */
+.template {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1rem;
+}
+
+.templateBox {
+    background-color: #4a494e;
+    text-align: center;
+}
+.validTemp{
+    background-color: #B2CC12;
+    width: 150px;
+    font-weight: bolder;
+}
+
+.template1,
+.template2,
+.template3{
+    position: relative;
+    text-align: center;
+}
+/* .t1 {
+    position: absolute;
+    z-index: 1;
+    background: red;
+} */
+.inputTemplate {
+    position: absolute;
+    top: 10px;
+    left: 20px;
+    z-index: 2;
+}
+
+.indiceTemplate {
+    text-align: center;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+}
+.indiceTemplate div{
+    display: flex;
+    justify-content: center;
+}
+.indiceTemplate span{
+    background-color: #B2CC12;
+    color: #4a494e;
+    padding: 5px;
+    width: 50px;
+    aspect-ratio: 1;
+    margin-top: 0.5rem;
+    display: flex;align-items: center;
+    justify-content: center;
+    border: 2px solid #B2CC12;
+    border-radius: 50%;
+    font-weight: bolder;
+    font-size: 1.2rem;
+}
+
+.userAvatar {
+    width: 20px;
+    height: 20px;
+}
+
+.userMsg {
+    border-radius: 20px;
+    border-bottom-right-radius: 0;
+    background-color: #B2CC12;
+    padding: 1rem;
+    color: #4a494e;
 }
