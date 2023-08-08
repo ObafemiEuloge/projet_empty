@@ -1,11 +1,6 @@
-/* * {
-    margin: 0px;
-    padding: 0px;
-    list-style: none;
-    text-decoration: none;
-} */
-*
-*::before
+
+*,
+*::before,
 *::after {
     box-sizing: border-box;
 }

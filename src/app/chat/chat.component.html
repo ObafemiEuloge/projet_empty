@@ -11,10 +11,11 @@
     </div>
 </div>
 
-<div class="container discussionSpace my-5">
+<div [@opacityAnimation] class="container discussionSpace my-5" >
     <div class="chatLogo">
         <p class="text-center logoChat">
-            <img src="../../assets/Empty-ressources/Sources/Logos/Logo Noir.png" alt="Favicon Seet">
+            <img src="../../assets/Logo noir.png" alt="Favicon Seet" class="logoNoir">
+            <span>Seet</span>
         </p>
     </div>
 
@@ -26,7 +27,14 @@
             <div class="asked gap-sm-3">
                 <img src="../../assets/Empty-ressources/Sources/Avatar Seet/IDAvatar.png" alt="IDAvatar">
                 <span class="fw-bolder fs-1">.</span>
-                <p class="chatbotMsg" [@opacityAnimation]> Quel nom veux-tu donner à ton site ? </p>
+                <div class="questionBulle">
+                    <div class="typing-indicator">
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                      </div>
+                    <p class="chatbotMsg" [@opacityAnimation]> Bienvenue ! Alors, quel nom veux-tu donner à ton site ? </p>
+                </div>
             </div>
             <div class="ans gap-sm-3" *ngIf="titleSiteInter !== ''">
                 <p class="userMsg"> {{ titleSiteInter }} </p>
@@ -36,7 +44,7 @@
             <div class="asked gap-sm-3" *ngIf="titleSiteInter !== ''">
                 <img src="../../assets/Empty-ressources/Sources/Avatar Seet/IDAvatar.png" alt="IDAvatar">
                 <span class="fw-bolder fs-1">.</span>
-                <p class="chatbotMsg" [@opacityAnimation]> A quelle catégorie veut appartenir ton site ? </p>
+                <p class="chatbotMsg" [@opacityAnimation]> Génial ! Dans quelle catégorie veux-tu mettre ton site ? </p>
             </div>
             <div class="ans gap-sm-3" *ngIf="categInter !== ''">
                 <p class="userMsg"> {{categInter}} </p>
@@ -47,7 +55,7 @@
             <div class="asked gap-sm-3" *ngIf="categInter !== ''">
                 <img src="../../assets/Empty-ressources/Sources/Avatar Seet/IDAvatar.png" alt="IDAvatar">
                 <span class="fw-bolder fs-1">.</span>
-                <p class="chatbotMsg" [@opacityAnimation]> Quel est le principal thème de ton site ? </p>
+                <p class="chatbotMsg" [@opacityAnimation]> D'accord. Dis-moi précisement de quel thème veut parler ton site et qui est en rapport avec le thème que tu as choisi. </p>
             </div>
             <div class="ans gap-sm-3" *ngIf="themInter !== ''">
                 <p class="userMsg"> {{themInter}} </p>
@@ -206,7 +214,7 @@
                 <img src="../../assets/Empty-ressources/Sources/Avatar Seet/IDAvatar.png" alt="IDAvatar">
                 <span class="fw-bolder fs-1">.</span>
                 <div class="divParaColor">
-                    <p class=" borde" [@opacityAnimation]> Choisis une palette de couleurs que tu souhaiterais utiliser
+                    <p class=" borde" [@opacityAnimation]>Veux-tu choisir une palette de couleurs que tu souhaiterais utiliser
                         sur ton site </p>
                     <div>
                         <form [formGroup]="profileForm" (ngSubmit)="validerColor()" class=" formColor">

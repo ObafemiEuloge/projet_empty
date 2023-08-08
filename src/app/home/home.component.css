@@ -1,4 +1,6 @@
 * {
+    /* margin: 0px;
+    padding: 0px; */
     list-style: none;
     text-decoration: none;
 }
@@ -18,13 +20,13 @@ span img {
 }
 
 .imgLogo img {
-    max-width: 50%;
-    margin-block: -130px;
+    max-width: 60%;
+    /* margin-block: -130px; */
 }
 
 h1{
-    font-size: 4rem;
-    margin-block: 4rem;
+    font-size: 5rem;
+    margin-bottom: 5rem;
 }
 
 h1 span {
@@ -89,9 +91,9 @@ h1 span {
 
 .img {
     display: inline-block;
-    max-width: 40%;
+    max-width: 45%;
     height: auto;
-    margin-inline: -20%;
+    margin-inline: -22.5%;
     /* margin-block: -6%; */
 }
 
@@ -202,18 +204,33 @@ div.phrase #la_phrase {
 
 
 
-@media screen and (max-width:600px) {
-    
-    .text-center h1 {
-        font-size: 2.5rem;
-        padding: 1rem;
+/* MEDIAS QUERIES */
+
+@media screen and (max-width: 980px) {
+    h1{
+        font-size: 4rem;
     }
-  
+
+    img.img{
+        max-width: 70%;
+        height: auto;
+        margin-inline: -35%;
+        
+    }
 }
 
-/*Tablet*/
- @media screen and (min-width:601px) {
-    .text-center h1 {
-        font-size: 3.5rem;
+
+@media screen and (max-width: 780px) {
+    h1{
+        font-size: 3rem;
+    }
+
+    img.img{
+        margin-block: 0;
+        margin-bottom: 5rem;
+    }
+
+    .homeParent{
+        margin-top: 18rem;
     }
 }

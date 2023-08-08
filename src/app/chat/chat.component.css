@@ -10,6 +10,10 @@
     max-width: 15%;
 }
 
+p{
+    font-size: 1.1rem;
+}
+
 /* Centrer le l'avatar */
 .headerChat div.avatarSeet {
     display: flex;
@@ -35,6 +39,7 @@
     color: #D7D6DC;
     text-align: center;
     max-width: 300px;
+    font-size: 1.2rem;
 }
 
 
@@ -58,12 +63,19 @@
 .chatLogo .logoChat {
     display: flex;
     justify-content: center;
+    align-items: center;
 }
 
 /* Ajuster la taille du logo en dessous de l'espace de discussion */
 .chatLogo .logoChat img {
     mix-blend-mode: luminosity;
-    max-width: 10%;
+    max-width: 3%;
+    margin-inline: 0.5rem;
+}
+
+.chatLogo .logoChat span{
+    font-size: 1.8rem;
+    font-weight: 700;
 }
 
 .chat .asked {
@@ -356,3 +368,50 @@ form ::placeholder {
     padding: 1rem;
     color: #4a494e;
 }
+/*================== LOGO NOIR Seet========================*/
+.logoChat img.logoNoir{
+    width: 80px;
+}
+
+/* La bulle des messages... */
+
+.typing-indicator {
+    display: flex;
+    justify-content: center;
+  }
+  
+  .typing-indicator span {
+    width: 8px;
+    height: 8px;
+    margin: 0 2px;
+    border-radius: 50%;
+    background: #000;
+    display: inline-block;
+    animation: typing-indicator 1.5s infinite ease-in-out;
+  }
+  
+  .typing-indicator span:nth-child(1) {
+    animation-delay: -0.3s;
+  }
+  
+  .typing-indicator span:nth-child(2) {
+    animation-delay: -0.15s;
+  }
+  
+  @keyframes typing-indicator {
+    0%,
+    80%,
+    100% {
+      transform: translateY(0);
+      opacity: 1;
+    }
+    
+    30% {
+      transform: translateY(-6px);
+      opacity: 0.7;
+    }
+  }
+
+  .questionBulle{
+    display: flex;
+  }
