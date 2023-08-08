@@ -67,8 +67,8 @@
                         <div class="template">
                             <!-- Template 1 -->
                             <div id="cass1" value="top" class="carousel slide template1" data-bs-ride="carousel">
-                                <input type="radio" value="temp1" name="template" formControlName="template_1"
-                                    class="inputTemplate" [ngClass]="{'disabled': templateChoice.value.template_1 !== ''}">
+                                <input type="radio" value="carousel-1" name="template" class="inputTemplate"
+                                    (change)="choiceTemplate($event)">
                                 <!-- Points au bas d'image/trois barres -->
                                 <div class="carousel-indicators">
                                     <button type="button" data-bs-target="#cass1" data-bs-slide-to="0"
@@ -103,8 +103,8 @@
                             </div>
                             <!-- Template 2 -->
                             <div id="cass2" class="carousel slide template2" data-bs-ride="carousel">
-                                <input type="radio" value="temp2" name="template" formControlName="template_2"
-                                    class="inputTemplate">
+                                <input type="radio" value="carousel-2" name="template" class="inputTemplate"
+                                    (change)="choiceTemplate($event)">
                                 <!-- Points au bas d'image/trois barres -->
                                 <div class="carousel-indicators">
                                     <button type="button" data-bs-target="#cass2" data-bs-slide-to="0"
@@ -139,8 +139,8 @@
                             </div>
                             <!-- Template 3 -->
                             <div id="cass4" class="carousel slide template3" data-bs-ride="carousel">
-                                <input type="radio" value="temp3" name="template" formControlName="template_3"
-                                    class="inputTemplate">
+                                <input type="radio" value="carousel-3" name="template" class="inputTemplate"
+                                    (change)="choiceTemplate($event)">
                                 <!-- Points au bas d'image/trois barres -->
                                 <div class="carousel-indicators">
                                     <button type="button" data-bs-target="#cass4" data-bs-slide-to="0"
@@ -182,31 +182,27 @@
                         <!-- <button type="button" class="validTemp btn p-1 mt-4" (click)="validerTemplate()">Valider</button> -->
                     </div>
                 </form>
-                <div class="ans gap-sm-3 mt-3"
-                    *ngIf="templateChoice.value.template_1 !== '' && templateChoice.value.template_2 === '' && templateChoice.value.template_3 === ''">
-                    <p class="userMsg"> <strong>Choix du template:</strong> Template 1</p>
-                    <img class="userAvatar" src="../../assets/Empty-ressources/Sources/Avatar Seet/IDAvatar.png"
-                        alt="IDAvatar">
-                </div>
-                <div class="ans gap-sm-3 mt-3"
-                    *ngIf="templateChoice.value.template_1 === '' && templateChoice.value.template_2 !== '' && templateChoice.value.template_3 === ''">
-                    <p class="userMsg"> <strong>Choix du template:</strong> Template 2</p>
-                    <img class="userAvatar" src="../../assets/Empty-ressources/Sources/Avatar Seet/IDAvatar.png"
-                        alt="IDAvatar">
-                </div>
-                <div class="ans gap-sm-3 mt-3"
-                    *ngIf="templateChoice.value.template_1 === '' && templateChoice.value.template_2 === '' && templateChoice.value.template_3 !== ''">
-                    <p class="userMsg"> <strong>Choix du template:</strong> Template 3</p>
+
+                <div class="ans gap-sm-3 mt-3" *ngIf="template !== ''">
+                    <!-- {{template}} -->
+                    <p class="userMsg">
+                        <strong>Choix du template:</strong> {{template}} <button type="button" class="modifColor"
+                            (click)="modifColor()"><img class="userAvatar"
+                                src="../../assets/Empty-ressources/Sources/Icons/editer.png" alt="IDAvatar"></button>
+                    </p>
                     <img class="userAvatar" src="../../assets/Empty-ressources/Sources/Avatar Seet/IDAvatar.png"
                         alt="IDAvatar">
                 </div>
             </div>
 
-            <div class="asked gap-sm-3" *ngIf="templateChoice.value.template_1 !== '' || templateChoice.value.template_2 !== '' || templateChoice.value.template_3 !== ''">
+            <div class="asked gap-sm-3" *ngIf="template !== ''">
                 <img src="../../assets/Empty-ressources/Sources/Avatar Seet/IDAvatar.png" alt="IDAvatar">
                 <span class="fw-bolder fs-1">.</span>
                 <div class="divParaColor">
-                    <p class=" borde" [@opacityAnimation]>Voulez-vous Choisir une palette de couleurs pour votre site ? <button  type="button" class="acceptColor" (click)="acceptColor()">Oui</button> <button  type="button" class="noColor" (click)="noColor()">Non</button></p>
+                    <p class=" borde" [@opacityAnimation]>Voulez-vous Choisir une palette de couleurs pour votre site ?
+                        <button type="button" class="acceptColor" (click)="acceptColor()">Oui</button> <button
+                            type="button" class="noColor" (click)="noColor()">Non</button>
+                    </p>
                     <div *ngIf="buttonValider === true">
                         <form [formGroup]="profileForm" (ngSubmit)="validerColor()" class=" formColor">
                             <div class="divColor">
@@ -231,10 +227,10 @@
                                 </div>
                             </div>
                             <div class="buttonValAn">
-                                <button  type="button" class="validColor" (click)="validerColor()">Valider</button>
-                            <button  type="button" class="annulerColor" (click)="annulerColor()">Annuler</button>
+                                <button type="button" class="validColor" (click)="validerColor()">Valider</button>
+                                <button type="button" class="annulerColor" (click)="annulerColor()">Annuler</button>
                             </div>
-                            
+
                         </form>
                     </div>
                 </div>
@@ -242,8 +238,10 @@
 
             <div class="ans gap-sm-3" *ngIf="colorChoice === true">
                 <div class="divColorAns" *ngIf="pColor !== '' || sColor !== '' || tColor !== ''">
-                    <p class="chatbotMsg"> Vos couleur sont: <button *ngIf="buttonModif === true" type="button" class="modifColor" (click)="modifColor()"><img src="../../assets/Empty-ressources/Sources/Icons/editer.png" alt="IDAvatar"></button></p>
-                    <p class="userMsg"> Vos couleur sont: </p>
+                    <p class="userMsg"> Vos couleurs de palette sont: <button *ngIf="buttonModif === true" type="button"
+                            class="modifColor" (click)="modifColor()"><img class="userAvatar"
+                                src="../../assets/Empty-ressources/Sources/Icons/editer.png" alt="IDAvatar"></button>
+                    </p>
                     <div>
                         <p class="colorAns" [style.backgroundColor]="pColor"></p>
                         <p class="colorAns" [style.backgroundColor]="sColor"></p>
@@ -254,25 +252,17 @@
                 <img src="../../assets/Empty-ressources/Sources/Avatar Seet/IDAvatar.png" alt="IDAvatar">
             </div>
             <div class="ans gap-sm-3" *ngIf="noColorChoice === true">
-                <div class="divColorAns">
-                    <p class="chatbotMsg"> Vous n'avez choisit aucune couleur: </p>
-                <div class="divColorAns">
-                    <p class="userMsg" *ngIf="pColor === '' || sColor === '' || tColor === ''"> Vous n'avez choisit
-                        aucune couleur: </p>
-                    <!-- <div>
-                        <p class="colorAns">{{pColor}} </p>
-                        <p class="colorAns">ihugy </p>
-                        <p class="colorAns">ihugy </p>
-                    </div> -->
-                </div>
-                <img class="userAvatar" src="../../assets/Empty-ressources/Sources/Avatar Seet/IDAvatar.png" alt="IDAvatar">
+                <p class="userMsg"> Vous n'avez choisit aucune couleur</p>
+                <img class="userAvatar" src="../../assets/Empty-ressources/Sources/Avatar Seet/IDAvatar.png"
+                    alt="IDAvatar">
             </div>
 
-            
+
             <div class="asked gap-sm-3" *ngIf="colorArray?.length !== 0">
                 <img src="../../assets/Empty-ressources/Sources/Avatar Seet/IDAvatar.png" alt="IDAvatar">
                 <span class="fw-bolder fs-1">.</span>
-                <p class="chatbotMsg" [@opacityAnimation]> Génial ! Tu y es presque. Maintenant, pour recevoir ton site,
+                <p class="chatbotMsg" [@opacityAnimation]> Génial ! Tu y es presque. Maintenant, pour recevoir ton
+                    site,
                     remplis le formulaire ci-dessous </p>
             </div>
         </div>
@@ -303,4 +293,3 @@
         </button>
     </div>
 </div>
-

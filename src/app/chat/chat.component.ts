@@ -151,6 +151,12 @@ export class ChatComponent implements OnInit {
     template_3: new FormControl(''),
   });
 
+  template: string = "";
+  choiceTemplate($event: any){
+    this.template = $event.target.value;
+    console.log(this.template);
+    
+  }
 
 
 }

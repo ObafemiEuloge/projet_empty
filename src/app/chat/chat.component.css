@@ -316,6 +316,7 @@ form ::placeholder {
 .buttonValAn{
     display: flex;
     gap: 1rem;
+}
 /* Template */
 .template {
     display: grid;
