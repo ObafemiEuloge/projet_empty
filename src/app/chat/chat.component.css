@@ -113,12 +113,9 @@
     border-bottom-left-radius: 0;
     color: #4a494e;
 }
-<<<<<<< HEAD
-=======
 .chat .asked .chatbotMsg p{
 margin-bottom: 0;
 }
->>>>>>> 4b6db43d33f646448fcfd1bba686f09c9efb9e0c
 
 
 .answer {
@@ -146,12 +143,8 @@ margin-bottom: 0;
 form {
     flex-basis: 95%;
 }
-<<<<<<< HEAD
-form input,
-=======
 
 form input[type= "text"],
->>>>>>> 4b6db43d33f646448fcfd1bba686f09c9efb9e0c
 form select {
     background-color: #B2CC12;
     color: black;
@@ -181,8 +174,6 @@ form ::placeholder {
     background-color: #B2CC12;
     border: none;
     padding: 0;
-<<<<<<< HEAD
-=======
 }
 .validColor{
     background-color: #B2CC12;
@@ -220,5 +211,4 @@ form ::placeholder {
 .divColor{
     display: flex;
     
->>>>>>> 4b6db43d33f646448fcfd1bba686f09c9efb9e0c
 }

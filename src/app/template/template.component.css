@@ -1,13 +1,6 @@
-<<<<<<< HEAD
-.parentCarousel{
-    display: grid;
-    grid-template-columns: 1fr 1fr 1fr;
-    gap: 2rem ;
-=======
 .carouselParent{
     margin-top: 2.5rem;
     display: grid;
     grid-template-columns: 1fr 1fr;
     gap: 3rem;
->>>>>>> 4b6db43d33f646448fcfd1bba686f09c9efb9e0c
 }
