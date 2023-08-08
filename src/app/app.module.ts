@@ -11,13 +11,14 @@ import { HomeComponent } from './home/home.component';
 import { ContactComponent } from './contact/contact.component';
 import { ChatComponent } from './chat/chat.component';
 import { TemplateComponent } from './template/template.component';
-import { StartComponent } from './start/start.component';
+import { StartBotComponent } from './start-bot/start-bot.component';
 
 // L'ensemble des routes de notre application
 const seetRoutes: Routes = [
   {
     path: '',
-    component: HomeComponent
+    redirectTo: '/home',
+    pathMatch: 'full'
   },
   {
     path: 'home',
@@ -32,8 +33,8 @@ const seetRoutes: Routes = [
     component: ContactComponent
   },
   {
-    path: 'start',
-    component: StartComponent
+    path: 'start-bot',
+    component: StartBotComponent
   },
   {
     path: 'template',
@@ -48,6 +49,7 @@ const seetRoutes: Routes = [
     ContactComponent,
     ChatComponent,
     TemplateComponent,
+    StartBotComponent,
   ],
   imports: [
     BrowserModule,
