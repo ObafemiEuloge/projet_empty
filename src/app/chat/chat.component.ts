@@ -1,8 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ChatService } from '../chat.service';
 import { Categorie } from '../class-infos';
-import { opacityAnimation, opacityAnimationChat } from '../animation.module';
-import { fadeIn, fadeOut } from "../animation.module";
+import { opacityAnimation } from '../animation.module';
 import { CATEGORIE } from '../mock-infos';
 import { FormControl, FormGroup } from '@angular/forms';
 import { fakeAsync } from '@angular/core/testing';
@@ -10,12 +9,10 @@ import { fakeAsync } from '@angular/core/testing';
   selector: 'app-chat',
   templateUrl: './chat.component.html',
   styleUrls: ['./chat.component.css'],
-  animations: [fadeOut, fadeIn, opacityAnimation, opacityAnimationChat]
+  animations: [opacityAnimation]
 })
 
 export class ChatComponent implements OnInit {
-
-  showFirst = true;
 
   answersList: any[] | undefined;  // récupérer le tableau de réponses 
 
@@ -34,8 +31,8 @@ export class ChatComponent implements OnInit {
   colorInter: string = "";  // récupérer le thème de l'utilisateur
 
   pColor: string = "";
-  sColor: string | undefined;
-  tColor: string | undefined;
+  sColor: string |undefined;
+  tColor: string |undefined;
 
   colorArray: string[] | undefined = [];  // récupérer les couleurs de l'utilisateur
 
@@ -117,9 +114,6 @@ export class ChatComponent implements OnInit {
     this.colorChoice = true;
   }
 
-<<<<<<< HEAD
- 
-=======
   templateChoice = new FormGroup({
     template_1: new FormControl(''),
     template_2: new FormControl(''),
@@ -127,6 +121,5 @@ export class ChatComponent implements OnInit {
   });
 
 
->>>>>>> 70864d97a9a9f54eb1d1a3fa7d647ac0d5afa7e1
 
 }
