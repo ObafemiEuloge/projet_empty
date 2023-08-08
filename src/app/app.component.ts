@@ -7,4 +7,15 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'projet_empty';
+  dynamicStyles: any = {}; // Un objet pour stocker les styles dynamiques
+
+  changeStyle() {
+
+    this.dynamicStyles = {
+      'background-color': 'blue',
+      'color': 'white',
+      'font-size': '20px',
+      'padding': '10px'
+    }
+  }
 }

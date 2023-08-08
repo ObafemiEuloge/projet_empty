@@ -7,7 +7,6 @@ import { Categorie } from './class-infos';
   providedIn: 'root'
 })
 export class ChatService {
-
   categories: Categorie[] = CATEGORIE; // Toute les catégories
 
   selectCategorie!: Categorie; // La variable stockant la catégorie sélectionnée

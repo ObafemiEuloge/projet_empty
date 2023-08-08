@@ -1,0 +1,101 @@
+<div [@fadeInOut] *ngIf="showFirst">Premier élément</div>
+<div [@fadeInOut] *ngIf="!showFirst">Deuxième élément</div>
+
+
+
+//Local storage
+<form (ngSubmit)="submitForm()" #myForm="ngForm">
+    <label for="name">Nom:</label>
+    <input type="text" id="name" name="name" [(ngModel)]="formData.name" required>
+
+    <label for="email">E-mail:</label>
+    <input type="email" id="email" name="email" [(ngModel)]="formData.email" required>
+
+    <button type="submit">Soumettre</button>
+</form>
+
+
+
+<script>
+    import { Component } from '@angular/core';
+    import { trigger, state, style, transition, animate } from '@angular/animations';
+
+    @Component({
+        selector: 'app-your-component',
+        templateUrl: './your-component.component.html',
+        styleUrls: ['./your-component.component.css'],
+        animations: [
+            trigger('fadeInOut', [
+                state('void', style({
+                    opacity: 0,
+                    transform: 'translateY(20px)'
+                })),
+                transition('void <=> *', [
+                    animate('300ms ease-out')
+                ]),
+            ])
+        ]
+    })
+    export class YourComponent {
+        showFirst = true;
+
+        toggleElements() {
+            this.showFirst = !this.showFirst;
+        }
+    }
+
+
+
+    //Local storage
+
+
+    import { Component, OnInit } from '@angular/core';
+
+    @Component({
+        selector: 'app-your-component',
+        templateUrl: './your-component.component.html',
+        styleUrls: ['./your-component.component.css'],
+    })
+    export class YourComponent implements OnInit {
+        formData = { name: '', email: '' };
+
+        ngOnInit() {
+            // Récupérer les données du localStorage (si elles existent)
+            const savedData = localStorage.getItem('formData');
+            if (savedData) {
+                this.formData = JSON.parse(savedData);
+            }
+        }
+
+        submitForm() {
+            // Soumettre le formulaire et enregistrer les données dans le localStorage
+            localStorage.setItem('formData', JSON.stringify(this.formData));
+        }
+    }
+
+
+
+    clearFormData() {
+        localStorage.removeItem('formData');
+        this.formData = { name: '', email: '' };
+    }
+
+
+
+    import { FormsModule } from '@angular/forms';
+
+    @NgModule({
+        declarations: [
+            // ...
+        ],
+        imports: [
+            // ...
+            FormsModule,
+        ],
+        // ...
+    })
+    export class AppModule { }
+
+
+
+</script>
