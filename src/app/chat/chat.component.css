@@ -182,20 +182,29 @@ form ::placeholder {
 }
 
 .validColor {
+    position: relative;
+    /* top: 10px; */
     background-color: #B2CC12;
     border: none;
     padding: 0 2rem;
     width: fit-content;
-    margin-top: 0.5rem;
+    margin: 0.5rem 0;
     border-radius: 20px;
 }
-.modifColor {
-    background-color: #da3e17;
+.annulerColor {
+    background-color: #df3d10;
     border: none;
     padding: 0 2rem;
     width: fit-content;
-    margin-top: 0.5rem;
+    margin: 0.5rem 0;
     border-radius: 20px;
+}
+.modifColor{
+    border: none;
+    background-color: #B2CC12;
+}
+.modifColor img{
+    width: 18px;
 }
 
 .selectColor {
@@ -215,6 +224,7 @@ form ::placeholder {
 }
 
 .formColor {
+    position: relative;
     display: flex;
     flex-flow: column;
     align-items: center;
@@ -283,4 +293,27 @@ form ::placeholder {
     border-radius: 50%;
     width: 50px;
     aspect-ratio: 1;
+}
+
+.acceptColor{
+    background-color: #B2CC12;
+    border: none;
+    padding: 0 0.5rem;
+    width: fit-content;
+    margin: 1rem;
+    border-radius: 20px;
+}
+.noColor{
+    background-color: #b82b0b;
+    color: #fff;
+    border: none;
+    padding: 0 0.5rem;
+    width: fit-content;
+    margin: 0.5rem 0;
+    border-radius: 20px;
+}
+
+.buttonValAn{
+    display: flex;
+    gap: 1rem;
 }

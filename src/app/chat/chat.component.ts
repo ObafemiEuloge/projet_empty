@@ -31,10 +31,11 @@ export class ChatComponent implements OnInit {
   colorInter: string = "";  // récupérer le thème de l'utilisateur
 
   pColor: string = "";
-  sColor: string |undefined;
-  tColor: string |undefined;
+  sColor: string = "";
+  tColor: string = "";
 
   colorArray: string[] | undefined = [];  // récupérer les couleurs de l'utilisateur
+  colorArrayCopy: string[] = this.colorArray!  // récupérer les couleurs de l'utilisateur
 
   /** les champs de saisie */
   input: boolean = false;
@@ -44,6 +45,9 @@ export class ChatComponent implements OnInit {
   selectColor: boolean = false;
   buttonSendMsg: boolean = true;
   colorChoice: boolean = false;
+  noColorChoice: boolean = false;
+  buttonValider: boolean = false;
+  buttonModif: boolean = false;
 
   constructor(
     private chatService: ChatService
@@ -112,16 +116,39 @@ export class ChatComponent implements OnInit {
     let sColor = this.profileForm.value.secondaryColor
     let tColor = this.profileForm.value.tertiaryColor
 
-    this.pColor = pColor!;
-    this.sColor = sColor!;
-    this.tColor = tColor!;
-    this.colorArray?.push(pColor!, sColor!, tColor!);
-    this.answersList?.push(this.colorArray.splice(0))
-    this.colorChoice = true;
-    // this.answersList = this.chatService.getAnswers(this.them)
-    console.log(this.answersList);
-    console.log(this.pColor);
+    if (pColor !== '' || sColor !== '' || tColor !== '') {
+      this.pColor = pColor!;
+      this.sColor = sColor!;
+      this.tColor = tColor!;
+      this.colorArray?.push(pColor!, sColor!, tColor!);
+      this.answersList?.push(this.colorArrayCopy?.splice(0))
+      this.colorChoice = true;
+      this.buttonValider = false;
+      this.buttonModif = true;
 
+      // this.answersList = this.chatService.getAnswers(this.them)
+      console.log(this.answersList);
+    }
+    console.log(this.colorArray);
+    return console.log(this.colorArray);
+    
+  }
+  modifColor() {
+    this.buttonValider = true;
+    this.buttonModif = false;
+  }
+  annulerColor() {
+    this.buttonValider = false;
+    this.buttonModif = true;
+  }
+  acceptColor() {
+    this.buttonValider = true;
+    this.noColorChoice = false;
+  }
+  noColor() {
+    this.buttonValider = false;
+    this.noColorChoice = true;
+    this.colorChoice = false;
   }
 
 }
