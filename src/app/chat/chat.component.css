@@ -71,6 +71,7 @@
     align-items: center;
     height: 100%;
 }
+
 .chat .ans {
     display: flex;
     align-items: center;
@@ -83,6 +84,7 @@
     padding-block: auto;
     vertical-align: middle;
 }
+
 .chat .ans span {
     color: #B2CC12;
     padding-block: auto;
@@ -93,6 +95,7 @@
     max-width: 50px;
     max-height: 50px;
 }
+
 .chat .ans img {
     max-width: 50px;
     max-height: 50px;
@@ -106,6 +109,7 @@
     color: #D7D6DC;
     margin-bottom: 0;
 }
+
 .chat .ans .chatbotMsg {
     background-color: #B2CC12;
     padding: 1rem;
@@ -113,8 +117,9 @@
     border-bottom-left-radius: 0;
     color: #4a494e;
 }
-.chat  .chatbotMsg p{
-margin-bottom: 0.5rem;
+
+.chat .chatbotMsg p {
+    margin-bottom: 0.5rem;
 }
 
 
@@ -144,7 +149,7 @@ form {
     flex-basis: 95%;
 }
 
-form input[type= "text"],
+form input[type="text"],
 form select {
     background-color: #B2CC12;
     color: black;
@@ -170,36 +175,46 @@ form ::placeholder {
     color: black;
 }
 
-.sendMsg{
+.sendMsg {
     background-color: #B2CC12;
     border: none;
     padding: 0;
 }
-.validColor{
+
+.validColor {
     background-color: #B2CC12;
     border: none;
     padding: 0 2rem;
     width: fit-content;
     margin-top: 0.5rem;
-   border-radius: 20px;
-
+    border-radius: 20px;
+}
+.modifColor {
+    background-color: #B2CC12;
+    border: none;
+    padding: 0 2rem;
+    width: fit-content;
+    margin-top: 0.5rem;
+    border-radius: 20px;
 }
 
 .selectColor {
     background-color: #B2CC12;
     padding: 1rem;
 }
+
 .selectColor input[type="color"] {
     width: 50px;
     padding: 0;
 }
 
 
-.selectColor div  span {
+.selectColor div span {
     border: 1px solid;
     padding: 0.3rem;
 }
-.formColor{
+
+.formColor {
     display: flex;
     flex-flow: column;
     align-items: center;
@@ -212,28 +227,33 @@ form ::placeholder {
     color: #D7D6DC;
     width: 100%;
 }
-.divColor{
+
+.divColor {
     display: flex;
     width: 100%;
     justify-content: space-between;
     padding: 0 1rem;
-    
-}
-.divColor div{
-    text-align: center;
-   flex-basis: 30%;
-}
-.divColor div input{
-   width: 100%;
-   border-radius: 20px;
-padding: 0 0.5rem;}
 
-.divParaColor{
-    width: 70%;
+}
+
+.divColor div {
+    text-align: center;
+    flex-basis: 30%;
+}
+
+.divColor div input {
+    width: 100%;
+    border-radius: 20px;
+    padding: 0 0.5rem;
+}
+
+.divParaColor {
+    width: 50%;
     margin-bottom: 1rem;
 
 }
-.borde{
+
+.borde {
     background-color: #4a494e;
     padding: 0.5rem 1rem;
     border-radius: 20px;
@@ -243,20 +263,22 @@ padding: 0 0.5rem;}
     margin-bottom: 0;
 }
 
-.divColorAns{
+.divColorAns {
     display: flex;
     flex-flow: column;
 }
-.divColorAns > p{
+
+.divColorAns>p {
     margin-bottom: 0.5rem;
 }
-.divColorAns div{
+
+.divColorAns div {
     display: flex;
     gap: 1rem;
     /* flex-flow: column; */
 }
 
-.colorAns{
+.colorAns {
     background-color: #fff;
     border-radius: 50%;
     width: 50px;

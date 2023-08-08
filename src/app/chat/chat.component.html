@@ -85,22 +85,23 @@
                                 </div>
                             </div>
                             <button type="button" class="validColor" (click)="validerColor()">Valider</button>
+                            <button type="button" class="modifColor" (click)="modifColor()">Modifier</button>
                         </form>
                     </div>
                 </div>
             </div>
 
-            <div class="ans gap-sm-3" *ngIf="colorArray?.length === 3">
-                <div class="divColorAns" >
+            <div class="ans gap-sm-3" *ngIf="colorChoice === true">
+                <div class="divColorAns" *ngIf="pColor !== '' || sColor !== '' || tColor !== ''">
                     <p class="chatbotMsg"> Vos couleur sont: </p>
                     <div>
-                        <p class="colorAns">{{pColor}} </p>
-                        <p class="colorAns">ihugy </p>
-                        <p class="colorAns">ihugy </p>
+                        <p class="colorAns" [style.backgroundColor]="pColor"></p>
+                        <p class="colorAns" [style.backgroundColor]="sColor"></p>
+                        <p class="colorAns" [style.backgroundColor]="tColor"></p>
                     </div>
                 </div>
                 <div class="divColorAns" >
-                    <p class="chatbotMsg"> Vous n'avez choisit aucune couleur: </p>
+                    <p class="chatbotMsg" *ngIf="pColor === '' || sColor === '' || tColor === ''"> Vous n'avez choisit aucune couleur: </p>
                     <!-- <div>
                         <p class="colorAns">{{pColor}} </p>
                         <p class="colorAns">ihugy </p>
