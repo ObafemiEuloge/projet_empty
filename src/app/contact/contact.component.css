@@ -1,5 +1,3 @@
-<<<<<<< HEAD
-=======
 * {
 
     list-style: none;
@@ -13,32 +11,21 @@
 
 
 
->>>>>>> 813dc769207bda98f7cc0b915ca9c109a482b470
 legend {
     border: px solid rgb(52, 52, 47);
     padding: .5em;
     font-size: 1.8rem;
 }
-<<<<<<< HEAD
-
-=======
 p{
     font-size: 2.8rem;
     font-style: italic;
 }
->>>>>>> 813dc769207bda98f7cc0b915ca9c109a482b470
 input {
     width: 300px;
     border-radius: 10px;
     padding: .4rem;
     padding-left: 1rem;
 }
-<<<<<<< HEAD
-
-button {
-    padding: .3rem;
-    border-radius: 10px;
-=======
 ::placeholder{
     font-style: italic;
 }
@@ -46,7 +33,6 @@ button {
     padding: .3rem;
     border-radius: 10px;
     font-style: italic;
->>>>>>> 813dc769207bda98f7cc0b915ca9c109a482b470
     background-color: #B2CC12;
     color: #181818;
 }
@@ -86,34 +72,20 @@ form{
     margin-bottom: 1.5rem;
     margin-top: 2rem;
     border-radius: 15px;
-<<<<<<< HEAD
-    background-color: rgba(95, 94, 98, 0.617);
-=======
     background-color: rgba(207, 189, 189, 0.089);
->>>>>>> 813dc769207bda98f7cc0b915ca9c109a482b470
 }
 
 .pt-logo{
     position: absolute;
     top: -9px;
-<<<<<<< HEAD
-    left: 145px;
-    margin-bottom: 8rem;
-=======
     left: 140px;
     margin-bottom: 8rem;
     padding: .2rem;
->>>>>>> 813dc769207bda98f7cc0b915ca9c109a482b470
     padding-right: 1rem;
     background-color: #B2CC12;
     border-radius: 10px;
     color: #181818;
 }
-<<<<<<< HEAD
-
-fieldset{
-    padding-top: 3rem ;
-=======
 span{
     font-size: 1rem;
     
@@ -121,5 +93,4 @@ span{
 
 fieldset{
     padding-top: 2.5rem ;
->>>>>>> 813dc769207bda98f7cc0b915ca9c109a482b470
 }

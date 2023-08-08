@@ -119,6 +119,7 @@ export class ChatComponent implements OnInit {
       this.colorChoice = true;
       this.buttonValider = false;
       this.buttonModif = true;
+    
 
       // this.answersList = this.chatService.getAnswers(this.them)
       console.log(this.answersList);
