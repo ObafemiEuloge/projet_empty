@@ -1,37 +1,82 @@
+<div>
 
-    <nav class="navbar justify-content-between" id="navbg">
-        <div class="container">
-            <a routerLink="" class="navbar-brand d-flex align-items-center logo-flex">
+    <nav class="navbar navbar-dark fixed-top logo-flex">
+        <!-- <div class="container"> -->
+            <div class="container d-flex justify-content-between">
+                <a class="navbar-brand" routerLink="/">
+                    <img src="../assets/Empty-ressources/Sources/Logos/Logo blanc.png" class="logo" alt="Logo Seet">
+                </a>
+                <button class="navbar-toggler buttonToggle" type="button" data-bs-toggle="offcanvas"
+                    data-bs-target="#offcanvasDarkNavbar" aria-controls="offcanvasDarkNavbar"
+                    aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="offcanvas offcanvas-end text-bg-dark" tabindex="-1" id="offcanvasDarkNavbar"
+                    aria-labelledby="offcanvasDarkNavbarLabel">
+                    <div class="offcanvas-header">
+                        <h5 class="offcanvas-title" id="offcanvasDarkNavbarLabel">Seet</h5>
+                        <button type="button" class="btn-close btn-close-white" data-bs-dismiss="offcanvas"
+                            aria-label="Close"></button>
+                    </div>
+                    <div class="offcanvas-body">
+                        <ul class="navbar-nav justify-content-end flex-grow-1 pe-3">
+                            <li class="nav-item my-2 px-2">
+                                <a class="nav-link  active" aria-current="page" routerLink="/">Accueil</a>
+                            </li>
+                            <li class="nav-item my-2 px-2">
+                                <a class="nav-link" routerLink="/template">Galerie</a>
+                            </li>
+                            <li class="nav-item my-2 px-2 dropdown">
+                                <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
+                                    aria-expanded="false">
+                                    Mode
+                                </a>
+                                <ul class="dropdown-menu dropdown-menu-dark">
+                                    <li><a class="dropdown-item" href="#">Light Mode </a></li>
+                                    <li><a class="dropdown-item" href="#">Dark Mode</a></li>
+
+                                </ul>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        <!-- </div> -->
+    </nav>
+    <!-- <nav class="navbar navbar-expand-lg logo-flex">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="#">
                 <img src="../assets/Empty-ressources/Sources/Logos/Logo blanc.png" class="logo" alt="Logo Seet">
             </a>
-            <ul class="nav justify-content-end">
-                <li class="nav-item ">
-                    <a routerLink="" class="navLi btn me-2">
-                        <img src="../assets/Empty-ressources/Sources/Icons/accueil.png" alt="">
-                        <span>Home</span>
-                    </a>
-                </li>
-                <li class="nav-item ">
-                    <a routerLink="/template" class="navLi btn me-2">
-                        <img src="../assets/Empty-ressources/Sources/Icons/photos.png" alt="">
-                        <span>Galerie</span>
-                    </a>
-                </li>
-                <!-- <li class="nav-item ">
-                    <a href="#" class="navLi btn commencer me-2" routerLink="/start">Commencer</a>
-                </li> -->
-                <li class="nav-item ">
-                    <button href="#" class="navLi btn me-2" ><img src="../assets/Empty-ressources/Sources/Icons/soleil.png" alt=""></button>
-                </li>
-            </ul>
-            <!-- <a href="#" class="menuH"> <img src="../assets/Img/menu-fill (1).png" alt="menu" width="50rem" ></a> -->
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
+                aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="nav justify-content-end">
+                    <li class="nav-item ">
+                        <a routerLink="" class="navLi btn me-2">
+                            <img src="../assets/Empty-ressources/Sources/Icons/accueil.png" alt="">
+                            <span>Accueil</span>
+                        </a>
+                    </li>
+                    <li class="nav-item ">
+                        <a routerLink="/template" class="navLi btn me-2">
+                            <img src="../assets/Empty-ressources/Sources/Icons/photos.png" alt="">
+                            <span>Galerie</span>
+                        </a>
+                    </li>
+                    <li class="nav-item ">
+                        <button href="#" class="navLi btn me-2"><img
+                                src="../assets/Empty-ressources/Sources/Icons/soleil.png" alt=""></button>
+                    </li>
+                </ul>
+            </div>
         </div>
-    </nav>
+    </nav> -->
+
     <!-- <app-contact></app-contact> -->
     <!-- <app-template></app-template> -->
-    <router-outlet></router-outlet>
-
-
-<style>
-
-</style>
+</div>
+<router-outlet></router-outlet>
