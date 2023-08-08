@@ -79,18 +79,10 @@ export class ChatComponent implements OnInit {
       this.selectCat = false;
       this.inputThem = false;
       this.selectColor = true;
-      this.buttonSendMsg = false
+      this.buttonSendMsg = false;
       this.click = 3
     }
-    if (this.color !== "" && this.click === 3) {
-      this.colorInter = this.color;
-      this.answersList = this.chatService.getAnswers(this.them)
-      this.input = false;
-      this.selectCat = false;
-      this.selectThem = false;
-      this.click = 4
-    }
-
+  
   }
 
 
@@ -109,6 +101,8 @@ export class ChatComponent implements OnInit {
 
   });
 
+
+
   validerColor() {
     this.colorArray = []
     let pColor = this.profileForm.value.primaryColor
@@ -121,12 +115,18 @@ export class ChatComponent implements OnInit {
     this.colorArray?.push(pColor!, sColor!, tColor!);
     this.answersList?.push(this.colorArray.splice(0))
     this.colorChoice = true;
-    // this.answersList = this.chatService.getAnswers(this.them)
-    console.log(this.answersList);
-    console.log(this.pColor);
-
   }
 
+<<<<<<< HEAD
  
+=======
+  templateChoice = new FormGroup({
+    template_1: new FormControl(''),
+    template_2: new FormControl(''),
+    template_3: new FormControl(''),
+  });
+
+
+>>>>>>> 70864d97a9a9f54eb1d1a3fa7d647ac0d5afa7e1
 
 }
