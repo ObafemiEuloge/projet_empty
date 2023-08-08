@@ -94,7 +94,7 @@ h1 span {
     max-width: 40%;
     height: auto;
     margin-inline: -20%;
-    margin-block: -6%;
+    /* margin-block: -6%; */
 }
 
 div.all_img {
