@@ -48,6 +48,8 @@ export class ChatComponent implements OnInit {
   noColorChoice: boolean = false;
   buttonValider: boolean = false;
   buttonModif: boolean = false;
+  opacit: number | undefined;
+  mix: string = "";
   formContact: boolean = false;
 
   constructor(
@@ -56,6 +58,7 @@ export class ChatComponent implements OnInit {
 
   ngOnInit(): void {
     this.input = true;
+
   }
   click: number = 0
   sendNewQuiz() {
@@ -84,7 +87,7 @@ export class ChatComponent implements OnInit {
       this.buttonSendMsg = false;
       this.click = 3
     }
-  
+
   }
 
 
@@ -122,6 +125,11 @@ export class ChatComponent implements OnInit {
       this.buttonModif = true;
     
 
+
+      // this.answersList = this.chatService.getAnswers(this.them)
+      console.log(this.answersList);
+      this.opacit = 0.05;
+      this.mix = "screen"
       if (this.colorChoice === true || this.noColorChoice === true) {
         setTimeout(() => {
           this.formContact = true;
@@ -131,7 +139,7 @@ export class ChatComponent implements OnInit {
     }
     console.log(this.colorArray);
     return console.log(this.colorArray);
-    
+
   }
   modifColor() {
     this.buttonValider = true;
@@ -149,6 +157,8 @@ export class ChatComponent implements OnInit {
     this.buttonValider = false;
     this.noColorChoice = true;
     this.colorChoice = false;
+    this.opacit = 0.05;
+    this.mix = "screen"
 
     if (this.noColorChoice === true) {
       setTimeout(() => {
@@ -165,10 +175,10 @@ export class ChatComponent implements OnInit {
   });
 
   template: string = "";
-  choiceTemplate($event: any){
+  choiceTemplate($event: any) {
     this.template = $event.target.value;
     console.log(this.template);
-    
+
   }
 
 

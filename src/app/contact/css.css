@@ -1,0 +1,381 @@
+@charset "UTF-8";
+.chatbo {
+  /*=========== Feuille de style commune du template de chat ============*/
+  /*==== Ajuster la taille de l'image peut importe le  type de périphérique ===*/
+  /* Centrer le l'avatar */
+  /* Styler le texte de bienvenue */
+  /* Texte en dessous de l'avatar */
+  /*===================== Espace de discussion ==================== */
+  /* Espace de discussion */
+  /* Centrer le logo en dessous de l'espace de discussion */
+  /* Ajuster la taille du logo en dessous de l'espace de discussion */
+  /* Template */
+  /*================== LOGO NOIR Seet========================*/
+  /* La bulle des messages... */
+}
+.chatbo *,
+.chatbo *::before,
+.chatbo *::after {
+  box-sizing: border-box;
+}
+.chatbo .headerChat div.avatarSeet img {
+  max-width: 15%;
+}
+.chatbo p {
+  font-size: 1.1rem;
+}
+.chatbo .headerChat div.avatarSeet {
+  display: flex;
+  justify-content: center;
+}
+.chatbo .headerChat h1 {
+  color: #B2CC12;
+  font-weight: bolder;
+  text-align: center;
+}
+.chatbo .headerChat div.avatarText {
+  display: flex;
+  justify-content: center;
+}
+.chatbo .headerChat div.avatarText p {
+  color: #D7D6DC;
+  text-align: center;
+  max-width: 300px;
+  font-size: 1.2rem;
+}
+.chatbo .discussionSpace {
+  border-radius: 50px;
+  border-bottom-left-radius: 0px;
+  border-bottom-right-radius: 0px;
+  overflow: hidden;
+  padding: 0;
+  background-color: #333;
+}
+.chatbo .logoChat {
+  background-color: #B2CC12;
+}
+.chatbo .chatLogo .logoChat {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.chatbo .chatLogo .logoChat img {
+  mix-blend-mode: luminosity;
+  max-width: 3%;
+  margin-inline: 0.5rem;
+}
+.chatbo .chatLogo .logoChat span {
+  font-size: 1.8rem;
+  font-weight: 700;
+}
+.chatbo .chat .asked {
+  display: flex;
+  align-items: center;
+  height: 100%;
+}
+.chatbo .chat .ans {
+  display: flex;
+  align-items: center;
+  justify-content: end;
+  height: 100%;
+}
+.chatbo .chat .asked span {
+  color: #B2CC12;
+  padding-block: auto;
+  vertical-align: middle;
+}
+.chatbo .chat .ans span {
+  color: #B2CC12;
+  padding-block: auto;
+  vertical-align: middle;
+}
+.chatbo .chat .asked img {
+  max-width: 50px;
+  max-height: 50px;
+}
+.chatbo .chat .ans img {
+  max-width: 50px;
+  max-height: 50px;
+}
+.chatbo .chat .asked .chatbotMsg {
+  background-color: #4a494e;
+  padding: 1rem;
+  border-radius: 20px;
+  border-bottom-left-radius: 0;
+  color: #D7D6DC;
+  margin-bottom: 0;
+}
+.chatbo .chat .ans .chatbotMsg {
+  background-color: #B2CC12;
+  padding: 1rem;
+  border-radius: 20px;
+  border-bottom-left-radius: 0;
+  color: #4a494e;
+}
+.chatbo .chat .chatbotMsg p {
+  margin-bottom: 0.5rem;
+}
+.chatbo .answer {
+  display: flex;
+  justify-content: end;
+}
+.chatbo .answer .answerBox {
+  background-color: #B2CC12;
+  border-radius: 20px;
+  border-bottom-right-radius: 0;
+  padding: 1rem;
+}
+.chatbo .answer .answerBox p {
+  display: inline-block;
+  margin: 0;
+}
+.chatbo .answer .answerBox img {
+  max-width: 15px;
+  margin-left: 0.3rem;
+}
+.chatbo form {
+  flex-basis: 95%;
+}
+.chatbo form input[type=text],
+.chatbo form select {
+  background-color: #B2CC12;
+  color: black;
+  padding: 1rem;
+  width: 100%;
+  height: fit-content;
+  border: none;
+}
+.chatbo input:focus,
+.chatbo select:focus {
+  outline: none;
+}
+.chatbo svg {
+  cursor: pointer;
+  padding-right: 0.5rem;
+  flex-basis: 5%;
+  border: none;
+}
+.chatbo form ::placeholder {
+  color: black;
+}
+.chatbo .sendMsg {
+  background-color: #B2CC12;
+  border: none;
+  padding: 0;
+}
+.chatbo .validColor {
+  position: relative;
+  /* top: 10px; */
+  background-color: #B2CC12;
+  border: none;
+  padding: 0 2rem;
+  width: fit-content;
+  margin: 0.5rem 0;
+  border-radius: 20px;
+}
+.chatbo .annulerColor {
+  background-color: #df3d10;
+  border: none;
+  padding: 0 2rem;
+  width: fit-content;
+  margin: 0.5rem 0;
+  border-radius: 20px;
+}
+.chatbo .modifColor {
+  border: none;
+  background-color: #B2CC12;
+}
+.chatbo .modifColor img {
+  width: 18px;
+}
+.chatbo .selectColor {
+  background-color: #B2CC12;
+  padding: 1rem;
+}
+.chatbo .selectColor input[type=color] {
+  width: 50px;
+  padding: 0;
+}
+.chatbo .selectColor div span {
+  border: 1px solid;
+  padding: 0.3rem;
+}
+.chatbo .formColor {
+  position: relative;
+  display: flex;
+  flex-flow: column;
+  align-items: center;
+  background-color: #4a494e;
+  /* padding: 1rem; */
+  /* border-bottom-left-radius: 20px; */
+  padding-bottom: 0.2rem;
+  border-bottom-right-radius: 20px;
+  border-bottom-left-radius: 0;
+  color: #D7D6DC;
+  width: 100%;
+}
+.chatbo .divColor {
+  display: flex;
+  width: 100%;
+  justify-content: space-between;
+  padding: 0 1rem;
+}
+.chatbo .divColor div {
+  text-align: center;
+  flex-basis: 30%;
+}
+.chatbo .divColor div input {
+  width: 100%;
+  border-radius: 20px;
+  padding: 0 0.5rem;
+}
+.chatbo .divParaColor {
+  width: 50%;
+  margin-bottom: 1rem;
+}
+.chatbo .borde {
+  background-color: #4a494e;
+  padding: 0.5rem 1rem;
+  border-radius: 20px;
+  border-bottom-right-radius: 0px;
+  border-bottom-left-radius: 0;
+  color: #D7D6DC;
+  margin-bottom: 0;
+}
+.chatbo .divColorAns {
+  display: flex;
+  flex-flow: column;
+}
+.chatbo .divColorAns > p {
+  margin-bottom: 0.5rem;
+}
+.chatbo .divColorAns div {
+  display: flex;
+  gap: 1rem;
+  /* flex-flow: column; */
+}
+.chatbo .colorAns {
+  background-color: #fff;
+  border-radius: 50%;
+  width: 50px;
+  aspect-ratio: 1;
+}
+.chatbo .acceptColor {
+  background-color: #B2CC12;
+  border: none;
+  padding: 0 0.5rem;
+  width: fit-content;
+  margin: 1rem;
+  border-radius: 20px;
+}
+.chatbo .noColor {
+  background-color: #b82b0b;
+  color: #fff;
+  border: none;
+  padding: 0 0.5rem;
+  width: fit-content;
+  margin: 0.5rem 0;
+  border-radius: 20px;
+}
+.chatbo .buttonValAn {
+  display: flex;
+  gap: 1rem;
+}
+.chatbo .template {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1rem;
+}
+.chatbo .templateBox {
+  background-color: #4a494e;
+  text-align: center;
+}
+.chatbo .validTemp {
+  background-color: #B2CC12;
+  width: 150px;
+  font-weight: bolder;
+}
+.chatbo .template1,
+.chatbo .template2,
+.chatbo .template3 {
+  position: relative;
+  text-align: center;
+}
+.chatbo .inputTemplate {
+  position: absolute;
+  top: 10px;
+  left: 20px;
+  z-index: 2;
+}
+.chatbo .indiceTemplate {
+  text-align: center;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+}
+.chatbo .indiceTemplate div {
+  display: flex;
+  justify-content: center;
+}
+.chatbo .indiceTemplate span {
+  background-color: #B2CC12;
+  color: #4a494e;
+  padding: 5px;
+  width: 50px;
+  aspect-ratio: 1;
+  margin-top: 0.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 2px solid #B2CC12;
+  border-radius: 50%;
+  font-weight: bolder;
+  font-size: 1.2rem;
+}
+.chatbo .userAvatar {
+  width: 20px;
+  height: 20px;
+}
+.chatbo .userMsg {
+  border-radius: 20px;
+  border-bottom-right-radius: 0;
+  background-color: #B2CC12;
+  padding: 1rem;
+  color: #4a494e;
+}
+.chatbo .logoChat img.logoNoir {
+  width: 80px;
+}
+.chatbo .typing-indicator {
+  display: flex;
+  justify-content: center;
+}
+.chatbo .typing-indicator span {
+  width: 8px;
+  height: 8px;
+  margin: 0 2px;
+  border-radius: 50%;
+  background: #000;
+  display: inline-block;
+  animation: typing-indicator 1.5s infinite ease-in-out;
+}
+.chatbo .typing-indicator span:nth-child(1) {
+  animation-delay: -0.3s;
+}
+.chatbo .typing-indicator span:nth-child(2) {
+  animation-delay: -0.15s;
+}
+@keyframes typing-indicator {
+  0%, 80%, 100% {
+    transform: translateY(0);
+    opacity: 1;
+  }
+  30% {
+    transform: translateY(-6px);
+    opacity: 0.7;
+  }
+}
+.chatbo .questionBulle {
+  display: flex;
+}
+
+/*# sourceMappingURL=css.css.map */
