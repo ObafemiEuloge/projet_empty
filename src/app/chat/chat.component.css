@@ -578,6 +578,7 @@ button.validate {
 .myform {
     /* width: fit-content; */
     max-width: 100%;
+    height: 100vh;
     background-image: url("../../assets/Empty-ressources/Sources/Background/fond.jpg");
     background-size: cover;
     background-repeat: repeat;
@@ -669,7 +670,7 @@ fieldset{
     top: 0;
     left: 0;
     bottom: 0;
-    padding-bottom: 5rem;
+    /* padding-bottom: 5rem; */
 }
 
 .avatarSeetForm {

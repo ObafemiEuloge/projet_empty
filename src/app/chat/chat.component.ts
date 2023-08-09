@@ -5,6 +5,7 @@ import { opacityAnimation } from '../animation.module';
 import { CATEGORIE } from '../mock-infos';
 import { FormControl, FormGroup } from '@angular/forms';
 import { fakeAsync } from '@angular/core/testing';
+
 @Component({
   selector: 'app-chat',
   templateUrl: './chat.component.html',
@@ -18,39 +19,38 @@ export class ChatComponent implements OnInit {
 
   categories: Categorie[] = CATEGORIE; // récupérer le tableau stockant les catégories
 
-  titleSite: string = "";  // récupérer le nom du site de l'utilisateur
-  titleSiteInter: string = "";  // Réponse à afficher à l'utilisateur
+  titleSite: string = "";  // input du titre
+  titleSiteInter: string = "";  // titre de l'utilisateur qu'on interpole
 
-  categ: string = "";  // récupérer la catégorie de l'utilisateur
-  categInter: string = "";  // récupérer la catégorie de l'utilisateur
+  categ: string = "";  // select de la catégorie
+  categInter: string = "";  // la catégorie de l'utilisateur qu'on interpole
 
-  them: string = "";  // récupérer le thème de l'utilisateur
-  themInter: string = "";  // récupérer le thème de l'utilisateur
+  them: string = "";  // input du thème
+  themInter: string = "";  // le thème de l'utilisateur qu'on interpole
 
-  color: string = "";  // récupérer le thème de l'utilisateur
-  colorInter: string = "";  // récupérer le thème de l'utilisateur
+  color: string = "";  // le thème de l'utilisateur
+  colorInter: string = "";  // le thème de l'utilisateur qu'on interpole
 
-  pColor: string = "";
-  sColor: string = "";
-  tColor: string = "";
+  pColor: string = ""; // couleur primaire
+  sColor: string = ""; // couleur secondaire
+  tColor: string = ""; // couleur tertiaire
 
   colorArray: string[] | undefined = [];  // récupérer les couleurs de l'utilisateur
   colorArrayCopy: string[] = this.colorArray!  // récupérer les couleurs de l'utilisateur
 
   /** les champs de saisie */
-  input: boolean = false;
-  inputThem: boolean = false;
-  selectCat: boolean = false;
-  selectThem: boolean = false;
-  selectColor: boolean = false;
-  buttonSendMsg: boolean = true;
-  colorChoice: boolean = false;
-  noColorChoice: boolean = false;
-  buttonValider: boolean = false;
-  buttonModif: boolean = false;
-  opacit: number | undefined;
-  mix: string = "";
-  formContact: boolean = false;
+  input: boolean = false; // élément permettant d'entrer le nom du site
+  selectCat: boolean = false; // élément permettant d'entrer la catégorie
+  inputThem: boolean = false; // élément permettant d'entrer le thème
+  selectColor: boolean = false; // élément permettant d'entrer le
+  buttonSendMsg: boolean = true; // bouton permettant d'envoyer les réponses de l'utilisateur 
+  colorChoice: boolean = false; // élément permettant d'entrer le 
+  noColorChoice: boolean = false; // élément permettant d'entrer le
+  buttonValider: boolean = false; // élément permettant d'entrer le
+  buttonModif: boolean = false; // élément permettant d'entrer le
+  opacit: number | undefined; // élément permettant d'entrer le
+  mix: string = ""; // élément permettant d'entrer le
+  formContact: boolean = false; // élément permettant d'entrer le
 
   constructor(
     private chatService: ChatService
@@ -159,6 +159,7 @@ export class ChatComponent implements OnInit {
     this.colorChoice = false;
     this.opacit = 0.05;
     this.mix = "screen"
+    console.log(this.answersList);
 
     if (this.noColorChoice === true) {
       setTimeout(() => {
@@ -177,9 +178,21 @@ export class ChatComponent implements OnInit {
   template: string = "";
   choiceTemplate($event: any) {
     this.template = $event.target.value;
-    console.log(this.template);
+    this.answersList = this.chatService.getAnswers(this.template)
+  }
+
+  editTitle(){
 
   }
+
+  editCategory(){
+
+  }
+
+  editTheme(){
+
+  }
+
 
 
 }

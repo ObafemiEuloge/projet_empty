@@ -7,11 +7,11 @@
     </div>
     <h1 class="fs-1">Bienvenue !</h1>
     <div class="avatarText">
-        <p  [@opacityAnimation]>Afin de générer ton site, je te prie de remplir les champs ci-dessous</p>
+        <p [@opacityAnimation]>Afin de générer ton site, je te prie de remplir les champs ci-dessous</p>
     </div>
 </div>
 
-<div [@opacityAnimation] class="container discussionSpace my-5" >
+<div [@opacityAnimation] class="container discussionSpace my-5">
     <div class="chatLogo">
         <p class="text-center logoChat">
             <img src="../../assets/Logo noir.png" alt="Favicon Seet" class="logoNoir">
@@ -19,11 +19,10 @@
         </p>
     </div>
 
-
-
     <!-- Espace de discussion  -->
     <div class="chat px-md-5 py-md-3">
         <div>
+            <!-- question title site -->
             <div class="asked gap-sm-3">
                 <img src="../../assets/Empty-ressources/Sources/Avatar Seet/IDAvatar.png" alt="IDAvatar">
                 <span class="fw-bolder fs-1">.</span>
@@ -33,47 +32,64 @@
                         <span></span>
                         <span></span>
                       </div> -->
-                    <p class="chatbotMsg" [@opacityAnimation]> Bienvenue ! Alors, quel nom veux-tu donner à ton site ? </p>
+                    <p class="chatbotMsg" [@opacityAnimation]> Bienvenue ! Alors, quel nom veux-tu donner à ton site ?
+                    </p>
                 </div>
             </div>
+            <!-- Title du site de l'utilisateur -->
             <div class="ans gap-sm-3" *ngIf="titleSiteInter !== ''">
-                <p class="userMsg">
-                    {{ titleSiteInter }}
-                     <button type="button" class="btnEdit"><img class="imgEdit" src="../../assets/Empty-ressources/Sources/Icons/editer.png" alt="IDAvatar"></button>
+                <p class="userMsg"> {{ titleSiteInter }}
+                    <!-- button editTitle -->
+                    <button type="button" class="btnEdit" (click)="editTitle()">
+                        <img class="imgEdit" src="../../assets/Empty-ressources/Sources/Icons/editer.png"
+                            alt="IDAvatar">
+                    </button>
                 </p>
-
                 <img src="../../assets/Empty-ressources/Sources/Avatar Seet/IDAvatar.png" class="userAvatar"
                     alt="IDAvatar">
             </div>
+
+            <!-- question catégorie -->
             <div class="asked gap-sm-3" *ngIf="titleSiteInter !== ''">
                 <img src="../../assets/Empty-ressources/Sources/Avatar Seet/IDAvatar.png" alt="IDAvatar">
                 <span class="fw-bolder fs-1">.</span>
                 <p class="chatbotMsg" [@opacityAnimation]> Génial ! Dans quelle catégorie veux-tu mettre ton site ? </p>
             </div>
+            <!-- Catégorie choisie -->
             <div class="ans gap-sm-3" *ngIf="categInter !== ''">
-                <p class="userMsg">
-                    {{categInter}} 
-                    <button type="button" class="btnEdit"><img class="imgEdit" src="../../assets/Empty-ressources/Sources/Icons/editer.png" alt="IDAvatar"></button>
+                <p class="userMsg"> {{categInter}}
+                    <!-- button editCategory -->
+                    <button type="button" class="btnEdit" (click)="editCategory()">
+                        <img class="imgEdit" src="../../assets/Empty-ressources/Sources/Icons/editer.png"
+                            alt="IDAvatar">
+                    </button>
                 </p>
                 <img src="../../assets/Empty-ressources/Sources/Avatar Seet/IDAvatar.png" class="userAvatar"
                     alt="IDAvatar">
             </div>
 
+            <!-- question thème -->
             <div class="asked gap-sm-3" *ngIf="categInter !== ''">
                 <img src="../../assets/Empty-ressources/Sources/Avatar Seet/IDAvatar.png" alt="IDAvatar">
                 <span class="fw-bolder fs-1">.</span>
-                <p class="chatbotMsg" [@opacityAnimation]> D'accord. Dis-moi précisement de quel thème veut parler ton site et qui est en rapport avec la catégorie que tu as choisie. </p>
+                <p class="chatbotMsg" [@opacityAnimation]> D'accord. Dis-moi précisement de quel thème veut parler ton
+                    site et qui est en rapport avec la catégorie que tu as choisie. </p>
             </div>
+            <!-- Thème de l'utilisateur -->
             <div class="ans gap-sm-3" *ngIf="themInter !== ''">
-                    <p class="userMsg"> {{themInter}} 
-                        <button type="button" class="btnEdit"><img class="imgEdit" src="../../assets/Empty-ressources/Sources/Icons/editer.png" alt="IDAvatar"></button>
-                    </p>
-                    
+                <p class="userMsg"> {{themInter}}
+                    <!-- button editTheme -->
+                    <button type="button" class="btnEdit" (click)="editTheme()">
+                        <img class="imgEdit" src="../../assets/Empty-ressources/Sources/Icons/editer.png"
+                            alt="IDAvatar">
+                    </button>
+                </p>
+
                 <img class="userAvatar" src="../../assets/Empty-ressources/Sources/Avatar Seet/IDAvatar.png"
                     alt="IDAvatar">
             </div>
 
-            <!-- Choix du template -->
+            <!-- question Choix du template -->
             <div *ngIf="themInter !== ''">
                 <div class="asked gap-sm-3">
                     <img src="../../assets/Empty-ressources/Sources/Avatar Seet/IDAvatar.png" alt="IDAvatar">
@@ -200,26 +216,30 @@
                         <!-- <button type="button" class="validTemp btn p-1 mt-4" (click)="validerTemplate()">Valider</button> -->
                     </div>
                 </form>
-
-                <div class="ans gap-sm-3 mt-3" *ngIf="template !== ''">
-                    <!-- {{template}} -->
-                    <p class="userMsg">
-                        <strong>Choix du template:</strong> {{template}} <button type="button" class="modifColor"
-                            (click)="modifColor()"><img class="userAvatar"
-                                src="../../assets/Empty-ressources/Sources/Icons/editer.png" alt="IDAvatar"></button>
-                    </p>
-                    <img class="userAvatar" src="../../assets/Empty-ressources/Sources/Avatar Seet/IDAvatar.png"
-                        alt="IDAvatar">
-                </div>
+            </div>
+            <!-- {{template}} choisi -->
+            <div class="ans gap-sm-3 mt-3" *ngIf="template !== ''">
+                <p class="userMsg">
+                    <strong>Choix du template:</strong> {{template}}
+                    <!-- button editTemplate -->
+                    <button type="button" class="modifColor" (click)="modifColor()">
+                        <img class="userAvatar" src="../../assets/Empty-ressources/Sources/Icons/editer.png"
+                            alt="IDAvatar">
+                    </button>
+                </p>
+                <img class="userAvatar" src="../../assets/Empty-ressources/Sources/Avatar Seet/IDAvatar.png"
+                    alt="IDAvatar">
             </div>
 
+            <!-- question choix des couleurs (facultatif) -->
             <div class="asked gap-sm-3" *ngIf="template !== ''">
                 <img src="../../assets/Empty-ressources/Sources/Avatar Seet/IDAvatar.png" alt="IDAvatar">
                 <span class="fw-bolder fs-1">.</span>
                 <div class="divParaColor">
                     <p class=" borde" [@opacityAnimation]>Voulez-vous Choisir une palette de couleurs pour votre site ?
-                        <button type="button" class="acceptColor" (click)="acceptColor()">Oui</button> <button
-                            type="button" class="noColor" (click)="noColor()">Non</button>
+                        <button type="button" class="acceptColor" (click)="acceptColor()">Oui</button>
+                        <button type="button" class="noColor" (click)="noColor()">Non
+                        </button>
                     </p>
                     <div *ngIf="buttonValider === true">
                         <form [formGroup]="profileForm" (ngSubmit)="validerColor()" class=" formColor">
@@ -253,12 +273,14 @@
                     </div>
                 </div>
             </div>
-
+            <!-- Choix des couleurs -->
             <div class="ans gap-sm-3" *ngIf="colorChoice === true">
                 <div class="divColorAns" *ngIf="pColor !== '' || sColor !== '' || tColor !== ''">
-                    <p class="userMsg"> Alors, voici les couleurs que tu as choisies. <button *ngIf="buttonModif === true" type="button"
-                            class="modifColor" (click)="modifColor()"><img class="userAvatar"
-                                src="../../assets/Empty-ressources/Sources/Icons/editer.png" alt="IDAvatar"></button>
+                    <p class="userMsg"> Alors, voici les couleurs que tu as choisies.
+                        <button *ngIf="buttonModif === true" type="button" class="modifColor" (click)="modifColor()">
+                            <img class="userAvatar" src="../../assets/Empty-ressources/Sources/Icons/editer.png"
+                                alt="IDAvatar">
+                        </button>
                     </p>
                     <div>
                         <p class="colorAns" [style.backgroundColor]="pColor"></p>
@@ -269,13 +291,15 @@
                 <span class="fw-bolder fs-1">.</span>
                 <img src="../../assets/Empty-ressources/Sources/Avatar Seet/IDAvatar.png" alt="IDAvatar">
             </div>
+
+            <!-- Aucun choix de couleurs -->
             <div class="ans gap-sm-3" *ngIf="noColorChoice === true">
                 <p class="userMsg"> Vous n'avez choisit aucune couleur</p>
                 <img class="userAvatar" src="../../assets/Empty-ressources/Sources/Avatar Seet/IDAvatar.png"
                     alt="IDAvatar">
             </div>
 
-
+            <!-- Message de félicitation -->
             <div class="asked gap-sm-3" *ngIf="colorChoice === true || noColorChoice === true">
                 <img src="../../assets/Empty-ressources/Sources/Avatar Seet/IDAvatar.png" alt="IDAvatar">
                 <span class="fw-bolder fs-1">.</span>
@@ -284,13 +308,17 @@
                     remplis le formulaire ci-contre</p>
             </div>
         </div>
-
     </div>
+
+    <!-- Formulaire servant de répondre aux questions -->
     <div class="formDiv d-flex">
         <form action="" method="post" #formSearch="ngForm">
             <ng-container>
+                <!-- Champ de saisit du nom de site -->
                 <input *ngIf="input === true" [(ngModel)]="titleSite" type="text" name="title" id="title"
                     (keyup.enter)="sendNewQuiz()" placeholder="Saisissez le nom de votre site ici...." required>
+
+                <!-- Selection de la catégorie -->
                 <select *ngIf="selectCat === true" id="categorie" aria-label="Large select example" name="categ"
                     [(ngModel)]="categ">
                     <option value="" disabled selected>Sélectionne une catégorie dans la liste suivante
@@ -298,10 +326,14 @@
                     <option [value]="categorie.titre" *ngFor="let categorie of categories"> {{categorie.titre}}
                     </option>
                 </select>
+
+                <!-- Champ de saisir du thème -->
                 <input *ngIf="inputThem === true" [(ngModel)]="them" type="text" name="them" id="them"
                     (keyup.enter)="sendNewQuiz()" placeholder="Saisissez votre thème ici...." required>
             </ng-container>
         </form>
+
+        <!-- Button d'envoi des réponses -->
         <button *ngIf="buttonSendMsg === true" type="button" style="width: 5%;" class="sendMsg" (click)="sendNewQuiz()">
             <svg xmlns="http://www.w3.org/2000/svg" width="45px" style="background-color: #B2CC12; border: none;"
                 fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="">
@@ -312,19 +344,19 @@
     </div>
 </div>
 
-<!-- Page de contact -->
-
+<!-- ************************ Page de contact ************************ -->
 <div class="parentForm" *ngIf="formContact === true">
-    <div [@opacityAnimation] class="myform my-4" >
-        <div  class="avatarSeetForm">
+    <div [@opacityAnimation] class="myform my-4">
+        <div class="avatarSeetForm">
             <img src="../../assets/Empty-ressources/Sources/Avatar Seet/Avatar SEET.png" alt="Avatar SEET" width="250">
             <p><strong>Remplis ce formulaire et reçois <br> ton site web...</strong></p>
         </div>
-    
+
         <div class="formul my-4">
             <form action="" class="formContact">
                 <fieldset>
-                    <div class="pt-logo"><span class="favIcon"><img src="../../assets/Logo noir.png" alt="Logo Seet" width="20"> Seet</span></div>
+                    <div class="pt-logo"><span class="favIcon"><img src="../../assets/Logo noir.png" alt="Logo Seet"
+                                width="20"> Seet</span></div>
                     <!-- <label for="Fname" class="text-dark fs-2"></label> -->
                     <input type="email" id="Fname" placeholder="Votre nom ">
                     <br><br>
@@ -336,6 +368,6 @@
                 </fieldset>
             </form>
         </div>
-    
+
     </div>
 </div>
