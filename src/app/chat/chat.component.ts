@@ -48,7 +48,7 @@ export class ChatComponent implements OnInit {
   noColorChoice: boolean = false;
   buttonValider: boolean = false;
   buttonModif: boolean = false;
-  formContact: boolean = true;
+  formContact: boolean = false;
 
   constructor(
     private chatService: ChatService
