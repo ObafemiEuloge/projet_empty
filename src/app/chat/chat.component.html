@@ -7,11 +7,11 @@
     </div>
     <h1 class="fs-1">Bienvenue !</h1>
     <div class="avatarText">
-        <p  [@opacityAnimation]>Afin de générer ton site, je te prie de remplir les champs ci-dessous</p>
+        <p [@opacityAnimation]>Afin de générer ton site, je te prie de remplir les champs ci-dessous</p>
     </div>
 </div>
 
-<div [@opacityAnimation] class="container discussionSpace my-5" >
+<div [@opacityAnimation] class="container discussionSpace my-5">
     <div class="chatLogo">
         <p class="text-center logoChat">
             <img src="../../assets/Logo noir.png" alt="Favicon Seet" class="logoNoir">
@@ -33,13 +33,15 @@
                         <span></span>
                         <span></span>
                       </div> -->
-                    <p class="chatbotMsg" [@opacityAnimation]> Bienvenue ! Alors, quel nom veux-tu donner à ton site ? </p>
+                    <p class="chatbotMsg" [@opacityAnimation]> Bienvenue ! Alors, quel nom veux-tu donner à ton site ?
+                    </p>
                 </div>
             </div>
             <div class="ans gap-sm-3" *ngIf="titleSiteInter !== ''">
                 <p class="userMsg">
                     {{ titleSiteInter }}
-                     <button type="button" class="btnEdit"><img class="imgEdit" src="../../assets/Empty-ressources/Sources/Icons/editer.png" alt="IDAvatar"></button>
+                    <button type="button" class="btnEdit"><img class="imgEdit"
+                            src="../../assets/Empty-ressources/Sources/Icons/editer.png" alt="IDAvatar"></button>
                 </p>
 
                 <img src="../../assets/Empty-ressources/Sources/Avatar Seet/IDAvatar.png" class="userAvatar"
@@ -52,8 +54,9 @@
             </div>
             <div class="ans gap-sm-3" *ngIf="categInter !== ''">
                 <p class="userMsg">
-                    {{categInter}} 
-                    <button type="button" class="btnEdit"><img class="imgEdit" src="../../assets/Empty-ressources/Sources/Icons/editer.png" alt="IDAvatar"></button>
+                    {{categInter}}
+                    <button type="button" class="btnEdit"><img class="imgEdit"
+                            src="../../assets/Empty-ressources/Sources/Icons/editer.png" alt="IDAvatar"></button>
                 </p>
                 <img src="../../assets/Empty-ressources/Sources/Avatar Seet/IDAvatar.png" class="userAvatar"
                     alt="IDAvatar">
@@ -62,13 +65,15 @@
             <div class="asked gap-sm-3" *ngIf="categInter !== ''">
                 <img src="../../assets/Empty-ressources/Sources/Avatar Seet/IDAvatar.png" alt="IDAvatar">
                 <span class="fw-bolder fs-1">.</span>
-                <p class="chatbotMsg" [@opacityAnimation]> D'accord. Dis-moi précisement de quel thème veut parler ton site et qui est en rapport avec la catégorie que tu as choisie. </p>
+                <p class="chatbotMsg" [@opacityAnimation]> D'accord. Dis-moi précisement de quel thème veut parler ton
+                    site et qui est en rapport avec la catégorie que tu as choisie. </p>
             </div>
             <div class="ans gap-sm-3" *ngIf="themInter !== ''">
-                    <p class="userMsg"> {{themInter}} 
-                        <button type="button" class="btnEdit"><img class="imgEdit" src="../../assets/Empty-ressources/Sources/Icons/editer.png" alt="IDAvatar"></button>
-                    </p>
-                    
+                <p class="userMsg"> {{themInter}}
+                    <button type="button" class="btnEdit"><img class="imgEdit"
+                            src="../../assets/Empty-ressources/Sources/Icons/editer.png" alt="IDAvatar"></button>
+                </p>
+
                 <img class="userAvatar" src="../../assets/Empty-ressources/Sources/Avatar Seet/IDAvatar.png"
                     alt="IDAvatar">
             </div>
@@ -256,9 +261,10 @@
 
             <div class="ans gap-sm-3" *ngIf="colorChoice === true">
                 <div class="divColorAns" *ngIf="pColor !== '' || sColor !== '' || tColor !== ''">
-                    <p class="userMsg"> Alors, voici les couleurs que tu as choisies. <button *ngIf="buttonModif === true" type="button"
-                            class="modifColor" (click)="modifColor()"><img class="userAvatar"
-                                src="../../assets/Empty-ressources/Sources/Icons/editer.png" alt="IDAvatar"></button>
+                    <p class="userMsg"> Alors, voici les couleurs que tu as choisies. <button
+                            *ngIf="buttonModif === true" type="button" class="modifColor" (click)="modifColor()"><img
+                                class="userAvatar" src="../../assets/Empty-ressources/Sources/Icons/editer.png"
+                                alt="IDAvatar"></button>
                     </p>
                     <div>
                         <p class="colorAns" [style.backgroundColor]="pColor"></p>
@@ -315,16 +321,17 @@
 <!-- Page de contact -->
 
 <div class="parentForm" *ngIf="formContact === true">
-    <div [@opacityAnimation] class="myform my-4" >
-        <div  class="avatarSeetForm">
+    <div [@opacityAnimation] class="myform my-4">
+        <div class="avatarSeetForm">
             <img src="../../assets/Empty-ressources/Sources/Avatar Seet/Avatar SEET.png" alt="Avatar SEET" width="250">
             <p><strong>Remplis ce formulaire et reçois <br> ton site web...</strong></p>
         </div>
-    
+
         <div class="formul my-4">
             <form action="" class="formContact">
                 <fieldset>
-                    <div class="pt-logo"><span class="favIcon"><img src="../../assets/Logo noir.png" alt="Logo Seet" width="20"> Seet</span></div>
+                    <div class="pt-logo"><span class="favIcon"><img src="../../assets/Logo noir.png" alt="Logo Seet"
+                                width="20"> Seet</span></div>
                     <!-- <label for="Fname" class="text-dark fs-2"></label> -->
                     <input type="email" id="Fname" placeholder="Votre nom ">
                     <br><br>
@@ -336,6 +343,6 @@
                 </fieldset>
             </form>
         </div>
-    
+
     </div>
 </div>
