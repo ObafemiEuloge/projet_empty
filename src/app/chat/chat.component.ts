@@ -50,6 +50,7 @@ export class ChatComponent implements OnInit {
   buttonModif: boolean = false;
   opacit: number | undefined;
   mix: string = "";
+  formContact: boolean = false;
 
   constructor(
     private chatService: ChatService
@@ -122,12 +123,19 @@ export class ChatComponent implements OnInit {
       this.colorChoice = true;
       this.buttonValider = false;
       this.buttonModif = true;
+    
 
 
       // this.answersList = this.chatService.getAnswers(this.them)
       console.log(this.answersList);
       this.opacit = 0.05;
       this.mix = "screen"
+      if (this.colorChoice === true || this.noColorChoice === true) {
+        setTimeout(() => {
+          this.formContact = true;
+        }, 3000);
+
+      }
     }
     console.log(this.colorArray);
     return console.log(this.colorArray);
@@ -151,6 +159,13 @@ export class ChatComponent implements OnInit {
     this.colorChoice = false;
     this.opacit = 0.05;
     this.mix = "screen"
+
+    if (this.noColorChoice === true) {
+      setTimeout(() => {
+        this.formContact = true;
+      }, 3000);
+
+    }
   }
 
   templateChoice = new FormGroup({

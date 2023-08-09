@@ -1,6 +1,43 @@
 .carouselParent{
-    margin-top: 2.5rem;
+    margin-top: 5rem;
     display: grid;
     grid-template-columns: 1fr 1fr;
     gap: 3rem;
+}
+
+.divCarousel {
+    border: solid 1px #B2CC12;
+    transition: all 0.5s;
+}
+
+.divCarousel:hover{
+    transform: scale(0.8);
+}
+
+h2{
+    margin-top: 10rem;
+    color: #D7D6DC;
+    text-align: center;
+    font-size: 2.5rem;
+    
+}
+
+@media screen and (max-width: 980px) {
+    h1{
+        font-size: 4rem;
+    }
+
+    img.img{
+        max-width: 70%;
+        height: auto;
+        margin-inline: -35%;
+        
+    }
+}
+
+
+@media screen and (max-width: 780px) {
+    .carouselParent{
+        grid-template-columns: 1fr;
+    }
 }

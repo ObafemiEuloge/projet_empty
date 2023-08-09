@@ -32,7 +32,7 @@ li a {
     font-weight: bold;
     transition: all 0.5s;
     font-size: 1.2rem;
-    border: solid 1px #B2CC12;
+    /* border: solid 1px #B2CC12; */
 }
 
 .commencer {
@@ -68,6 +68,6 @@ ul li .commencer:hover{
 
 .buttonToggle span{
     /* border-color: #181818; */
-    mix-blend-mode: exclusion;
+    mix-blend-mode: difference;
     width: 30px;
 }
