@@ -36,21 +36,29 @@ export class ChatComponent implements OnInit {
   tColor: string = ""; // couleur tertiaire
 
   colorArray: string[] | undefined = [];  // récupérer les couleurs de l'utilisateur
-  colorArrayCopy: string[] = this.colorArray!  // récupérer les couleurs de l'utilisateur
+  colorArrayCopy: string[] = this.colorArray!  // copie du tableau des couleurs
 
   /** les champs de saisie */
-  input: boolean = false; // élément permettant d'entrer le nom du site
-  selectCat: boolean = false; // élément permettant d'entrer la catégorie
-  inputThem: boolean = false; // élément permettant d'entrer le thème
-  selectColor: boolean = false; // élément permettant d'entrer le
+  input: boolean = false; // propriété permettant d'afficher le champ permettant d'entrer le nom du site
+  selectCat: boolean = false; // propriété permettant d'afficher le champ permettant d'entrer la catégorie
+  inputThem: boolean = false; // propriété permettant d'afficher le champ permettant d'entrer le thème
+  template: string = ""; // propriété permettant de préciser le template choisit
+
+  colorChoice: boolean = false; // propriété permettant d'afficher les réponses des couleurs 
+
+  noColorChoice: boolean = false; // propriété permettant d'afficher la réponses au cas ou on ne choisit pas de couleurs
+  buttonValider: boolean = false; // bouton pour valider les couleurs
+
+  buttonModif: boolean = false; // bouton pour modifier les couleurs
+  buttonModifTemplate: boolean = false; // bouton pour modifier le template
+
   buttonSendMsg: boolean = true; // bouton permettant d'envoyer les réponses de l'utilisateur 
-  colorChoice: boolean = false; // élément permettant d'entrer le 
-  noColorChoice: boolean = false; // élément permettant d'entrer le
-  buttonValider: boolean = false; // élément permettant d'entrer le
-  buttonModif: boolean = false; // élément permettant d'entrer le
-  opacit: number | undefined; // élément permettant d'entrer le
-  mix: string = ""; // élément permettant d'entrer le
-  formContact: boolean = false; // élément permettant d'entrer le
+  buttonModifMsg: boolean = false; // bouton permettant d'envoyer les réponses de l'utilisateur modifiées
+  congratulation: boolean = false; // propriété permettant d'afficher le formulaire de contact
+  formContact: boolean = false; // propriété permettant d'afficher le formulaire de contact
+
+  click: number = 0 // compteur du click du button d'envoi des messages
+  clickMod: number = 0 // compteur du click du button d'envoi des messages modifiées
 
   constructor(
     private chatService: ChatService
@@ -58,10 +66,12 @@ export class ChatComponent implements OnInit {
 
   ngOnInit(): void {
     this.input = true;
-
   }
-  click: number = 0
-  sendNewQuiz() {
+
+  /**
+   * Fonction d'envoi des réponses
+   */
+  sendAns() {
     if (this.titleSite !== "" && this.click === 0) {
       this.titleSiteInter = this.titleSite;
       this.answersList = this.chatService.getAnswers(this.titleSite)
@@ -83,14 +93,91 @@ export class ChatComponent implements OnInit {
       this.input = false;
       this.selectCat = false;
       this.inputThem = false;
-      this.selectColor = true;
       this.buttonSendMsg = false;
       this.click = 3
     }
 
   }
+  /**
+   * Fonction d'envoi des réponses modifiées
+   */
+  sendModif() {
+    if (this.input === true) {
+      this.titleSiteInter = this.titleSite;
+      this.answersList = this.chatService.getAnswers(this.titleSite)
+      this.buttonModifMsg = false;
+      this.input = false;
+    }
+    if (this.selectCat === true) {
+      this.categInter = this.categ;
+      this.answersList = this.chatService.getAnswers(this.categ)
+      this.buttonModifMsg = false;
+      this.selectCat = false;
+    }
+    if (this.inputThem === true) {
+      this.themInter = this.them;
+      this.answersList = this.chatService.getAnswers(this.them)
+      this.buttonModifMsg = false;
+      this.inputThem = false;
+    }
+  }
+
+  /**
+ * Fonction de modification du nom de site
+ */
+  editTitle() {
+    this.input = true;
+    this.selectCat = false;
+    this.inputThem = false;
+    this.buttonSendMsg = false;
+    this.buttonModifMsg = true;
+  }
+
+  /**
+   * Fonction de modification de la catégorie
+   */
+  editCategory() {
+    this.input = false;
+    this.selectCat = true;
+    this.inputThem = false;
+    this.buttonSendMsg = false;
+    this.buttonModifMsg = true;
+  }
+
+  /**
+   * Fonction de modification du thème
+   */
+  editTheme() {
+    this.input = false;
+    this.selectCat = false;
+    this.inputThem = true;
+    this.buttonSendMsg = false;
+    this.buttonModifMsg = true;
+  }
+
+  /**
+   * Fonction de modification du template
+   */
+  editTemplate() {
+    this.template = "";
+    this.buttonModifTemplate = false;
+  }
 
 
+  /**
+   * Fonction permettant de choisir un template
+   * @param $event 
+   */
+  choiceTemplate($event: any) {
+    this.template = $event.target.value;
+    this.answersList = this.chatService.getAnswers(this.template)
+    this.buttonModifTemplate = true;
+    this.congratulation = true;
+  }
+
+  /**
+   * FormGroup des couleurs
+   */
   profileForm = new FormGroup({
     // Primary Color
     primaryColor: new FormControl(''),
@@ -106,8 +193,10 @@ export class ChatComponent implements OnInit {
 
   });
 
-
-
+  /**
+   * Fonction de validation des couleurs
+   * @returns 
+   */
   validerColor() {
     this.colorArray = []
     let pColor = this.profileForm.value.primaryColor
@@ -123,14 +212,11 @@ export class ChatComponent implements OnInit {
       this.colorChoice = true;
       this.buttonValider = false;
       this.buttonModif = true;
-    
-
+      this.noColorChoice = false;
 
       // this.answersList = this.chatService.getAnswers(this.them)
       console.log(this.answersList);
-      this.opacit = 0.05;
-      this.mix = "screen"
-      if (this.colorChoice === true || this.noColorChoice === true) {
+      if (this.colorChoice === true) {
         setTimeout(() => {
           this.formContact = true;
         }, 3000);
@@ -141,58 +227,56 @@ export class ChatComponent implements OnInit {
     return console.log(this.colorArray);
 
   }
+
+  /**
+   * Fonction de modificaton des couleurs
+   */
   modifColor() {
     this.buttonValider = true;
     this.buttonModif = false;
   }
+
+  /**
+   * Fonction d'annulation de la modification des couleurs
+   */
   annulerColor() {
     this.buttonValider = false;
     this.buttonModif = true;
   }
+
+  /**
+   * Fonction pour choisir des palettes de couleurs
+   */
   acceptColor() {
     this.buttonValider = true;
     this.noColorChoice = false;
   }
+
+  /**
+   * Fonction permettant de ne pas choisir de palette de couleurs
+   */
   noColor() {
     this.buttonValider = false;
     this.noColorChoice = true;
     this.colorChoice = false;
-    this.opacit = 0.05;
-    this.mix = "screen"
+    this.buttonModif = true;
     console.log(this.answersList);
 
     if (this.noColorChoice === true) {
       setTimeout(() => {
         this.formContact = true;
       }, 3000);
-
     }
   }
 
-  templateChoice = new FormGroup({
-    template_1: new FormControl(''),
-    template_2: new FormControl(''),
-    template_3: new FormControl(''),
-  });
-
-  template: string = "";
-  choiceTemplate($event: any) {
-    this.template = $event.target.value;
-    this.answersList = this.chatService.getAnswers(this.template)
+  /**
+   * Fonction permettant de revenir sur le chat bot au cas ou on veut faire des modification
+   */
+  retour() {
+    this.congratulation = false;
+    setTimeout(() => {
+      this.formContact = false;
+    }, 1000);
   }
-
-  editTitle(){
-
-  }
-
-  editCategory(){
-
-  }
-
-  editTheme(){
-
-  }
-
-
 
 }

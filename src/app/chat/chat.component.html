@@ -96,7 +96,7 @@
                     <span class="fw-bolder fs-1">.</span>
                     <p class="chatbotMsg" [@opacityAnimation]>Veuillez choisir un template ! </p>
                 </div>
-                <form action="" [formGroup]="templateChoice" class=" formColor">
+                <form action="" class=" formColor" *ngIf="buttonModifTemplate === false">
                     <div class="templateBox p-3 ms-4 mt-3">
                         <div class="template">
                             <!-- Template 1 -->
@@ -222,7 +222,7 @@
                 <p class="userMsg">
                     <strong>Choix du template:</strong> {{template}}
                     <!-- button editTemplate -->
-                    <button type="button" class="modifColor" (click)="modifColor()">
+                    <button type="button" class="modifColor" *ngIf="buttonModifTemplate === true" (click)="editTemplate()">
                         <img class="userAvatar" src="../../assets/Empty-ressources/Sources/Icons/editer.png"
                             alt="IDAvatar">
                     </button>
@@ -274,7 +274,7 @@
                 </div>
             </div>
             <!-- Choix des couleurs -->
-            <div class="ans gap-sm-3" *ngIf="colorChoice === true">
+            <div class="ans gap-sm-3" *ngIf="colorChoice === true && template !== ''">
                 <div class="divColorAns" *ngIf="pColor !== '' || sColor !== '' || tColor !== ''">
                     <p class="userMsg"> Alors, voici les couleurs que tu as choisies.
                         <button *ngIf="buttonModif === true" type="button" class="modifColor" (click)="modifColor()">
@@ -293,14 +293,19 @@
             </div>
 
             <!-- Aucun choix de couleurs -->
-            <div class="ans gap-sm-3" *ngIf="noColorChoice === true">
-                <p class="userMsg"> Vous n'avez choisit aucune couleur</p>
+            <div class="ans gap-sm-3" *ngIf="noColorChoice === true && template !== ''">
+                <p class="userMsg"> Vous n'avez choisit aucune couleur
+                    <button *ngIf="buttonModif === true" type="button" class="modifColor" (click)="modifColor()">
+                        <img class="userAvatar" src="../../assets/Empty-ressources/Sources/Icons/editer.png"
+                            alt="IDAvatar">
+                    </button>
+                </p>
                 <img class="userAvatar" src="../../assets/Empty-ressources/Sources/Avatar Seet/IDAvatar.png"
                     alt="IDAvatar">
             </div>
 
             <!-- Message de félicitation -->
-            <div class="asked gap-sm-3" *ngIf="colorChoice === true || noColorChoice === true">
+            <div class="asked gap-sm-3" *ngIf="congratulation === true && buttonModif === true && template !== '' && buttonModifTemplate === true">
                 <img src="../../assets/Empty-ressources/Sources/Avatar Seet/IDAvatar.png" alt="IDAvatar">
                 <span class="fw-bolder fs-1">.</span>
                 <p class="chatbotMsg" [@opacityAnimation]> Génial ! Tu y es presque. Maintenant, pour recevoir ton
@@ -316,7 +321,7 @@
             <ng-container>
                 <!-- Champ de saisit du nom de site -->
                 <input *ngIf="input === true" [(ngModel)]="titleSite" type="text" name="title" id="title"
-                    (keyup.enter)="sendNewQuiz()" placeholder="Saisissez le nom de votre site ici...." required>
+                     placeholder="Saisissez le nom de votre site ici...." required>
 
                 <!-- Selection de la catégorie -->
                 <select *ngIf="selectCat === true" id="categorie" aria-label="Large select example" name="categ"
@@ -329,12 +334,20 @@
 
                 <!-- Champ de saisir du thème -->
                 <input *ngIf="inputThem === true" [(ngModel)]="them" type="text" name="them" id="them"
-                    (keyup.enter)="sendNewQuiz()" placeholder="Saisissez votre thème ici...." required>
+                     placeholder="Saisissez votre thème ici...." required>
             </ng-container>
         </form>
 
         <!-- Button d'envoi des réponses -->
-        <button *ngIf="buttonSendMsg === true" type="button" style="width: 5%;" class="sendMsg" (click)="sendNewQuiz()">
+        <button *ngIf="buttonSendMsg === true" type="button" style="width: 5%;" class="sendMsg" (click)="sendAns()">
+            <svg xmlns="http://www.w3.org/2000/svg" width="45px" style="background-color: #B2CC12; border: none;"
+                fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="">
+                <path stroke-linecap="round" stroke-linejoin="round"
+                    d="M6 12L3.269 3.126A59.768 59.768 0 0121.485 12 59.77 59.77 0 013.27 20.876L5.999 12zm0 0h7.5" />
+            </svg>
+        </button>
+        <!-- button de modification -->
+        <button *ngIf="buttonModifMsg === true" type="button" style="width: 5%;" class="sendMsg" (click)="sendModif()">
             <svg xmlns="http://www.w3.org/2000/svg" width="45px" style="background-color: #B2CC12; border: none;"
                 fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="">
                 <path stroke-linecap="round" stroke-linejoin="round"
@@ -368,10 +381,10 @@
                 </fieldset>
             </form>
         </div>
-        <div class="closeBtn ">
+        <button class="closeBtn" (click)="retour()">
             <span class="fas  fa-arrow-alt-circle-left"></span>
             <span> Retour</span>
-        </div>
-    
+        </button>
+
     </div>
 </div>
