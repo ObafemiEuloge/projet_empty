@@ -51,7 +51,7 @@ export class ChatComponent implements OnInit {
   opacit: number | undefined;
   mix: string = "";
   formContact: boolean = false;
-  btnContinue : boolean =  false;
+  btnContinue : boolean =  true;
 
   constructor(
     private chatService: ChatService
