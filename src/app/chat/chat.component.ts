@@ -131,8 +131,8 @@ export class ChatComponent implements OnInit {
  */
   editTitle() {
     this.input = true;
-    // this.selectCat = false;
-    // this.inputThem = false;
+    this.selectCat = false;
+    this.inputThem = false;
     this.buttonSendMsg = false;
     this.buttonModifMsg = true;
   }
@@ -222,7 +222,7 @@ export class ChatComponent implements OnInit {
       console.log(this.answersList);
       if (this.colorChoice === true) {
         setTimeout(() => {
-          this.formContact = false;
+          this.formContact = true;
           this.btnContinue = true;
         }, 3000);
 

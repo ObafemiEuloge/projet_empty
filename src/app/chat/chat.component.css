@@ -171,7 +171,7 @@ form {
     flex-basis: 95%;
 }
 
-form input[type="text"],
+form.formQuestion input[type="text"],
 form select {
     background-color: #B2CC12;
     color: black;
@@ -550,7 +550,7 @@ button.validate {
     text-align: center;
     color: #D7D6DC;
     height: 100vh;
-
+    margin: 0;
 }
 
 .mylegend {
@@ -613,7 +613,8 @@ fieldset {
 
 .formul input {
     background-color: #d7d6dcc9;
-    border: none;
+    border: 1px solid #b3cc1266;
+    /* border: none; */
 }
 
 .formul input::placeholder {
@@ -643,9 +644,9 @@ fieldset {
     padding-bottom: 7rem;
 }
 
-.avatarSeetForm {
+/* .avatarSeetForm {
     margin-top: 8rem;
-}
+} */
 
 /*======================================================
 ============ Responsive espace de discussion ==============
@@ -687,7 +688,7 @@ fieldset {
         margin-top: 10rem;
     }
 
-.closeBtn {
+.myform button.closeBtn {
     position: absolute;
     top: 1rem;
     left: 2rem;
@@ -707,7 +708,7 @@ fieldset {
     width: 100%;
 }
 
-.continueBtn{
+.myform button.continueBtn{
     background-color: #B2CC12;
     color: #181818;
     padding: .5rem 1.5rem;
@@ -718,9 +719,6 @@ fieldset {
     transition: all 0.4s;
 }
 
-.continueBtn:hover{
-    background-color: #333;
-    color: #B2CC12;
-}
+
 
 }
