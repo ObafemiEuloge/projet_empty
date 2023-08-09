@@ -210,7 +210,7 @@ form ::placeholder {
     padding: 0 2rem;
     width: fit-content;
     margin: 0.5rem 0;
-    border-radius: 20px;
+    /* border-radius: 20px; */
 }
 
 .annulerColor {
@@ -219,7 +219,7 @@ form ::placeholder {
     padding: 0 2rem;
     width: fit-content;
     margin: 0.5rem 0;
-    border-radius: 20px;
+    /* border-radius: 20px; */
 }
 
 .modifColor {
@@ -274,6 +274,9 @@ form ::placeholder {
 .divColor div input {
     width: 100%;
     padding: 0 0.5rem;
+    border: solid 1px #B2CC12;
+    padding: 0;
+    border: none;
 }
 
 .divParaColor {
@@ -314,21 +317,41 @@ form ::placeholder {
 
 .acceptColor {
     background-color: #B2CC12;
+    color: #181818;
     border: none;
+    padding-inline: 1rem;
+    color: #B2CC12;
+    font-weight: bold;
     padding: 0 0.5rem;
     width: fit-content;
-    margin: 1rem;
-    border-radius: 20px;
+    margin: 0.5rem .5rem;
+   background-color: #4a494e;
+    border: solid 1px #B2CC12;
 }
 
-.noColor {
+    .noColor{
     background-color: #b82b0b;
-    color: #fff;
-    border: none;
+    color: #181818;
+    border: solid 1px #df3d10;
+    padding-inline: 1rem;
+    color: #df3d10;
+    font-weight: bold;
+    /* border: none; */
     padding: 0 0.5rem;
     width: fit-content;
-    margin: 0.5rem 0;
-    border-radius: 20px;
+    margin: 0.5rem .5rem;
+   background-color: #4a494e;
+    /* border-radius: 10px; */
+    transition: all 0.3s;
+}
+
+.noColor:hover{
+    background-color: #df3d10;
+    color: #4a494e;
+}
+.acceptColor:hover{
+    background-color: #B2CC12;
+    color: #4a494e;
 }
 
 .buttonValAn {
@@ -341,6 +364,8 @@ form ::placeholder {
     grid-template-columns: repeat(3, 1fr);
     gap: 1rem;
 }
+
+
 
 .templateBox {
     background-color: #4a494e;
@@ -517,6 +542,7 @@ button.validate {
     background-repeat: repeat;
     text-align: center;
     color: #D7D6DC;
+    height: 100vh;
 
 }
 
@@ -602,12 +628,12 @@ fieldset {
     position: fixed;
     width: 100vw;
     height: 100vh;
-    background-color: rgba(0, 0, 0, 0.056);
+    background-color: rgba(0, 0, 0, 0);
     z-index: 100;
     top: 0;
     left: 0;
     bottom: 0;
-    padding-bottom: 5rem;
+    padding-bottom: 7rem;
 }
 
 .avatarSeetForm {
@@ -653,4 +679,41 @@ fieldset {
     .headerChat {
         margin-top: 10rem;
     }
+
+.closeBtn {
+    position: absolute;
+    top: 1rem;
+    left: 2rem;
+    font-size: 1.5rem;
+    z-index: 105;
+    background-color: transparent;
+    padding: .5rem;
+    font-weight: 900;
+    border-radius: 50%;
+    color: #B2CC12;
+    border: none;
+}
+
+.btnContinue{
+    display: flex;
+    justify-content: end;
+    width: 100%;
+}
+
+.continueBtn{
+    background-color: #B2CC12;
+    color: #181818;
+    padding: .5rem 1.5rem;
+    font-weight: bold;
+    font-size: 1.1rem;
+    border-radius: 10px;
+    border: solid 1px #B2CC12;
+    transition: all 0.4s;
+}
+
+.continueBtn:hover{
+    background-color: #333;
+    color: #B2CC12;
+}
+
 }

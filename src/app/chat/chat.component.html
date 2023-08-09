@@ -41,6 +41,11 @@
                 <img src="../../assets/Empty-ressources/Sources/Avatar Seet/IDAvatar.png" alt="IDAvatar">
                 <span class="fw-bolder fs-1">.</span>
                 <div class="questionBulle">
+                    <!-- <div class="typing-indicator">
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                      </div> -->
                     <p class="chatbotMsg" [@opacityAnimation]> Bienvenue ! Alors, quel nom veux-tu donner à ton site ?
                     </p>
                 </div>
@@ -282,20 +287,20 @@
                             <div class="divColor">
                                 <!-- Choix de la couleur primaire du site -->
                                 <div>
-                                    <label for="">1st</label>
+                                    <label for="">Primaire</label>
                                     <input id="primaryColor" type="color" formControlName="primaryColor">
                                 </div>
 
                                 <!-- Choix de la couleur secondaire du site -->
                                 <div>
-                                    <label for="">2nd</label>
+                                    <label for="">Secondaire</label>
 
                                     <input id="secondaryColor" type="color" formControlName="secondaryColor">
                                 </div>
 
                                 <!-- Choix de la couleur tertiaire du site -->
                                 <div>
-                                    <label for="">3rd</label>
+                                    <label for="">Tertiaire</label>
 
                                     <input id="tertiaryColor" type="color" formControlName="tertiaryColor">
                                 </div>
@@ -318,9 +323,10 @@
             <!------- (Si il décide d'opérer un choix pour la couleur primaire, secondaire, tertiaire) -------->
             <div class="ans gap-sm-3" *ngIf="colorChoice === true">
                 <div class="divColorAns" *ngIf="pColor !== '' || sColor !== '' || tColor !== ''">
-                    <p class="userMsg"> Vos couleurs de palette sont: <button *ngIf="buttonModif === true" type="button"
-                            class="modifColor" (click)="modifColor()"><img class="userAvatar"
-                                src="../../assets/Empty-ressources/Sources/Icons/editer.png" alt="IDAvatar"></button>
+                    <p class="userMsg"> Alors, voici les couleurs que tu as choisies. <button
+                            *ngIf="buttonModif === true" type="button" class="modifColor" (click)="modifColor()"><img
+                                class="userAvatar" src="../../assets/Empty-ressources/Sources/Icons/editer.png"
+                                alt="IDAvatar"></button>
                     </p>
                     <div>
                         <p class="colorAns" [style.backgroundColor]="pColor"></p>
@@ -346,10 +352,14 @@
             <div class="asked gap-sm-3" *ngIf="colorChoice === true || noColorChoice === true">
                 <img src="../../assets/Empty-ressources/Sources/Avatar Seet/IDAvatar.png" alt="IDAvatar">
                 <span class="fw-bolder fs-1">.</span>
-                <p class="chatbotMsg" [@opacityAnimation]> Génial ! Tu y es presque. Maintenant, pour recevoir ton
-                    site,
-                    remplis le formulaire ci-contre</p>
+                <p class="chatbotMsg" [@opacityAnimation]> Génial ! Génial, ton template vient d'être généré.
+                    Maintenant, pour recevoir ton
+                    template, remplis le formulaire ci-contre</p>
             </div>
+        </div>
+
+        <div class="btnContinue" *ngIf="btnContinue === true">
+            <button class="continueBtn">Continuer</button>
         </div>
     </div>
 
@@ -394,22 +404,29 @@
             <p><strong>Remplis ce formulaire et reçois <br> ton site web...</strong></p>
         </div>
         <!------------ Formulaire à remplir pour recevoir le site générer  ----------->
+
         <div class="formul my-4">
             <form action="" class="formContact" #formContact="ngForm" (ngSubmit)="onSumbit()">
                 <fieldset>
                     <div class="pt-logo"><span class="favIcon"><img src="../../assets/Logo noir.png" alt="Logo Seet"
                                 width="20"> Seet</span></div>
                     <input type="text" id="Fname" placeholder="Votre nom" [(ngModel)]="lname" name="lname">
+                    <!-- <label for="Fname" class="text-dark fs-2"></label> -->
+                    <input type="email" id="Fname" placeholder="Votre nom ">
                     <br><br>
-                    <input type="text" id="Fname" placeholder="Votre prénom " [(ngModel)]="fname" name="fname">
+                    <input type="text" id="Lname" placeholder="Votre prénom " [(ngModel)]="fname" name="fname">
                     <br><br>
-                    <input type="email" id="mail" placeholder="Adresse email..." [(ngModel)]="email" name="email">
+                    <input type="email" id="Mail" placeholder="Adresse email..." [(ngModel)]="email" name="email">
                     <br> <br>
                     <button type="submit" class="validate">Valider</button>
                 </fieldset>
             </form>
 
         </div>
+        <button class="closeBtn ">
+            <span class="fas  fa-arrow-alt-circle-left"></span>
+            <span> Retour</span>
+        </button>
 
     </div>
 </div>
