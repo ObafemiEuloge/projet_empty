@@ -3,7 +3,7 @@ import { ChatService } from '../chat.service';
 import { Categorie } from '../class-infos';
 import { opacityAnimation } from '../animation.module';
 import { CATEGORIE } from '../mock-infos';
-import { FormControl, FormGroup } from '@angular/forms';
+import { FormControl, FormGroup, NgForm } from '@angular/forms';
 import { fakeAsync } from '@angular/core/testing';
 
 @Component({
@@ -57,6 +57,8 @@ export class ChatComponent implements OnInit {
   congratulation: boolean = false; // propriété permettant d'afficher le formulaire de contact
   formContact: boolean = false; // propriété permettant d'afficher le formulaire de contact
 
+  btnContinue: boolean = false; // propriété permettant d'afficher le formulaire de contact
+
   click: number = 0 // compteur du click du button d'envoi des messages
   clickMod: number = 0 // compteur du click du button d'envoi des messages modifiées
 
@@ -107,12 +109,14 @@ export class ChatComponent implements OnInit {
       this.answersList = this.chatService.getAnswers(this.titleSite)
       this.buttonModifMsg = false;
       this.input = false;
+      this.selectCat = true;
     }
     if (this.selectCat === true) {
       this.categInter = this.categ;
       this.answersList = this.chatService.getAnswers(this.categ)
       this.buttonModifMsg = false;
       this.selectCat = false;
+      this.inputThem = true;
     }
     if (this.inputThem === true) {
       this.themInter = this.them;
@@ -127,8 +131,8 @@ export class ChatComponent implements OnInit {
  */
   editTitle() {
     this.input = true;
-    this.selectCat = false;
-    this.inputThem = false;
+    // this.selectCat = false;
+    // this.inputThem = false;
     this.buttonSendMsg = false;
     this.buttonModifMsg = true;
   }
@@ -218,7 +222,8 @@ export class ChatComponent implements OnInit {
       console.log(this.answersList);
       if (this.colorChoice === true) {
         setTimeout(() => {
-          this.formContact = true;
+          this.formContact = false;
+          this.btnContinue = true;
         }, 3000);
 
       }
@@ -265,6 +270,7 @@ export class ChatComponent implements OnInit {
     if (this.noColorChoice === true) {
       setTimeout(() => {
         this.formContact = true;
+        this.btnContinue = true;
       }, 3000);
     }
   }
@@ -279,4 +285,13 @@ export class ChatComponent implements OnInit {
     }, 1000);
   }
 
+  lname: string = "";
+  fname: string = "";
+  email: string = "";
+
+
+
+onSumbit() {
+  console.log(this.lname, this.fname, this.email);
+}
 }

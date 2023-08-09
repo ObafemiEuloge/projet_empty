@@ -68,7 +68,10 @@ ul li .commencer:hover{
 }
 
 .buttonToggle span{
-    /* border-color: #181818; */
     mix-blend-mode: difference;
     width: 30px;
+}
+
+.navbar-collapse {
+    justify-content: end;
 }
