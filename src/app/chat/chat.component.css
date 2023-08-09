@@ -673,14 +673,11 @@ fieldset{
     padding-bottom: 7rem;
 }
 
-.avatarSeetForm {
-    margin-top: 8rem;
-}
 
 .closeBtn {
     position: absolute;
-    top: 10rem;
-    left: 5rem;
+    top: 1rem;
+    left: 2rem;
     font-size: 1.5rem;
     z-index: 105;
     background-color: transparent;
@@ -689,4 +686,26 @@ fieldset{
     border-radius: 50%;
     color: #B2CC12;
     border: none;
+}
+
+.btnContinue{
+    display: flex;
+    justify-content: end;
+    width: 100%;
+}
+
+.continueBtn{
+    background-color: #B2CC12;
+    color: #181818;
+    padding: .5rem 1.5rem;
+    font-weight: bold;
+    font-size: 1.1rem;
+    border-radius: 10px;
+    border: solid 1px #B2CC12;
+    transition: all 0.4s;
+}
+
+.continueBtn:hover{
+    background-color: #333;
+    color: #B2CC12;
 }
