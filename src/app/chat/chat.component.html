@@ -1,5 +1,12 @@
-<!-- Développement du comportement du chatbot -->
+<!----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+---------------------------------------------------------------------  Développement de l'espace de discussion  --------------------------------------------------------------------------------
+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------>
 
+
+
+<!----------------------------------------------------------------------------------------------------
+---------------------  Dernier Message avant l'affichage du formulaire  -----------------------
+----------------------------------------------------------------------------------------------------->
 <div class="container-fluid headerChat mb-4">
     <div class="avatarSeet" [@opacityAnimation]>
         <img src="../../assets/Empty-ressources/Sources/Avatar Seet/Avatar SEET.png" alt="Avatar SEET"
@@ -7,11 +14,16 @@
     </div>
     <h1 class="fs-1">Bienvenue !</h1>
     <div class="avatarText">
-        <p  [@opacityAnimation]>Afin de générer ton site, je te prie de remplir les champs ci-dessous</p>
+        <p [@opacityAnimation]>Afin de générer ton site, je te prie de remplir les champs ci-dessous</p>
     </div>
 </div>
 
-<div [@opacityAnimation] class="container discussionSpace my-5" >
+
+<!----------------------------------------------------------------------------------------------------
+--------------------------------------  Espace de discussion  --------------------------------------
+----------------------------------------------------------------------------------------------------->
+
+<div [@opacityAnimation] class="container discussionSpace my-5">
     <div class="chatLogo">
         <p class="text-center logoChat">
             <img src="../../assets/Logo noir.png" alt="Favicon Seet" class="logoNoir">
@@ -19,61 +31,90 @@
         </p>
     </div>
 
-
-
-    <!-- Espace de discussion  -->
     <div class="chat px-md-5 py-md-3">
         <div>
+            <!---------------------------------------------------------------------------------------------------
+            ------------------------------------- Première question ------------------------------------------
+            ------------------------------------- ( Le nom du site ) -------------------------------------------
+            ----------------------------------------------------------------------------------------------------->
             <div class="asked gap-sm-3">
                 <img src="../../assets/Empty-ressources/Sources/Avatar Seet/IDAvatar.png" alt="IDAvatar">
                 <span class="fw-bolder fs-1">.</span>
                 <div class="questionBulle">
-                    <!-- <div class="typing-indicator">
-                        <span></span>
-                        <span></span>
-                        <span></span>
-                      </div> -->
-                    <p class="chatbotMsg" [@opacityAnimation]> Bienvenue ! Alors, quel nom veux-tu donner à ton site ? </p>
+                    <p class="chatbotMsg" [@opacityAnimation]> Bienvenue ! Alors, quel nom veux-tu donner à ton site ?
+                    </p>
                 </div>
             </div>
+            <!---------------------------------------------------------------------------------------------------
+            ----------------------- Réponse de l'utilisateur à la première question ------------------------
+            ----------------------------------------------------------------------------------------------------->
             <div class="ans gap-sm-3" *ngIf="titleSiteInter !== ''">
                 <p class="userMsg">
                     {{ titleSiteInter }}
-                     <button type="button" class="btnEdit"><img class="imgEdit" src="../../assets/Empty-ressources/Sources/Icons/editer.png" alt="IDAvatar"></button>
+                    <button type="button" class="btnEdit"><img class="imgEdit"
+                            src="../../assets/Empty-ressources/Sources/Icons/editer.png" alt="IDAvatar"></button>
                 </p>
 
                 <img src="../../assets/Empty-ressources/Sources/Avatar Seet/IDAvatar.png" class="userAvatar"
                     alt="IDAvatar">
             </div>
+
+
+
+            <!---------------------------------------------------------------------------------------------------
+            ------------------------------------- Deuxième question ------------------------------------------
+            ------------------------------------- ( La catégorie ) -------------------------------------------
+            ----------------------------------------------------------------------------------------------------->
             <div class="asked gap-sm-3" *ngIf="titleSiteInter !== ''">
                 <img src="../../assets/Empty-ressources/Sources/Avatar Seet/IDAvatar.png" alt="IDAvatar">
                 <span class="fw-bolder fs-1">.</span>
                 <p class="chatbotMsg" [@opacityAnimation]> Génial ! Dans quelle catégorie veux-tu mettre ton site ? </p>
             </div>
+            <!---------------------------------------------------------------------------------------------------
+            ----------------------- Réponse de l'utilisateur à la deuxième question ------------------------
+            ----------------------------------------------------------------------------------------------------->
             <div class="ans gap-sm-3" *ngIf="categInter !== ''">
                 <p class="userMsg">
-                    {{categInter}} 
-                    <button type="button" class="btnEdit"><img class="imgEdit" src="../../assets/Empty-ressources/Sources/Icons/editer.png" alt="IDAvatar"></button>
+                    {{categInter}}
+                    <button type="button" class="btnEdit"><img class="imgEdit"
+                            src="../../assets/Empty-ressources/Sources/Icons/editer.png" alt="IDAvatar"></button>
                 </p>
                 <img src="../../assets/Empty-ressources/Sources/Avatar Seet/IDAvatar.png" class="userAvatar"
                     alt="IDAvatar">
             </div>
 
+
+
+
+            <!---------------------------------------------------------------------------------------------------
+            ------------------------------------- Troisième question -----------------------------------------
+            ------------------------------------- ( Le thème ) ------------------------------------------------
+            ---------------------------------------------------------------------------------------------------->
             <div class="asked gap-sm-3" *ngIf="categInter !== ''">
                 <img src="../../assets/Empty-ressources/Sources/Avatar Seet/IDAvatar.png" alt="IDAvatar">
                 <span class="fw-bolder fs-1">.</span>
-                <p class="chatbotMsg" [@opacityAnimation]> D'accord. Dis-moi précisement de quel thème veut parler ton site et qui est en rapport avec la catégorie que tu as choisie. </p>
+                <p class="chatbotMsg" [@opacityAnimation]> D'accord. Dis-moi précisement de quel thème veut parler ton
+                    site et qui est en rapport avec la catégorie que tu as choisie. </p>
             </div>
+            <!---------------------------------------------------------------------------------------------------
+            ----------------------- Réponse de l'utilisateur à la troisième question ------------------------
+            ----------------------------------------------------------------------------------------------------->
             <div class="ans gap-sm-3" *ngIf="themInter !== ''">
-                    <p class="userMsg"> {{themInter}} 
-                        <button type="button" class="btnEdit"><img class="imgEdit" src="../../assets/Empty-ressources/Sources/Icons/editer.png" alt="IDAvatar"></button>
-                    </p>
-                    
+                <p class="userMsg"> {{themInter}}
+                    <button type="button" class="btnEdit"><img class="imgEdit"
+                            src="../../assets/Empty-ressources/Sources/Icons/editer.png" alt="IDAvatar"></button>
+                </p>
+
                 <img class="userAvatar" src="../../assets/Empty-ressources/Sources/Avatar Seet/IDAvatar.png"
                     alt="IDAvatar">
             </div>
 
-            <!-- Choix du template -->
+
+
+            <!---------------------------------------------------------------------------------------------------
+            ------------------------------------- Quatrième question -----------------------------------------
+            ---------------------------------- ( Le choix du template  ) --------------------------------------
+            ---------------------------------------------------------------------------------------------------->
             <div *ngIf="themInter !== ''">
                 <div class="asked gap-sm-3">
                     <img src="../../assets/Empty-ressources/Sources/Avatar Seet/IDAvatar.png" alt="IDAvatar">
@@ -83,7 +124,9 @@
                 <form action="" [formGroup]="templateChoice" class=" formColor">
                     <div class="templateBox p-3 ms-4 mt-3">
                         <div class="template">
-                            <!-- Template 1 -->
+                            <!-------------------------------------------------------------------------------
+                            ------------------------------------ Template 1 -------------------------------
+                            -------------------------------------------------------------------------------->
                             <div id="cass1" value="top" class="carousel slide template1" data-bs-ride="carousel">
                                 <input type="radio" value="carousel-1" name="template" class="inputTemplate"
                                     (change)="choiceTemplate($event)">
@@ -119,7 +162,9 @@
                                     <span class="carousel-control-next-icon"></span>
                                 </button>
                             </div>
-                            <!-- Template 2 -->
+                            <!-------------------------------------------------------------------------------
+                            ------------------------------------ Template 2 -------------------------------
+                            -------------------------------------------------------------------------------->
                             <div id="cass2" class="carousel slide template2" data-bs-ride="carousel">
                                 <input type="radio" value="carousel-2" name="template" class="inputTemplate"
                                     (change)="choiceTemplate($event)">
@@ -155,7 +200,9 @@
                                     <span class="carousel-control-next-icon"></span>
                                 </button>
                             </div>
-                            <!-- Template 3 -->
+                            <!-------------------------------------------------------------------------------
+                            ------------------------------------ Template 3 -------------------------------
+                            -------------------------------------------------------------------------------->
                             <div id="cass4" class="carousel slide template3" data-bs-ride="carousel">
                                 <input type="radio" value="carousel-3" name="template" class="inputTemplate"
                                     (change)="choiceTemplate($event)">
@@ -191,16 +238,19 @@
                                     <span class="carousel-control-next-icon"></span>
                                 </button>
                             </div>
+
                         </div>
                         <div class="indiceTemplate">
                             <div><span class="btn t1">1</span></div>
                             <div><span class="btn t2">2</span></div>
                             <div><span class="btn t3">3</span></div>
                         </div>
-                        <!-- <button type="button" class="validTemp btn p-1 mt-4" (click)="validerTemplate()">Valider</button> -->
                     </div>
                 </form>
 
+                <!---------------------------------------------------------------------------------------------------
+                ----------------------- Réponse de l'utilisateur à la Quatrième question ------------------------
+                 ----------------------------------------------------------------------------------------------------->
                 <div class="ans gap-sm-3 mt-3" *ngIf="template !== ''">
                     <!-- {{template}} -->
                     <p class="userMsg">
@@ -213,6 +263,12 @@
                 </div>
             </div>
 
+
+
+            <!---------------------------------------------------------------------------------------------------
+            ------------------------------------- Cinquième question -----------------------------------------
+            ---------------------------------- ( Le choix des couleurs  ) --------------------------------------
+            ---------------------------------------------------------------------------------------------------->
             <div class="asked gap-sm-3" *ngIf="template !== ''">
                 <img src="../../assets/Empty-ressources/Sources/Avatar Seet/IDAvatar.png" alt="IDAvatar">
                 <span class="fw-bolder fs-1">.</span>
@@ -254,6 +310,12 @@
                 </div>
             </div>
 
+
+            <!----------------------------------------------------------------------------------------------------
+                 ----------------------- Réponse de l'utilisateur à la cinquième question ------------------------
+                 ----------------------------------------------------------------------------------------------------->
+
+            <!------- (Si il décide d'opérer un choix pour la couleur primaire, secondaire, tertiaire) -------->
             <div class="ans gap-sm-3" *ngIf="colorChoice === true">
                 <div class="divColorAns" *ngIf="pColor !== '' || sColor !== '' || tColor !== ''">
                     <p class="userMsg"> Vos couleurs de palette sont: <button *ngIf="buttonModif === true" type="button"
@@ -269,6 +331,7 @@
                 <span class="fw-bolder fs-1">.</span>
                 <img src="../../assets/Empty-ressources/Sources/Avatar Seet/IDAvatar.png" alt="IDAvatar">
             </div>
+            <!-------------------------------- (Si il décide de ne pas opérer de choix ) ------------------------------->
             <div class="ans gap-sm-3" *ngIf="noColorChoice === true">
                 <p class="userMsg"> Vous n'avez choisit aucune couleur</p>
                 <img class="userAvatar" src="../../assets/Empty-ressources/Sources/Avatar Seet/IDAvatar.png"
@@ -276,6 +339,10 @@
             </div>
 
 
+            <!---------------------------------------------------------------------------------------------------
+            ------------------------------------- Sixième question -----------------------------------------
+            ---------------------------------- ( Message de félicitation ) --------------------------------------
+            ---------------------------------------------------------------------------------------------------->
             <div class="asked gap-sm-3" *ngIf="colorChoice === true || noColorChoice === true">
                 <img src="../../assets/Empty-ressources/Sources/Avatar Seet/IDAvatar.png" alt="IDAvatar">
                 <span class="fw-bolder fs-1">.</span>
@@ -284,8 +351,11 @@
                     remplis le formulaire ci-contre</p>
             </div>
         </div>
-
     </div>
+
+    <!---------------------------------------------------------------------------------------------------
+    --------------- Affichage des champs du formulaire en fonction des questions --------------
+    ---------------------------------------------------------------------------------------------------->
     <div class="formDiv d-flex">
         <form action="" method="post" #formSearch="ngForm">
             <ng-container>
@@ -312,30 +382,34 @@
     </div>
 </div>
 
-<!-- Page de contact -->
 
+<!-- Cette partie de l'application s'affiche uniquement si l'utilisateur a fini de répondre à toutes les questions. 
+    Il doit soumettre le formulaire pour recevoir le code source du site qui a été généré en fonction des informations fournies -->
+
+<!-------------------------------- Page de contact ------------------------------------------>
 <div class="parentForm" *ngIf="formContact === true">
-    <div [@opacityAnimation] class="myform my-4" >
-        <div  class="avatarSeetForm">
+    <div [@opacityAnimation] class="myform my-4">
+        <div class="avatarSeetForm">
             <img src="../../assets/Empty-ressources/Sources/Avatar Seet/Avatar SEET.png" alt="Avatar SEET" width="250">
             <p><strong>Remplis ce formulaire et reçois <br> ton site web...</strong></p>
         </div>
-    
+        <!------------ Formulaire à remplir pour recevoir le site générer  ----------->
         <div class="formul my-4">
-            <form action="" class="formContact">
+            <form action="" class="formContact" #formContact="ngForm" (ngSubmit)="onSumbit()">
                 <fieldset>
-                    <div class="pt-logo"><span class="favIcon"><img src="../../assets/Logo noir.png" alt="Logo Seet" width="20"> Seet</span></div>
-                    <!-- <label for="Fname" class="text-dark fs-2"></label> -->
-                    <input type="email" id="Fname" placeholder="Votre nom ">
+                    <div class="pt-logo"><span class="favIcon"><img src="../../assets/Logo noir.png" alt="Logo Seet"
+                                width="20"> Seet</span></div>
+                    <input type="text" id="Fname" placeholder="Votre nom" [(ngModel)]="lname" name="lname">
                     <br><br>
-                    <input type="email" id="Fname" placeholder="Votre prénom ">
+                    <input type="text" id="Fname" placeholder="Votre prénom " [(ngModel)]="fname" name="fname">
                     <br><br>
-                    <!-- <label for="mail"></label><br> -->
-                    <input type="email" id="mail" placeholder="Adresse email..."> <br> <br>
+                    <input type="email" id="mail" placeholder="Adresse email..." [(ngModel)]="email" name="email">
+                    <br> <br>
                     <button type="submit" class="validate">Valider</button>
                 </fieldset>
             </form>
+
         </div>
-    
+
     </div>
 </div>

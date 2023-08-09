@@ -3,7 +3,7 @@ import { ChatService } from '../chat.service';
 import { Categorie } from '../class-infos';
 import { opacityAnimation } from '../animation.module';
 import { CATEGORIE } from '../mock-infos';
-import { FormControl, FormGroup } from '@angular/forms';
+import { FormControl, FormGroup, NgForm } from '@angular/forms';
 import { fakeAsync } from '@angular/core/testing';
 @Component({
   selector: 'app-chat',
@@ -48,7 +48,7 @@ export class ChatComponent implements OnInit {
   noColorChoice: boolean = false;
   buttonValider: boolean = false;
   buttonModif: boolean = false;
-  formContact: boolean = false;
+  formContact: boolean = true;
 
   constructor(
     private chatService: ChatService
@@ -84,7 +84,7 @@ export class ChatComponent implements OnInit {
       this.buttonSendMsg = false;
       this.click = 3
     }
-  
+
   }
 
 
@@ -120,7 +120,7 @@ export class ChatComponent implements OnInit {
       this.colorChoice = true;
       this.buttonValider = false;
       this.buttonModif = true;
-    
+
 
       if (this.colorChoice === true || this.noColorChoice === true) {
         setTimeout(() => {
@@ -131,7 +131,7 @@ export class ChatComponent implements OnInit {
     }
     console.log(this.colorArray);
     return console.log(this.colorArray);
-    
+
   }
   modifColor() {
     this.buttonValider = true;
@@ -165,11 +165,19 @@ export class ChatComponent implements OnInit {
   });
 
   template: string = "";
-  choiceTemplate($event: any){
+  choiceTemplate($event: any) {
     this.template = $event.target.value;
     console.log(this.template);
-    
+
   }
 
+  lname: string = "";
+  fname: string = "";
+  email: string = "";
 
+
+
+onSumbit() {
+  console.log(this.lname, this.fname, this.email);
+}
 }
