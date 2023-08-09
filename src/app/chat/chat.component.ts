@@ -3,7 +3,7 @@ import { ChatService } from '../chat.service';
 import { Categorie } from '../class-infos';
 import { opacityAnimation } from '../animation.module';
 import { CATEGORIE } from '../mock-infos';
-import { FormControl, FormGroup } from '@angular/forms';
+import { FormControl, FormGroup, NgForm } from '@angular/forms';
 import { fakeAsync } from '@angular/core/testing';
 @Component({
   selector: 'app-chat',
@@ -51,6 +51,7 @@ export class ChatComponent implements OnInit {
   opacit: number | undefined;
   mix: string = "";
   formContact: boolean = false;
+  btnContinue : boolean =  true;
 
   constructor(
     private chatService: ChatService
@@ -123,7 +124,7 @@ export class ChatComponent implements OnInit {
       this.colorChoice = true;
       this.buttonValider = false;
       this.buttonModif = true;
-    
+
 
 
       // this.answersList = this.chatService.getAnswers(this.them)
@@ -132,7 +133,8 @@ export class ChatComponent implements OnInit {
       this.mix = "screen"
       if (this.colorChoice === true || this.noColorChoice === true) {
         setTimeout(() => {
-          this.formContact = true;
+          this.formContact = false;
+          this.btnContinue = true;
         }, 3000);
 
       }
@@ -163,6 +165,7 @@ export class ChatComponent implements OnInit {
     if (this.noColorChoice === true) {
       setTimeout(() => {
         this.formContact = true;
+        this.btnContinue = true;
       }, 3000);
 
     }
@@ -181,5 +184,13 @@ export class ChatComponent implements OnInit {
 
   }
 
+  lname: string = "";
+  fname: string = "";
+  email: string = "";
 
+
+
+onSumbit() {
+  console.log(this.lname, this.fname, this.email);
+}
 }

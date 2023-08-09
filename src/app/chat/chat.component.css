@@ -1,38 +1,45 @@
-/*=========== Feuille de style commune du template de chat ============*/
+/*======================================================================================================== 
+==============================Feuille de style commune du template de chat ==================================
+=========================================================================================================*/
+
+/*====================================
+==================  Reset  =============
+======================================*/
 *,
 *::before,
 *::after {
     box-sizing: border-box;
+    list-style: none;
+    text-decoration: none;
 }
 
-/*==== Ajuster la taille de l'image peut importe le  type de périphérique ===*/
+
+/*=============================================================
+======================= Espace de Bienvenu ======================
+===============================================================*/
 .headerChat div.avatarSeet {
     margin-top: 6rem;
 }
+
 .headerChat div.avatarSeet img {
     max-width: 15%;
 }
 
-p{
+p {
     font-size: 1.1rem;
 }
 
-/* Centrer le l'avatar */
 .headerChat div.avatarSeet {
     display: flex;
     justify-content: center;
 }
 
-
-/* Styler le texte de bienvenue */
 .headerChat h1 {
     color: #B2CC12;
     font-weight: bolder;
     text-align: center;
 }
 
-
-/* Texte en dessous de l'avatar */
 .headerChat div.avatarText {
     display: flex;
     justify-content: center;
@@ -46,9 +53,10 @@ p{
 }
 
 
-/*===================== Espace de discussion ==================== */
 
-/* Espace de discussion */
+/*=============================================================
+======================= Espace de discussion ======================
+===============================================================*/
 .discussionSpace {
     border-radius: 50px;
     border-bottom-left-radius: 0px;
@@ -62,21 +70,19 @@ p{
     background-color: #B2CC12;
 }
 
-/* Centrer le logo en dessous de l'espace de discussion */
 .chatLogo .logoChat {
     display: flex;
     justify-content: center;
     align-items: center;
 }
 
-/* Ajuster la taille du logo en dessous de l'espace de discussion */
 .chatLogo .logoChat img {
     mix-blend-mode: luminosity;
     max-width: 3%;
     margin-inline: 0.5rem;
 }
 
-.chatLogo .logoChat span{
+.chatLogo .logoChat span {
     font-size: 1.8rem;
     font-weight: 700;
 }
@@ -138,7 +144,6 @@ p{
 .chat .chatbotMsg p {
     margin-bottom: 0.5rem;
 }
-
 
 .answer {
     display: flex;
@@ -204,49 +209,8 @@ form ::placeholder {
     padding: 0;
 }
 
-
-/**
-* Responsive espace de discussion
-*/
-@media screen and (max-width: 600px) {
-    .asked {
-        margin-left: 1rem;
-        /* max-width: 70%; */
-        gap: 0.5rem;
-    }
-
-    .ans {
-        margin-right: 1rem;
-    }
-
-    .sendMsg {
-        padding-right: 3rem;
-        width: 80%;
-    }
-
-    .headerChat {
-        margin-top: 10rem;
-    }
-
-    .discussionSpace {
-        margin-inline: 0.2rem;
-    }
-}
-
-@media screen and (min-width: 601px) and (max-width: 1200px) {
-    .sendMsg {
-        padding-right: 3rem;
-        width: 100%;
-    }
-
-    .headerChat {
-        margin-top: 10rem;
-    }
-}
-
 .validColor {
     position: relative;
-    /* top: 10px; */
     background-color: #B2CC12;
     border: none;
     padding: 0 2rem;
@@ -254,6 +218,7 @@ form ::placeholder {
     margin: 0.5rem 0;
     /* border-radius: 20px; */
 }
+
 .annulerColor {
     background-color: #df3d10;
     border: none;
@@ -262,11 +227,13 @@ form ::placeholder {
     margin: 0.5rem 0;
     /* border-radius: 20px; */
 }
-.modifColor{
+
+.modifColor {
     border: none;
     background-color: #B2CC12;
 }
-.modifColor img{
+
+.modifColor img {
     width: 18px;
 }
 
@@ -280,7 +247,6 @@ form ::placeholder {
     padding: 0;
 }
 
-
 .selectColor div span {
     border: 1px solid;
     padding: 0.3rem;
@@ -292,8 +258,6 @@ form ::placeholder {
     flex-flow: column;
     align-items: center;
     background-color: #4a494e;
-    /* padding: 1rem; */
-    /* border-bottom-left-radius: 20px; */
     padding-bottom: 0.2rem;
     border-bottom-right-radius: 20px;
     border-bottom-left-radius: 0;
@@ -306,7 +270,6 @@ form ::placeholder {
     width: 100%;
     justify-content: space-between;
     padding: 0 1rem;
-
 }
 
 .divColor div {
@@ -316,7 +279,7 @@ form ::placeholder {
 
 .divColor div input {
     width: 100%;
-    /* border-radius: 20px; */
+    padding: 0 0.5rem;
     border: solid 1px #B2CC12;
     padding: 0;
     border: none;
@@ -325,7 +288,6 @@ form ::placeholder {
 .divParaColor {
     width: 50%;
     margin-bottom: 1rem;
-
 }
 
 .borde {
@@ -350,7 +312,6 @@ form ::placeholder {
 .divColorAns div {
     display: flex;
     gap: 1rem;
-    /* flex-flow: column; */
 }
 
 .colorAns {
@@ -360,21 +321,22 @@ form ::placeholder {
     aspect-ratio: 1;
 }
 
-.acceptColor{
+.acceptColor {
+    background-color: #B2CC12;
     color: #181818;
     border: none;
     padding-inline: 1rem;
     color: #B2CC12;
     font-weight: bold;
-    /* border: none; */
     padding: 0 0.5rem;
     width: fit-content;
     margin: 0.5rem .5rem;
    background-color: #4a494e;
     border: solid 1px #B2CC12;
-    /* border-radius: 10px; */
 }
-.noColor{
+
+    .noColor{
+    background-color: #b82b0b;
     color: #181818;
     border: solid 1px #df3d10;
     padding-inline: 1rem;
@@ -398,11 +360,11 @@ form ::placeholder {
     color: #4a494e;
 }
 
-.buttonValAn{
+.buttonValAn {
     display: flex;
     gap: 1rem;
 }
-/* Template */
+
 .template {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
@@ -415,7 +377,8 @@ form ::placeholder {
     background-color: #4a494e;
     text-align: center;
 }
-.validTemp{
+
+.validTemp {
     background-color: #B2CC12;
     width: 150px;
     font-weight: bolder;
@@ -423,15 +386,11 @@ form ::placeholder {
 
 .template1,
 .template2,
-.template3{
+.template3 {
     position: relative;
     text-align: center;
 }
-/* .t1 {
-    position: absolute;
-    z-index: 1;
-    background: red;
-} */
+
 .inputTemplate {
     position: absolute;
     top: 10px;
@@ -444,18 +403,21 @@ form ::placeholder {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
 }
-.indiceTemplate div{
+
+.indiceTemplate div {
     display: flex;
     justify-content: center;
 }
-.indiceTemplate span{
+
+.indiceTemplate span {
     background-color: #B2CC12;
     color: #4a494e;
     padding: 5px;
     width: 50px;
     aspect-ratio: 1;
     margin-top: 0.5rem;
-    display: flex;align-items: center;
+    display: flex;
+    align-items: center;
     justify-content: center;
     border: 2px solid #B2CC12;
     border-radius: 50%;
@@ -481,7 +443,6 @@ form ::placeholder {
     width: 100%;
 }
 
-
 .userMsg {
     border-radius: 20px;
     border-bottom-right-radius: 0;
@@ -490,19 +451,27 @@ form ::placeholder {
     color: #4a494e;
     margin-block: 0.5rem;
 }
-/*================== LOGO NOIR Seet========================*/
-.logoChat img.logoNoir{
+
+
+
+/*================================================ 
+=============== LOGO NOIR Seet ==================
+==================================================*/
+.logoChat img.logoNoir {
     width: 80px;
 }
 
-/* La bulle des messages... */
+
+/*================================================ 
+============= La bulle des messages.. ===============
+==================================================*/
 
 .typing-indicator {
     display: flex;
     justify-content: center;
-  }
-  
-  .typing-indicator span {
+}
+
+.typing-indicator span {
     width: 8px;
     height: 8px;
     margin: 0 2px;
@@ -510,69 +479,60 @@ form ::placeholder {
     background: #000;
     display: inline-block;
     animation: typing-indicator 1.5s infinite ease-in-out;
-  }
-  
-  .typing-indicator span:nth-child(1) {
+}
+
+.typing-indicator span:nth-child(1) {
     animation-delay: -0.3s;
-  }
-  
-  .typing-indicator span:nth-child(2) {
+}
+
+.typing-indicator span:nth-child(2) {
     animation-delay: -0.15s;
-  }
-  
-  @keyframes typing-indicator {
+}
+
+@keyframes typing-indicator {
+
     0%,
     80%,
     100% {
-      transform: translateY(0);
-      opacity: 1;
+        transform: translateY(0);
+        opacity: 1;
     }
-    
+
     30% {
-      transform: translateY(-6px);
-      opacity: 0.7;
+        transform: translateY(-6px);
+        opacity: 0.7;
     }
-  }
+}
 
-  .questionBulle{
+.questionBulle {
     display: flex;
-  }
-
-  /**
-  * Formulaire de contact
-  */
-
-  * {
-
-    list-style: none;
-    text-decoration: none;
-}
-*
-*::before
-*::after {
-    box-sizing: border-box;
 }
 
-
-
+/*===========================================================
+  ===================== Formulaire de contact ===================
+  ===========================================================*/
 legend {
     border: px solid rgb(52, 52, 47);
     padding: .5em;
     font-size: 1.8rem;
 }
-.formContact p{
+
+.formContact p {
     font-size: 2.8rem;
     font-style: italic;
 }
+
 .formContact input {
     width: 300px;
     border-radius: 10px;
     padding: .4rem;
     padding-left: 1rem;
 }
-::placeholder{
+
+::placeholder {
     font-style: italic;
 }
+
 button.validate {
     padding: .3rem;
     border-radius: 10px;
@@ -582,13 +542,13 @@ button.validate {
 }
 
 .myform {
-    /* width: fit-content; */
     max-width: 100%;
     background-image: url("../../assets/Empty-ressources/Sources/Background/fond.jpg");
     background-size: cover;
     background-repeat: repeat;
     text-align: center;
     color: #D7D6DC;
+    height: 100vh;
 
 }
 
@@ -605,7 +565,8 @@ button.validate {
 .formul {
     display: flex;
 }
-form.formContact{
+
+form.formContact {
     justify-content: center;
     position: relative;
     width: auto;
@@ -618,10 +579,10 @@ form.formContact{
     border-radius: 15px;
     background-color: rgba(207, 189, 189, 0.089);
     border: 1px solid #b3cc1266;
-    
+
 }
 
-.pt-logo{
+.pt-logo {
     position: absolute;
     top: -9px;
     left: 140px;
@@ -633,13 +594,14 @@ form.formContact{
     color: #181818;
     text-align: center;
 }
-span.favIcon{
+
+span.favIcon {
     font-size: 1rem;
-    
+
 }
 
-fieldset{
-    padding-top: 2.5rem ;
+fieldset {
+    padding-top: 2.5rem;
 }
 
 .formul {
@@ -651,12 +613,13 @@ fieldset{
 .formul input {
     background-color: #d7d6dcc9;
     border: none;
-    /* border: 1px solid #B2CC12; */
 }
+
 .formul input::placeholder {
     font-weight: 400;
     opacity: 0.7;
 }
+
 .formul input:focus {
     outline: 1px solid #b3cc12d9;
 }
@@ -664,20 +627,99 @@ fieldset{
 .formul .validate {
     width: 100%;
     border: none;
+    margin-bottom: 20rem;
 }
 
 .parentForm {
     position: fixed;
     width: 100vw;
     height: 100vh;
-    background-color: rgba(0, 0, 0, 0.056);
+    background-color: rgba(0, 0, 0, 0);
     z-index: 100;
     top: 0;
     left: 0;
     bottom: 0;
-    padding-bottom: 5rem;
+    padding-bottom: 7rem;
 }
 
 .avatarSeetForm {
-    margin-top: 4rem;
+    margin-top: 8rem;
+}
+
+/*======================================================
+============ Responsive espace de discussion ==============
+=======================================================*/
+@media screen and (max-width: 600px) {
+    .asked {
+        margin-left: 1rem;
+        /* max-width: 70%; */
+        gap: 0.5rem;
+    }
+
+    .ans {
+        margin-right: 1rem;
+    }
+
+    .sendMsg {
+        padding-right: 3rem;
+        width: 80%;
+    }
+
+    .headerChat {
+        margin-top: 10rem;
+    }
+
+    .discussionSpace {
+        margin-inline: 0.2rem;
+    }
+}
+
+
+
+@media screen and (min-width: 601px) and (max-width: 1200px) {
+    .sendMsg {
+        padding-right: 3rem;
+        width: 100%;
+    }
+
+    .headerChat {
+        margin-top: 10rem;
+    }
+
+.closeBtn {
+    position: absolute;
+    top: 1rem;
+    left: 2rem;
+    font-size: 1.5rem;
+    z-index: 105;
+    background-color: transparent;
+    padding: .5rem;
+    font-weight: 900;
+    border-radius: 50%;
+    color: #B2CC12;
+    border: none;
+}
+
+.btnContinue{
+    display: flex;
+    justify-content: end;
+    width: 100%;
+}
+
+.continueBtn{
+    background-color: #B2CC12;
+    color: #181818;
+    padding: .5rem 1.5rem;
+    font-weight: bold;
+    font-size: 1.1rem;
+    border-radius: 10px;
+    border: solid 1px #B2CC12;
+    transition: all 0.4s;
+}
+
+.continueBtn:hover{
+    background-color: #333;
+    color: #B2CC12;
+}
+
 }

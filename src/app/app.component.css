@@ -24,11 +24,12 @@ nav {
     border-bottom: solid 6px #D7D6DC;
 }
 
-li img {
-    width: 25px;
+.imgIcon {
+    width: 20px;
 }
 
-li a {
+
+a {
     font-weight: bold;
     transition: all 0.5s;
     font-size: 1.2rem;
@@ -67,7 +68,10 @@ ul li .commencer:hover{
 }
 
 .buttonToggle span{
-    /* border-color: #181818; */
     mix-blend-mode: difference;
     width: 30px;
+}
+
+.navbar-collapse {
+    justify-content: end;
 }
