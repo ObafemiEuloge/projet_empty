@@ -314,7 +314,7 @@
 
 <!-- Page de contact -->
 
-<div class="parentForm" *ngIf="formContact === true">
+<div class="parentForm" *ngIf="formContact === false">
     <div [@opacityAnimation] class="myform my-4" >
         <div  class="avatarSeetForm">
             <img src="../../assets/Empty-ressources/Sources/Avatar Seet/Avatar SEET.png" alt="Avatar SEET" width="250">
@@ -335,6 +335,10 @@
                     <button type="submit" class="validate">Valider</button>
                 </fieldset>
             </form>
+        </div>
+        <div class="closeBtn ">
+            <span class="fas  fa-arrow-alt-circle-left"></span>
+            <span> Retour</span>
         </div>
     
     </div>

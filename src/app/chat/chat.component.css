@@ -583,6 +583,7 @@ button.validate {
     background-repeat: repeat;
     text-align: center;
     color: #D7D6DC;
+    height: 100vh;
 
 }
 
@@ -664,14 +665,28 @@ fieldset{
     position: fixed;
     width: 100vw;
     height: 100vh;
-    background-color: rgba(0, 0, 0, 0.056);
+    background-color: rgba(0, 0, 0, 0);
     z-index: 100;
     top: 0;
     left: 0;
     bottom: 0;
-    padding-bottom: 5rem;
+    padding-bottom: 7rem;
 }
 
 .avatarSeetForm {
-    margin-top: 4rem;
+    margin-top: 8rem;
+}
+
+.closeBtn {
+    position: absolute;
+    top: 10rem;
+    left: 5rem;
+    font-size: 1.5rem;
+    z-index: 105;
+    background-color: transparent;
+    padding: .5rem;
+    font-weight: 900;
+    border-radius: 50%;
+    color: #B2CC12;
+    border: none;
 }

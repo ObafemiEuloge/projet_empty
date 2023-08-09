@@ -1,16 +1,14 @@
 <div>
 
-    <nav class="navbar navbar-dark fixed-top logo-flex">
-        <!-- <div class="container"> -->
+    <!-- <nav class="navbar navbar-dark fixed-top logo-flex">
+        <div class="container">
             <div class="container d-flex justify-content-between">
                 <a class="navbar-brand" routerLink="/">
                     <img src="../assets/Empty-ressources/Sources/Logos/Logo Noir.png" class="logo" alt="Logo Seet">
                 </a>
-                <button class="navbar-toggler buttonToggle" type="button" data-bs-toggle="offcanvas"
-                    data-bs-target="#offcanvasDarkNavbar" aria-controls="offcanvasDarkNavbar"
-                    aria-label="Toggle navigation">
-                    <span class="navbar-toggler-icon"></span>
-                </button>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
                 <div class="offcanvas offcanvas-end text-bg-dark" tabindex="-1" id="offcanvasDarkNavbar"
                     aria-labelledby="offcanvasDarkNavbarLabel" style="width: 15%;">
                     <div class="offcanvas-header">
@@ -18,30 +16,45 @@
                         <button type="button" class="btn-close btn-close-white" data-bs-dismiss="offcanvas"
                             aria-label="Close"></button>
                     </div>
-                    <div class="offcanvas-body">
-                        <ul class="navbar-nav justify-content-end flex-grow-1 pe-3">
-                            <li class="nav-item my-2 px-2">
-                                <a class="nav-link  active" aria-current="page" routerLink="/">Accueil</a>
-                            </li>
-                            <li class="nav-item my-2 px-2">
-                                <a class="nav-link" routerLink="/template">Galerie</a>
-                            </li>
-                            <li class="nav-item my-2 px-2 dropdown">
-                                <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
-                                    aria-expanded="false">
-                                    Mode
-                                </a>
-                                <ul class="dropdown-menu dropdown-menu-dark">
-                                    <li><a class="dropdown-item">Light Mode </a></li>
-                                    <li><a class="dropdown-item">Dark Mode</a></li>
-
-                                </ul>
-                            </li>
-                        </ul>
-                    </div>
+                    <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+                <div class="navbar-nav">
+                    <a class="nav-link active" aria-current="page" href="#">Home</a>
+                    <a class="nav-link" href="#">Features</a>
+                    <a class="nav-link" href="#">Pricing</a>
+                    <a class="nav-link disabled" aria-disabled="true">Disabled</a>
                 </div>
             </div>
-        <!-- </div> -->
+                </div>
+            </div>
+        </div>
+    </nav> -->
+
+    <nav class="navbar navbar-expand-lg" style="background-color: #B2CC12;">
+        <div class="container-fluid w-100 d-flex justify-content-between">
+            <a class="navbar-brand" routerLink="/">
+                <img src="../assets/Empty-ressources/Sources/Logos/Logo Noir.png" class="logo" alt="Logo Seet">
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup"
+                aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+                <div class="navbar-nav">
+                    <a class="nav-link active d-flex justify-content-center align-items-center" aria-current="page">
+                        <img class="imgIcon mx-2" src="../assets/Empty-ressources/Sources/Icons/accueil.png" alt="Accueil">
+                        <span>Accueil</span>
+                    </a>
+                    <a class="nav-link active d-flex justify-content-center align-items-center" aria-current="page" href="#">
+                        <img class="imgIcon mx-2" src="../assets/Empty-ressources/Sources/Icons/photos.png" alt="Galerie">
+                        <span>Galerie</span>
+                    </a>
+                    <a class="nav-link active d-flex justify-content-center align-items-center" aria-current="page">
+                        <img class="imgIcon mx-2" src="../assets/Empty-ressources/Sources/Icons/soleil.png" alt="Accueil">
+                    </a>
+                    
+                </div>
+            </div>
+        </div>
     </nav>
     <!-- <nav class="navbar navbar-expand-lg logo-flex">
         <div class="container-fluid">
