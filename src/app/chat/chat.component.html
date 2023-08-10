@@ -365,9 +365,9 @@
             </div>
         </div>
 
-        <div class="btnContinue" *ngIf="btnContinue === true">
-            <button class="continueBtn">Continuer</button>
-        </div>
+    </div>
+    <div class="btnContinue" *ngIf="btnContinue === true">
+        <button class="continueBtn">Continuer</button>
     </div>
 
     <!---------------------------------------------------------------------------------------------------
@@ -470,5 +470,28 @@
 .myform button.closeBtn:hover{
     /* background-color: #333; */
     color: #D7D6DC;
+}
+
+.btnContinue{
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    margin-block: 2rem;
+}
+
+.continueBtn{
+    background-color: #B2CC12;
+    color: #181818;
+    padding: .5rem 1.5rem;
+    font-weight: bold;
+    font-size: 1.1rem;
+    border-radius: 10px;
+    border: solid 1px #B2CC12;
+    transition: all 0.4s;
+}
+
+.continueBtn:hover{
+    color: #B2CC12;
+    background-color: #333;
 }
 </style>
