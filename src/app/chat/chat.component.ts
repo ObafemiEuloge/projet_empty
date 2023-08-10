@@ -42,6 +42,11 @@ export class ChatComponent implements OnInit {
   input: boolean = false; // propriété permettant d'afficher le champ permettant d'entrer le nom du site
   selectCat: boolean = false; // propriété permettant d'afficher le champ permettant d'entrer la catégorie
   inputThem: boolean = false; // propriété permettant d'afficher le champ permettant d'entrer le thème
+
+  inputModif: boolean = false; // propriété permettant d'afficher le champ permettant d'entrer le nom du site
+  selectCatModif: boolean = false; // propriété permettant d'afficher le champ permettant d'entrer la catégorie
+  inputThemModif: boolean = false; // propriété permettant d'afficher le champ permettant d'entrer le thème
+
   template: string = ""; // propriété permettant de préciser le template choisit
 
   colorChoice: boolean = false; // propriété permettant d'afficher les réponses des couleurs 
@@ -104,25 +109,23 @@ export class ChatComponent implements OnInit {
    * Fonction d'envoi des réponses modifiées
    */
   sendModif() {
-    if (this.input === true) {
+    if (this.inputModif === true) {
       this.titleSiteInter = this.titleSite;
       this.answersList = this.chatService.getAnswers(this.titleSite)
       this.buttonModifMsg = false;
-      this.input = false;
-      this.selectCat = true;
+      this.inputModif = false;
     }
-    if (this.selectCat === true) {
+    if (this.selectCatModif === true) {
       this.categInter = this.categ;
       this.answersList = this.chatService.getAnswers(this.categ)
       this.buttonModifMsg = false;
-      this.selectCat = false;
-      this.inputThem = true;
+      this.selectCatModif = false;
     }
-    if (this.inputThem === true) {
+    if (this.inputThemModif === true) {
       this.themInter = this.them;
       this.answersList = this.chatService.getAnswers(this.them)
       this.buttonModifMsg = false;
-      this.inputThem = false;
+      this.inputThemModif = false;
     }
   }
 
@@ -130,10 +133,7 @@ export class ChatComponent implements OnInit {
  * Fonction de modification du nom de site
  */
   editTitle() {
-    this.input = true;
-    // this.selectCat = false;
-    // this.inputThem = false;
-    this.buttonSendMsg = false;
+    this.inputModif = true;
     this.buttonModifMsg = true;
   }
 
@@ -141,10 +141,7 @@ export class ChatComponent implements OnInit {
    * Fonction de modification de la catégorie
    */
   editCategory() {
-    this.input = false;
-    this.selectCat = true;
-    this.inputThem = false;
-    this.buttonSendMsg = false;
+    this.selectCatModif = true;
     this.buttonModifMsg = true;
   }
 
@@ -152,10 +149,7 @@ export class ChatComponent implements OnInit {
    * Fonction de modification du thème
    */
   editTheme() {
-    this.input = false;
-    this.selectCat = false;
-    this.inputThem = true;
-    this.buttonSendMsg = false;
+    this.inputThemModif = true;
     this.buttonModifMsg = true;
   }
 
@@ -291,7 +285,7 @@ export class ChatComponent implements OnInit {
 
 
 
-onSumbit() {
-  console.log(this.lname, this.fname, this.email);
-}
+  onSumbit() {
+    console.log(this.lname, this.fname, this.email);
+  }
 }

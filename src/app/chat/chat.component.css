@@ -58,6 +58,8 @@ p {
 ======================= Espace de discussion ======================
 ===============================================================*/
 .discussionSpace {
+    position: relative;
+
     border-radius: 50px;
     border-bottom-left-radius: 0px;
     border-bottom-right-radius: 0px;
@@ -170,9 +172,15 @@ p {
 form {
     flex-basis: 95%;
 }
+.champSendMsg{
+    position: relative;
+}
 
 form input[type="text"],
 form select {
+    position: absolute;
+    bottom: 0;
+    margin-top: 1rem;
     background-color: #B2CC12;
     color: black;
     padding: 1rem;
@@ -180,6 +188,15 @@ form select {
     height: fit-content;
     border: none;
 }
+/* form input[type="text"],
+form select {
+    background-color: #B2CC12;
+    color: black;
+    padding: 1rem;
+    width: 100%;
+    height: fit-content;
+    border: none;
+} */
 
 input:focus,
 select:focus {
@@ -204,9 +221,20 @@ form ::placeholder {
 }
 
 .sendMsg {
+    position: absolute;
     background-color: #B2CC12;
     border: none;
-    padding: 0;
+    padding: 0.6rem 1rem;
+    right: 0%;
+}
+.modifMsg {
+    position: absolute;
+    background-color: #B2CC12;
+    border: none;
+    padding: 0.6rem 1rem;
+    right: 0%;
+    bottom: 0;
+
 }
 
 .validColor {
@@ -252,8 +280,8 @@ form ::placeholder {
     padding: 0.3rem;
 }
 
-.formColor {
-    position: relative;
+.formDivColor {
+    /* position: relative; */
     display: flex;
     flex-flow: column;
     align-items: center;
