@@ -551,10 +551,7 @@ legend {
 }
 
 .formContact input {
-    width: 300px;
-    border-radius: 10px;
-    padding: .4rem;
-    padding-left: 1rem;
+    
 }
 
 ::placeholder {
@@ -639,7 +636,11 @@ fieldset {
     margin-inline: auto;
 }
 
-.formul input {
+.formul form input {
+    width: 300px;
+    border-radius: 10px;
+    padding: .4rem;
+    padding-left: 1rem;
     background-color: #d7d6dcc9;
     border: 1px solid #b3cc1266;
     /* border: none; */
@@ -734,4 +735,55 @@ fieldset {
 
 
 
+}
+
+
+
+.myform button.closeBtn {
+    position: absolute;
+    top: 1rem;
+    left: 2rem;
+    font-size: 1.5rem;
+    z-index: 105;
+    background-color: transparent;
+    padding: .5rem;
+    font-weight: 900;
+    border-radius: 50%;
+    color: #B2CC12;
+    border: none;
+    transition: all 0.4s;
+}
+
+.myform button.closeBtn:hover{
+    /* background-color: #333; */
+    color: #D7D6DC;
+}
+
+.btnContinue{
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    margin-block: 2rem;
+}
+
+.continueBtn{
+    background-color: #B2CC12;
+    color: #181818;
+    padding: .5rem 1.5rem;
+    font-weight: bold;
+    font-size: 1.1rem;
+    border-radius: 10px;
+    border: solid 1px #B2CC12;
+    transition: all 0.4s;
+}
+
+.continueBtn:hover{
+    color: #B2CC12;
+    background-color: #333;
+}
+
+.scroll{
+    height: 850px;
+    overflow-y: scroll;
+    scroll-behavior: smooth;
 }
