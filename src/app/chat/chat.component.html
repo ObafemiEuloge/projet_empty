@@ -367,16 +367,16 @@
             </div>
         </div>
 
-        <div class="btnContinue" *ngIf="btnContinue === true">
-            <button class="continueBtn">Continuer</button>
-        </div>
+    </div>
+    <div class="btnContinue" *ngIf="btnContinue === true">
+        <button class="continueBtn">Continuer</button>
     </div>
 
     <!---------------------------------------------------------------------------------------------------
     --------------- Affichage des champs du formulaire en fonction des questions --------------
     ---------------------------------------------------------------------------------------------------->
     <div class="formDiv d-flex">
-        <form action="" method="post" #formSearch="ngForm">
+        <form action="" class="formQuestion" method="post" #formSearch="ngForm">
             <ng-container>
                 <div class=" py-4 mb-2"></div>
                 <div class="champSendMsg">
@@ -411,7 +411,7 @@
 
 
     <div class="formDiv d-flex">
-        <form action="" method="post" #formSearch="ngForm">
+        <form action="" class="formQuestion" method="post" #formSearch="ngForm">
             <ng-container>
                 <!-- <div class=" py-4 mb-2"></div> -->
                 <div class="champSendMsg">
@@ -451,7 +451,7 @@
 
 <!-------------------------------- Page de contact ------------------------------------------>
 <div class="parentForm" *ngIf="formContact === true">
-    <div [@opacityAnimation] class="myform my-4">
+    <div [@opacityAnimation] class="myform">
         <div class="avatarSeetForm">
             <img src="../../assets/Empty-ressources/Sources/Avatar Seet/Avatar SEET.png" alt="Avatar SEET" width="250">
             <p><strong>Remplis ce formulaire et reçois <br> ton site web...</strong></p>
@@ -463,22 +463,66 @@
                 <fieldset>
                     <div class="pt-logo"><span class="favIcon"><img src="../../assets/Logo noir.png" alt="Logo Seet"
                                 width="20"> Seet</span></div>
-                    <input type="text" id="Fname" placeholder="Votre nom" [(ngModel)]="lname" name="lname">
-                    <!-- <label for="Fname" class="text-dark fs-2"></label> -->
+                    <input type="text" id="fname" placeholder="Votre nom" [(ngModel)]="lname" name="lname">
                     <br><br>
-                    <input type="text" id="Lname" placeholder="Votre prénom " [(ngModel)]="fname" name="fname">
+                    <input type="text" id="lname" placeholder="Votre prénom " [(ngModel)]="fname" name="fname">
                     <br><br>
-                    <input type="email" id="Mail" placeholder="Adresse email..." [(ngModel)]="email" name="email">
+                    <input type="email" id="mail" placeholder="Adresse email..." [(ngModel)]="email" name="email">
                     <br> <br>
                     <button type="submit" class="validate">Valider</button>
                 </fieldset>
             </form>
 
         </div>
+        
         <button class="closeBtn" (click)="retour()">
             <span class="fas  fa-arrow-alt-circle-left"></span>
             <span> Retour</span>
         </button>
-
     </div>
 </div>
+
+<style>
+    .myform button.closeBtn {
+    position: absolute;
+    top: 1rem;
+    left: 2rem;
+    font-size: 1.5rem;
+    z-index: 105;
+    background-color: transparent;
+    padding: .5rem;
+    font-weight: 900;
+    border-radius: 50%;
+    color: #B2CC12;
+    border: none;
+    transition: all 0.4s;
+}
+
+.myform button.closeBtn:hover{
+    /* background-color: #333; */
+    color: #D7D6DC;
+}
+
+.btnContinue{
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    margin-block: 2rem;
+}
+
+.continueBtn{
+    background-color: #B2CC12;
+    color: #181818;
+    padding: .5rem 1.5rem;
+    font-weight: bold;
+    font-size: 1.1rem;
+    border-radius: 10px;
+    border: solid 1px #B2CC12;
+    transition: all 0.4s;
+}
+
+.continueBtn:hover{
+    color: #B2CC12;
+    background-color: #333;
+}
+</style>

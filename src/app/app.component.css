@@ -7,7 +7,7 @@
 
 
 .logo{
-    width:90px; 
+    width:120px; 
     margin-inline: 1rem ;  
 }
 
@@ -17,15 +17,24 @@
 
 .logo-flex span {
     font-size: 2rem;
+    color: #B2CC12;
 }
 
 nav {
-    background-color: #B2CC12;
-    border-bottom: solid 6px #D7D6DC;
+    background-color: transparent;
+    /* border-bottom: solid 6px #D7D6DC; */
+    /* border: solid 1px #B2CC12; */
+    color: #B2CC12;
+
+}
+
+.menuTitre{
+    color: #B2CC12;
 }
 
 .imgIcon {
     width: 20px;
+    mix-blend-mode: color(white );
 }
 
 
@@ -38,7 +47,7 @@ a {
 
 .commencer {
     background-color: #D7D6DC;
-    color: #181818;
+    color: #B2CC12;
     border: solid 1px #D7D6DC;
     font-weight: 900;
 }
@@ -75,3 +84,4 @@ ul li .commencer:hover{
 .navbar-collapse {
     justify-content: end;
 }
+
