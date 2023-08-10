@@ -266,8 +266,7 @@
                 <p class="userMsg">
                     <strong>Choix du template:</strong> {{template}}
                     <!-- button editTemplate -->
-                    <button type="button" class="modifColor" *ngIf="buttonModifTemplate === true"
-                        (click)="editTemplate()">
+                    <button type="button" class="modifColor" *ngIf="buttonModifTemplate === true" (click)="editTemplate()">
                         <img class="userAvatar" src="../../assets/Empty-ressources/Sources/Icons/editer.png"
                             alt="IDAvatar">
                     </button>
@@ -357,8 +356,7 @@
             ------------------------------------- Sixième question -----------------------------------------
             ---------------------------------- ( Message de félicitation ) --------------------------------------
             ---------------------------------------------------------------------------------------------------->
-            <div class="asked gap-sm-3"
-                *ngIf="congratulation === true && buttonModif === true && template !== '' && buttonModifTemplate === true">
+            <div class="asked gap-sm-3" *ngIf="congratulation === true && buttonModif === true && template !== '' && buttonModifTemplate === true">
                 <img src="../../assets/Empty-ressources/Sources/Avatar Seet/IDAvatar.png" alt="IDAvatar">
                 <span class="fw-bolder fs-1">.</span>
                 <p class="chatbotMsg" [@opacityAnimation]> Génial ! Génial, ton template vient d'être généré.
@@ -378,24 +376,22 @@
     <div class="formDiv d-flex">
         <form action="" class="formQuestion" method="post" #formSearch="ngForm">
             <ng-container>
-                <div class=" py-4 mb-2"></div>
-                <div class="champSendMsg">
-                    <!-- Champ de saisit du nom de site -->
-                    <input class="" *ngIf="input === true" [(ngModel)]="titleSite" type="text" name="title" id="title"
-                        placeholder="Saisissez le nom de votre site ici...." required>
-                    <!--  -->
-                    <!-- Selection de la catégorie -->
-                    <select class="" id="categorie" aria-label="Large select example" *ngIf="selectCat === true" name="categ" [(ngModel)]="categ">
-                        <option value="" disabled selected>Sélectionne une catégorie dans la liste suivante
-                        </option>
-                        <option [value]="categorie.titre" *ngFor="let categorie of categories"> {{categorie.titre}}
-                        </option>
-                    </select>
+                <!-- Champ de saisit du nom de site -->
+                <input *ngIf="input === true" [(ngModel)]="titleSite" type="text" name="title" id="title"
+                     placeholder="Saisissez le nom de votre site ici...." required>
 
-                    <!-- Champ de saisir du thème -->
-                    <input class="" *ngIf="inputThem === true" [(ngModel)]="them" type="text" name="them" id="them"
-                        placeholder="Saisissez votre thème ici...." required>
-                </div>
+                <!-- Selection de la catégorie -->
+                <select *ngIf="selectCat === true" id="categorie" aria-label="Large select example" name="categ"
+                    [(ngModel)]="categ">
+                    <option value="" disabled selected>Sélectionne une catégorie dans la liste suivante
+                    </option>
+                    <option [value]="categorie.titre" *ngFor="let categorie of categories"> {{categorie.titre}}
+                    </option>
+                </select>
+
+                <!-- Champ de saisir du thème -->
+                <input *ngIf="inputThem === true" [(ngModel)]="them" type="text" name="them" id="them"
+                     placeholder="Saisissez votre thème ici...." required>
             </ng-container>
         </form>
 
@@ -407,35 +403,8 @@
                     d="M6 12L3.269 3.126A59.768 59.768 0 0121.485 12 59.77 59.77 0 013.27 20.876L5.999 12zm0 0h7.5" />
             </svg>
         </button>
-    </div>
-
-
-    <div class="formDiv d-flex">
-        <form action="" class="formQuestion" method="post" #formSearch="ngForm">
-            <ng-container>
-                <!-- <div class=" py-4 mb-2"></div> -->
-                <div class="champSendMsg">
-                    <!-- Champ de modification du nom de site -->
-                    <input class="champModif" *ngIf="inputModif === true" [(ngModel)]="titleSite" type="text"
-                        name="title" id="title" placeholder="Modifier le nom de votre site ici...." required>
-                    <!-- Selection de la catégorie à changer -->
-                    <select class="champModif" id="categorie" 
-                        aria-label="Large select example" name="categ" [(ngModel)]="categ" *ngIf="selectCatModif === true">
-                        <option value="" disabled selected>Sélectionne la catégorie à modifier dans la liste suivante
-                        </option>
-                        <option [value]="categorie.titre" *ngFor="let categorie of categories"> {{categorie.titre}}
-                        </option>
-                    </select>
-
-                    <!-- Champ de modification du thème -->
-                    <input class="champModif" *ngIf="inputThemModif === true" [(ngModel)]="them" type="text" name="them"
-                        id="them" placeholder="Modifier votre thème ici...." required>
-                </div>
-            </ng-container>
-        </form>
-
         <!-- button de modification -->
-        <button type="button" style="width: 5%;" class="modifMsg" *ngIf="buttonModifMsg === true" (click)="sendModif()">
+        <button *ngIf="buttonModifMsg === true" type="button" style="width: 5%;" class="sendMsg" (click)="sendModif()">
             <svg xmlns="http://www.w3.org/2000/svg" width="45px" style="background-color: #B2CC12; border: none;"
                 fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="">
                 <path stroke-linecap="round" stroke-linejoin="round"

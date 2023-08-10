@@ -85,3 +85,8 @@ ul li .commencer:hover{
     justify-content: end;
 }
 
+.inline {
+    display: block;
+    border-bottom: solid 1px #B2CC12;
+    width: 100%;
+}
