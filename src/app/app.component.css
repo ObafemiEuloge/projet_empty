@@ -1,4 +1,3 @@
-
 *,
 *::before,
 *::after {
@@ -6,9 +5,19 @@
 }
 
 
-.logo{
-    width:120px; 
-    margin-inline: 1rem ;  
+.logo {
+    width: 30px;
+    margin-inline: 1rem;
+}
+
+.parentLogo {
+    display: flex;
+    align-items: center;
+}
+
+.parentLogo span {
+    color: #f6ca0c;
+    font-size: 1.6rem;
 }
 
 .logo-flex img {
@@ -17,24 +26,24 @@
 
 .logo-flex span {
     font-size: 2rem;
-    color: #B2CC12;
+    color: #f6ca0c;
 }
 
 nav {
     background-color: transparent;
     /* border-bottom: solid 6px #D7D6DC; */
-    /* border: solid 1px #B2CC12; */
-    color: #B2CC12;
+    /* border: solid 1px #f6ca0c; */
+    color: #f6ca0c;
 
 }
 
-.menuTitre{
-    color: #B2CC12;
+.menuTitre {
+    color: #f6ca0c;
 }
 
 .imgIcon {
     width: 20px;
-    mix-blend-mode: color(white );
+    mix-blend-mode: color(white);
 }
 
 
@@ -42,17 +51,17 @@ a {
     font-weight: bold;
     transition: all 0.5s;
     font-size: 1.2rem;
-    /* border: solid 1px #B2CC12; */
+    /* border: solid 1px #f6ca0c; */
 }
 
 .commencer {
     background-color: #D7D6DC;
-    color: #B2CC12;
+    color: #f6ca0c;
     border: solid 1px #D7D6DC;
     font-weight: 900;
 }
 
-ul li .navLi span{
+ul li .navLi span {
     transition: all 0.5s;
     font-weight: 900;
 }
@@ -62,21 +71,21 @@ ul li .navLi:hover {
 }
 
 
-ul li .navLi img{
+ul li .navLi img {
     transition: all 0.5s;
     margin-right: .3rem;
 }
 
-ul li .navLi:hover img{
+ul li .navLi:hover img {
     transform: scale(1.1);
 }
 
-ul li .commencer:hover{
-    background-color: #B2CC12;
+ul li .commencer:hover {
+    background-color: #f6ca0c;
     color: #181818;
 }
 
-.buttonToggle span{
+.buttonToggle span {
     mix-blend-mode: difference;
     width: 30px;
 }
@@ -87,6 +96,6 @@ ul li .commencer:hover{
 
 .inline {
     display: block;
-    border-bottom: solid 1px #B2CC12;
+    border-bottom: solid 1px #f6ca0c;
     width: 100%;
 }
