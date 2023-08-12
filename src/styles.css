@@ -2,8 +2,11 @@
 
 body.body{
     font-family: ProductSans;
-    background-image: url("./assets/Empty-ressources/Sources/Background/fond.jpg");
+    background-image: url("./assets/Empty-ressources/Sources/Background/fond2.jpg");
+    background-blend-mode: color-dodge;
+    background-color: rgb(32, 29, 26);
     background-size: cover;
     background-attachment: fixed;
     position: relative;
+    
 }

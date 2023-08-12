@@ -1,41 +1,32 @@
-//class Categorie
+// type générique des Categories
 export class Categorie {
     static id: any;
     constructor(
-        public id:string,
-        public titre:string,
+        public id: string,
+        public titre: string,
         public value: string
-    ){}
+    ) { }
 }
 
-export class Theme {
-    constructor(
-        public id : string,
-        public theme_List: string []
-    ){}
-}
+ /**
+  * type générique du tableau des couleurs renseigneés par l'utilisateur 
+  */
 export class Colors {
     constructor(
-        public template_colors: string []
-    ){}
+        public template_colors: string[]
+    ) { }
 }
-export class Questions {
-        constructor(
-            public num: number,
-            public question: string,
-        ) {}
+
+/**
+ * type générique de l'objet qui récupére les informations de l'utilisateur
+ */
+export interface informationUser {
+    siteName: string,
+    category: string,
+    theme: string,
+    template: string,
+    colors: string[],
+    firstName: string,
+    lastName: string,
+    email: string
 }
-export class quizAndAnswer {
-        constructor(
-            public title: string,
-            public cate: string,
-            public them: string,
-            public color: string[],
-            public templa: string,
-        ) {}
-}
-// export class Questions {
-//         constructor(
-//             public chatQuestions: string [],
-//         ) {}
-// }
