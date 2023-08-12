@@ -40,6 +40,7 @@ export class ChatComponent implements OnInit {
 
   /** les champs de saisie */
   input: boolean = false; // propriété permettant d'afficher le champ permettant d'entrer le nom du site
+  inputModif: boolean = false; // propriété permettant d'afficher le champ permettant d'entrer le nom du site
   selectCat: boolean = false; // propriété permettant d'afficher le champ permettant d'entrer la catégorie
   inputThem: boolean = false; // propriété permettant d'afficher le champ permettant d'entrer le thème
   template: string = ""; // propriété permettant de préciser le template choisit
@@ -104,11 +105,11 @@ export class ChatComponent implements OnInit {
    * Fonction d'envoi des réponses modifiées
    */
   sendModif() {
-    if (this.input === true) {
+    if (this.inputModif === true) {
       this.titleSiteInter = this.titleSite;
       this.answersList = this.chatService.getAnswers(this.titleSite)
       this.buttonModifMsg = false;
-      this.input = false;
+      this.inputModif = false;
       this.selectCat = true;
     }
     if (this.selectCat === true) {
@@ -130,7 +131,7 @@ export class ChatComponent implements OnInit {
  * Fonction de modification du nom de site
  */
   editTitle() {
-    this.input = true;
+    this.inputModif = true;
     this.selectCat = false;
     this.inputThem = false;
     this.buttonSendMsg = false;
