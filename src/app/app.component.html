@@ -1,38 +1,36 @@
-<div>
-    <nav class="navbar navbar-expand-lg container">
-        <div class="container-fluid w-100 d-flex justify-content-between">
-            <a class="navbar-brand parentLogo" routerLink="/" >
-                <img src="../assets/Empty-ressources/Sources/Logos/Favicon.png" class="logo" alt="Logo Seet">
-                <span>Seet</span>
-            </a>
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup"
-                aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-            <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
-                <div class="navbar-nav">
-                    <a class="nav-link active d-flex justify-content-center align-items-center" routerLink=""
-                        aria-current="page">
-                        <span class="text-white me-2"></span>
-                        <img class="imgIcon mx-2" src="../assets/Empty-ressources/Sources/Icons/accueil.png" alt="Accueil">
-                        <span class="menuTitre">Accueil</span>
-                    </a>
-                    <a routerLink="/template" class="nav-link active d-flex justify-content-center align-items-center"
-                        aria-current="page" href="#">
-                        <img class="imgIcon mx-2" src="../assets/Empty-ressources/Sources/Icons/galerie.png" alt="Galerie">
-                        <span class="me-2 text-white"></span>
-
-                        <span class="menuTitre">Galerie</span>
-                    </a>
-                    <a class="nav-link active d-flex justify-content-center align-items-center" aria-current="page" style="cursor: pointer;">
-                        <img class="imgIcon mx-2" src="../assets/Empty-ressources/Sources/Icons/sun.png" alt="Accueil">
-                    </a>
+<div [@opacityAnimation] [ngClass]="{'background-style-1': isBackgroundStyle1, 'background-style-2': !isBackgroundStyle1}">
+    <div>
+        <nav class="navbar navbar-expand-lg container">
+            <div class="container-fluid w-100 d-flex justify-content-between">
+                <a class="navbar-brand parentLogo" routerLink="/" >
+                    <img src="../assets/Empty-ressources/Sources/Logos/Favicon.png" class="logo" alt="Logo Seet">
+                    <span>Seet</span>
+                </a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup"
+                    aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+                    <div class="navbar-nav">
+                        <a class="nav-link active d-flex justify-content-center align-items-center" routerLink=""
+                            aria-current="page">
+                            <span class="text-white me-2"></span>
+                            <img class="imgIcon mx-2" src="../assets/Empty-ressources/Sources/Icons/accueil.png" alt="Accueil">
+                            <span class="menuTitre">Accueil</span>
+                        </a>
+                        <a routerLink="/template" class="nav-link active d-flex justify-content-center align-items-center"
+                            aria-current="page" href="#">
+                            <img class="imgIcon mx-2" src="../assets/Empty-ressources/Sources/Icons/galerie.png" alt="Galerie">
+                            <span class="me-2 text-white"></span>
+                            <span class="menuTitre">Galerie</span>
+                        </a>
+                        <button  (click)="toggleBackgroundStyle()" class="nav-link active d-flex justify-content-center align-items-center" aria-current="page" style="cursor: pointer;">
+                            <img class="imgIcon mx-2"  [src]="isBackgroundStyle1 ? '../assets/Empty-ressources/Sources/Icons/nuit.png' : '../assets/Empty-ressources/Sources/Icons/sun.png'" alt="Image" alt="Accueil">
+                        </button>
+                    </div>
                 </div>
             </div>
-        </div>
-    </nav>
-    <!-- <div class="inline"></div> -->
+        </nav>
+    </div>
+    <router-outlet></router-outlet>
 </div>
-<!-- <app-contact></app-contact> -->
-<!-- <app-template></app-template> -->
-<router-outlet></router-outlet>

@@ -48,4 +48,12 @@ export class ChatService {
     return this.answers
   }
 
+  isBackgroundStyle1: boolean = true;
+
+  toggleBackgroundStyle() {
+    setTimeout(() => {
+      this.isBackgroundStyle1 = !this.isBackgroundStyle1;
+    }, 100);
+  }
+
 }
