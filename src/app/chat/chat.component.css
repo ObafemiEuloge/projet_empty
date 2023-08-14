@@ -70,9 +70,12 @@ p {
     background-color: #3333334f;
 }
 .conversation{
-    height: 50vh;
+    height: 60vh;
     overflow-y: scroll;
     scroll-behavior: smooth;
+}
+.conversation::-webkit-scrollbar{
+    overflow: hidden;
 }
 .logoChat {
     background-color: #f6ca0c;
@@ -181,6 +184,9 @@ form {
 .champSendMsg{
     position: relative;
 }
+.formDiv{
+    position: relative;
+}
 
 form.formQuestion input[type="text"],
 form select {
@@ -236,7 +242,7 @@ form ::placeholder {
     position: absolute;
     background-color: #f6ca0c;
     border: none;
-    padding: 0.6rem 1rem;
+    /* padding: 0.6rem 1rem; */
     right: 0%;
     bottom: 0;
 
@@ -414,6 +420,7 @@ form ::placeholder {
 .templateBox {
     background-color: #4a494e;
     text-align: center;
+    border-radius: 20px;
 }
 
 .validTemp {
@@ -721,6 +728,10 @@ fieldset {
     .sendMsg {
         /* padding-right: 3rem; */
         width: 100%;
+    }
+
+    .modifMsg {
+        padding: 0.6rem 1rem;
     }
 
     .headerChat {

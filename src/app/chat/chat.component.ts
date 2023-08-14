@@ -338,7 +338,7 @@ export class ChatComponent implements OnInit {
       try {
         const scroll = this.scrollElement.nativeElement;
 
-        scroll!.scrollTop = scroll!.scrollHeight + 800;
+        scroll!.scrollTop = scroll!.scrollHeight + 1000;
         console.log(scroll!.scrollHeight);
         console.log(scroll!.scrollTop);
       } catch (err) { }
