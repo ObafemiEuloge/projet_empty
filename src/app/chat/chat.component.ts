@@ -166,6 +166,8 @@ export class ChatComponent implements OnInit {
  */
   editTitle() {
     this.inputModif = true;
+    this.selectCatModif = false;
+    this.inputThemModif = false;
     this.buttonModifMsg = true;
   }
 
@@ -173,7 +175,9 @@ export class ChatComponent implements OnInit {
    * Fonction de modification de la catégorie
    */
   editCategory() {
+    this.inputModif = false;
     this.selectCatModif = true;
+    this.inputThemModif = false;
     this.buttonModifMsg = true;
   }
 
@@ -181,6 +185,8 @@ export class ChatComponent implements OnInit {
    * Fonction de modification du thème
    */
   editTheme() {
+    this.inputModif = false;
+    this.selectCatModif = false;
     this.inputThemModif = true;
     this.buttonModifMsg = true;
   }
@@ -342,7 +348,7 @@ export class ChatComponent implements OnInit {
         console.log(scroll!.scrollHeight);
         console.log(scroll!.scrollTop);
       } catch (err) { }
-    }, 150)
+    }, 250)
   }
 
   /**
