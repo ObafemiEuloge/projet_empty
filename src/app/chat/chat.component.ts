@@ -243,13 +243,13 @@ export class ChatComponent implements OnInit {
       this.buttonModif = true;
       this.noColorChoice = false;
 
-      // if (this.colorChoice === true) {
-      //   setTimeout(() => {
-      //     this.formContact = true;
-      //     // this.btnContinue = true;
-      //   }, 3000);
+      if (this.colorChoice === true) {
+        setTimeout(() => {
+          this.formContact = true;
+          // this.btnContinue = true;
+        }, 3000);
 
-      // }
+      }
     }
     this.scrollToBottom();
     return console.log(this.colorArray);
