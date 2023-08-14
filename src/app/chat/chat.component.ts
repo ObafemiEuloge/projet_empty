@@ -4,7 +4,6 @@ import { Categorie } from '../class-infos';
 import { opacityAnimation } from '../animation.module';
 import { CATEGORIE } from '../mock-infos';
 import { FormControl, FormGroup, NgForm } from '@angular/forms';
-import { fakeAsync } from '@angular/core/testing';
 import { informationUser } from '../class-infos';
 
 @Component({
@@ -95,19 +94,19 @@ export class ChatComponent implements OnInit {
 
   ngOnInit(): void {
     this.input = true;
-  }
+    this.scrollToBottom();
 
+  }
   /**
    * Fonction d'envoi des réponses
    */
   sendAns() {
     if (this.titleSite !== "" && this.click === 0) {
       this.titleSiteInter = this.titleSite;
-      // this.answersList = this.chatService.getAnswers(this.titleSite)
       this.input = false;
       this.selectCat = true;
       this.click = 1;
-      this.scrollToBottom()
+      this.scrollToBottom();
 
     }
     if (this.categ !== "" && this.click === 1) {
@@ -117,7 +116,7 @@ export class ChatComponent implements OnInit {
       this.selectCat = false;
       this.inputThem = true;
       this.click = 2
-      this.scrollToBottom()
+
 
     }
     if (this.them !== "" && this.click === 2) {
@@ -128,10 +127,10 @@ export class ChatComponent implements OnInit {
       this.inputThem = false;
       this.buttonSendMsg = false;
       this.click = 3
-      this.scrollToBottom()
+
 
     }
-
+    this.scrollToBottom();
   }
   /**
    * Fonction d'envoi des réponses modifiées
@@ -142,7 +141,7 @@ export class ChatComponent implements OnInit {
       // this.answersList = this.chatService.getAnswers(this.titleSite)
       this.buttonModifMsg = false;
       this.inputModif = false;
-      this.scrollToBottom()
+
 
     }
 
@@ -151,14 +150,14 @@ export class ChatComponent implements OnInit {
       // this.answersList = this.chatService.getAnswers(this.categ)
       this.buttonModifMsg = false;
       this.selectCatModif = false;
-      this.scrollToBottom()
+
     }
     if (this.inputThemModif === true) {
       this.themInter = this.them;
       // this.answersList = this.chatService.getAnswers(this.them)
       this.buttonModifMsg = false;
       this.inputThemModif = false;
-      this.scrollToBottom()
+
     }
   }
 
@@ -201,9 +200,9 @@ export class ChatComponent implements OnInit {
    */
   choiceTemplate($event: any) {
     this.template = $event.target.value;
-    // this.answersList = this.chatService.getAnswers(this.template)
     this.buttonModifTemplate = true;
     this.congratulation = true;
+    this.scrollToBottom();
   }
 
   /**
@@ -239,24 +238,21 @@ export class ChatComponent implements OnInit {
       this.sColor = sColor!;
       this.tColor = tColor!;
       this.colorArray?.push(pColor!, sColor!, tColor!);
-      // this.answersList?.push(this.colorArrayCopy?.splice(0))
       this.colorChoice = true;
       this.buttonValider = false;
       this.buttonModif = true;
       this.noColorChoice = false;
 
-      // console.log(this.answersList);
-      if (this.colorChoice === true) {
-        setTimeout(() => {
-          this.formContact = true;
-          // this.btnContinue = true;
-        }, 3000);
+      // if (this.colorChoice === true) {
+      //   setTimeout(() => {
+      //     this.formContact = true;
+      //     // this.btnContinue = true;
+      //   }, 3000);
 
-      }
+      // }
     }
-    console.log(this.colorArray);
+    this.scrollToBottom();
     return console.log(this.colorArray);
-
   }
 
   /**
@@ -273,6 +269,7 @@ export class ChatComponent implements OnInit {
   annulerColor() {
     this.buttonValider = false;
     this.buttonModif = true;
+    this.scrollToBottom();
   }
 
   /**
@@ -281,6 +278,7 @@ export class ChatComponent implements OnInit {
   acceptColor() {
     this.buttonValider = true;
     this.noColorChoice = false;
+    this.scrollToBottom();
   }
 
   /**
@@ -291,6 +289,7 @@ export class ChatComponent implements OnInit {
     this.noColorChoice = true;
     this.colorChoice = false;
     this.buttonModif = true;
+    this.scrollToBottom();
     // console.log(this.answersList);
     if (this.noColorChoice === true) {
       setTimeout(() => {
@@ -316,24 +315,36 @@ export class ChatComponent implements OnInit {
    */
   continuer() {
     this.congratulation = true;
+    this.scrollToBottom();
     this.btnContinue = false
     setTimeout(() => {
       this.formContact = true;
     }, 2000);
   }
 
-
-  @ViewChild('scroll') child!: ElementRef;
+  /**
+   * Décorateur permettant de récupérer un élément html (#scroll)
+   */
+  @ViewChild('scroll', { static: true })
+  scrollElement!: ElementRef; // propriété de l'élément
   ngAfterViewInit() {
     this.scrollToBottom();
   }
+  /**
+   * Fonction de scroll automatique vers le bas
+   */
   scrollToBottom() {
-    const scroll = this.child.nativeElement;
-    scroll.scrollTop = scroll.scrollHeight;
-    console.log(scroll.scrollTop);
-    console.log(scroll.scrollHeight);
+    setTimeout(() => {
+      try {
+        const scroll = this.scrollElement.nativeElement;
 
+        scroll!.scrollTop = scroll!.scrollHeight + 800;
+        console.log(scroll!.scrollHeight);
+        console.log(scroll!.scrollTop);
+      } catch (err) { }
+    }, 150)
   }
+
   /**
    * Fonction récupérant toutes les informations de l'utilisateur
    */

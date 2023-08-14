@@ -14,15 +14,19 @@
 }
 
 
+
+
+
 /*=============================================================
 ======================= Espace de Bienvenu ======================
 ===============================================================*/
+
 .headerChat div.avatarSeet {
-    margin-top: 6rem;
+    /* margin-top: 5rem; */
 }
 
 .headerChat div.avatarSeet img {
-    max-width: 15%;
+    max-width: 12%;
 }
 
 p {
@@ -34,7 +38,7 @@ p {
     justify-content: center;
 }
 
-.headerChat h1 {
+.headerChat h2 {
     color: #f6ca0c;
     font-weight: bolder;
     text-align: center;
@@ -49,7 +53,7 @@ p {
     color: #D7D6DC;
     text-align: center;
     max-width: 300px;
-    font-size: 1.2rem;
+    font-size: 1rem;
 }
 
 
@@ -58,8 +62,6 @@ p {
 ======================= Espace de discussion ======================
 ===============================================================*/
 .discussionSpace {
-    position: relative;
-
     border-radius: 50px;
     border-bottom-left-radius: 0px;
     border-bottom-right-radius: 0px;
@@ -67,7 +69,11 @@ p {
     padding: 0;
     background-color: #3333334f;
 }
-
+.conversation{
+    height: 50vh;
+    overflow-y: scroll;
+    scroll-behavior: smooth;
+}
 .logoChat {
     background-color: #f6ca0c;
 }
@@ -554,10 +560,6 @@ legend {
     font-style: italic;
 }
 
-.formContact input {
-    
-}
-
 ::placeholder {
     font-style: italic;
 }
@@ -705,7 +707,7 @@ fieldset {
     }
 
     .headerChat {
-        margin-top: 10rem;
+        /* margin-top: 10rem; */
     }
 
     .discussionSpace {
@@ -722,7 +724,7 @@ fieldset {
     }
 
     .headerChat {
-        margin-top: 10rem;
+        /* margin-top: 10rem; */
     }
 
 .myform button.closeBtn {
