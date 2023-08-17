@@ -111,24 +111,18 @@ export class ChatComponent implements OnInit {
     }
     if (this.categ !== "" && this.click === 1) {
       this.categInter = this.categ;
-      // this.answersList = this.chatService.getAnswers(this.categ)
       this.input = false;
       this.selectCat = false;
       this.inputThem = true;
       this.click = 2
-
-
     }
     if (this.them !== "" && this.click === 2) {
       this.themInter = this.them;
-      // this.answersList = this.chatService.getAnswers(this.them)
       this.input = false;
       this.selectCat = false;
       this.inputThem = false;
       this.buttonSendMsg = false;
       this.click = 3
-
-
     }
     this.scrollToBottom();
   }
@@ -138,7 +132,6 @@ export class ChatComponent implements OnInit {
   sendModif() {
     if (this.inputModif === true) {
       this.titleSiteInter = this.titleSite;
-      // this.answersList = this.chatService.getAnswers(this.titleSite)
       this.buttonModifMsg = false;
       this.inputModif = false;
 
