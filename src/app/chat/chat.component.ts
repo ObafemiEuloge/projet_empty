@@ -336,10 +336,7 @@ export class ChatComponent implements OnInit {
     setTimeout(() => {
       try {
         const scroll = this.scrollElement.nativeElement;
-
         scroll!.scrollTop = scroll!.scrollHeight + 1000;
-        console.log(scroll!.scrollHeight);
-        console.log(scroll!.scrollTop);
       } catch (err) { }
     }, 250)
   }
